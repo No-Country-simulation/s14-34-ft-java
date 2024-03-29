@@ -1,9 +1,17 @@
-import Image from "next/image";
+import FootersOne from "@/components/containers/footers/footersOne";
+import HeadersOne from "@/components/containers/headers/headersOne";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <div>
+      <HeadersOne />
+      <main className="flex min-h-screen flex-col items-center justify-between p-24">
+        <div>
+          <h1>Home </h1>
+        </div>
+      </main>
+      <FootersOne />
+    </div>
 
-    </main>
   );
 }
