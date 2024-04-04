@@ -17,3 +17,13 @@ export const RegisterShema = z.object({
     message: "Password no coinciden",
     path:["confirmPassword"],
 })
+
+
+export const LoginShema = z.object({
+    email:z
+    .string()
+    .email({ message: "Enter a valid email" }),
+    password: z
+    .string()
+    .min(6, { message: "Enter your password" }),
+})
