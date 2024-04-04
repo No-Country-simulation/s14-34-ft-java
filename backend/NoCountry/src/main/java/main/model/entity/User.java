@@ -5,8 +5,11 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+
+import javax.print.attribute.standard.MediaSize;
 
 @Entity
 @Table(name = "users")
@@ -15,8 +18,9 @@ import lombok.Setter;
 @RequiredArgsConstructor
 public class User {
     @Id
+    @Column(name = "user_Id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long user_Id;
+    private Long userId;
 
 
     @Column(name = "first_name")
