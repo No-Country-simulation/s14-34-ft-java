@@ -1,9 +1,6 @@
 package main.model.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -16,8 +13,8 @@ import lombok.Setter;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long user_Id;
-
+    @Column(name = "user_Id")
+    private Long userId;
 
     @Column(name = "first_name")
     private String firstName;

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import main.service.impl.UserService;
 
 @Controller
-@RequestMapping("/api/v1")
+@RequestMapping("/api/user")
 @RequiredArgsConstructor
 public class UserController {
 
@@ -23,7 +23,7 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.CREATED).body("User saved successfully");
     }
 
-    @PutMapping(value = "updateUser/{id}")
+    @PutMapping(value = "update/{id}")
     public ResponseEntity<String> updateUser(@PathVariable Long id, @RequestBody User user) {
         try {
             userService.updateUser(id, user);
