@@ -15,9 +15,9 @@ public class Pet {
     @Column(name = "pet_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long petId;
+
+    // AGREGANDO CAMBIOS
     private String name;
-
-
     private String breed;
     private String colour;
     private Integer age;
