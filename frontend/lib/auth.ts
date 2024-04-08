@@ -36,8 +36,6 @@ export const AuthOptions: NextAuthOptions = {
         if (!token) {
           throw new Error("Token not found in the response");
         }
-        console.log(token)
-        console.log(user)
         return { ...user, token };
       },
     }),

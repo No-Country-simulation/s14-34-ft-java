@@ -25,7 +25,7 @@ export default function Nav() {
                     <Link href="/faqs">FAGs</Link>
                 </div>
                 <div>
-                    <Link href="/dasboard/Petsitting">Pet sitting</Link>
+                    <Link href="/dashboard/Petsitting">Pet sitting</Link>
                 </div>
                 <div>
                     <Link href="#" onClick={() => signOut()}>Sign out</Link>
