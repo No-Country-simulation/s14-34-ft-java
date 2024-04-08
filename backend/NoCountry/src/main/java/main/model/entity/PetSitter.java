@@ -1,6 +1,6 @@
-package model.entity;
+package main.model.entity;
 
-public class User {
+public class PetSitter {
     private String firstName;
     private String lastName;
     private String address;
