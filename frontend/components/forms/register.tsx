@@ -7,7 +7,6 @@ import Link from "next/link";
 import { useState } from 'react';
 import { PhoneInput } from 'react-international-phone';
 //import 'react-international-phone/style.css';
-import { PhoneNumberUtil } from 'google-libphonenumber';
 import './input-phone.css';
 
 
@@ -34,14 +33,14 @@ export default function FormRegister() {
 
     const [phone, setPhone] = useState('');
 
-    const phoneUtil = PhoneNumberUtil.getInstance();
+    const isPhoneValid = (phone: string): boolean => {
+        const numericPhone = phone.replace(/\D/g, '');
 
-    const isPhoneValid = (phone: string) => {
-        try {
-            return phoneUtil.isValidNumber(phoneUtil.parseAndKeepRawInput(phone));
-        } catch (error) {
-            return false;
-        }
+        const minDigits = 7; 
+        const maxDigits = 20; 
+
+        const numberOfDigits = numericPhone.length;
+        return numberOfDigits >= minDigits && numberOfDigits <= maxDigits;
     };
 
 

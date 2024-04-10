@@ -12,7 +12,6 @@
     "@hookform/resolvers": "^3.3.4",
     "embla-carousel-autoplay": "^8.0.1",
     "embla-carousel-react": "^8.0.1",
-    "google-libphonenumber": "^3.2.34",
     "next": "14.1.4",
     "next-auth": "^4.24.7",
     "react": "^18",
