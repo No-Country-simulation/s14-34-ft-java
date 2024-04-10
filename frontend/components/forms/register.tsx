@@ -6,7 +6,7 @@ import { RegisterShema } from "@/shemas/shemas";
 import { SubmitHandler, useForm } from "react-hook-form";
 import Link from "next/link";
 import PhoneInput from 'react-phone-number-input';
-import { useState } from "react";
+import { useState } from 'react';
 
 interface Register {
     name: string;
@@ -30,6 +30,8 @@ export default function FormRegister() {
 
     const [phoneValue, setPhoneValue] = useState<string | undefined>(undefined);
 
+    const [value, setValue] = useState()
+    
     const onSubmit: SubmitHandler<Register> = async (data) => {
         // 
         if (data.password !== data.confirmPassword) {
@@ -40,7 +42,7 @@ export default function FormRegister() {
             return;
         }
         //
-        const [value, setValue] = useState()
+        
         //
         const [name, lastname] = data.name.split(' ');
         // 

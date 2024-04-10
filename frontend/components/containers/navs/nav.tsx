@@ -24,9 +24,6 @@ export default function Nav() {
         return (
             <div className="flex flex-row gap-2">
                 <div>
-                    <Link href="/dashboard/Petsitting">Pet sitting</Link>
-                </div>
-                <div>
                     <Link href="#" onClick={() => signOut()}>Sign out</Link>
                 </div>
             </div>
