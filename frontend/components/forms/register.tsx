@@ -1,15 +1,21 @@
 'use client'
 
+import 'react-phone-number-input/style.css';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { RegisterShema } from "@/shemas/shemas";
 import { SubmitHandler, useForm } from "react-hook-form";
 import Link from "next/link";
-
+import PhoneInput from 'react-phone-number-input';
+import { useState } from "react";
 
 interface Register {
+    name: string;
+    lastname: string;
     email: string;
+    phone: string;
     password: string;
     confirmPassword: string;
+    agreeTerms: boolean;
 }
 
 export default function FormRegister() {
@@ -22,89 +28,128 @@ export default function FormRegister() {
         resolver: zodResolver(RegisterShema),
     });
 
+    const [phoneValue, setPhoneValue] = useState<string | undefined>(undefined);
+
     const onSubmit: SubmitHandler<Register> = async (data) => {
-        // Validar si las contraseñas coinciden
+        // 
         if (data.password !== data.confirmPassword) {
             setError("confirmPassword", {
                 type: "manual",
-                message: "Las contraseñas no coinciden",
+                message: "Passwords do not match",
             } as any);
-            return; // Detener el envío del formulario
+            return;
         }
-
-        // Envío de datos solo si las contraseñas coinciden
+        //
+        const [value, setValue] = useState()
+        //
+        const [name, lastname] = data.name.split(' ');
+        // 
         const formData = {
+            name,
+            lastname,
             email: data.email,
+            phone: `+${phoneValue}`,
             password: data.password,
         };
-
-        // Lógica para enviar formData al servidor
+        // 
         console.log(formData);
     };
-
     return (
-        <div className="grid grid-cols-2 gap-4">
-            <div className="flex items-center justify-center h-56 max-w-sm bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700">
-                <svg className="w-10 h-auto text-gray-200 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 20">
-                    <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.98 2.98 0 0 0 .13 5H5Z" />
-                    <path d="M14.066 0H7v5a2 2 0 0 1-2 2H0v11a1.97 1.97 0 0 0 1.934 2h12.132A1.97 1.97 0 0 0 16 18V2a1.97 1.97 0 0 0-1.934-2ZM9 13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2Zm4 .382a1 1 0 0 1-1.447.894L10 13v-2l1.553-1.276a1 1 0 0 1 1.447.894v2.764Z" />
-                </svg>
-                <span className="sr-only">Loading...</span>
-            </div>
-            <div className=" p-2 text-gray-600">
-                <div>
-                    <h1>Register</h1>
-                    <div>
-                        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-                            <div className="flex flex-col">
-                                <label htmlFor="email"></label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    placeholder="Email"
-                                    autoComplete="given-name"
-                                    {...register("email")}
-                                    className="border border-gray-300 rounded-md px-3 py-2"
-                                />
-                                {errors.email && <span className="text-red-500">Required field</span>}
-                            </div>
-                            <div className="flex flex-col">
-                                <label htmlFor="password"></label>
-                                <input
-                                    id="password"
-                                    type="password"
-                                    placeholder="** password **"
-                                    autoComplete="given-name"
-                                    {...register("password")}
-                                    className="border border-gray-300 rounded-md px-3 py-2"
-                                />
-                                {errors.password && <span className="text-red-500">Required field</span>}
-                            </div>
-                            <div className="flex flex-col">
-                                <label htmlFor="confirmPassword"></label>
-                                <input
-                                    id="confirmPassword"
-                                    type="password"
-                                    placeholder=" confirm Password"
-                                    {...register("confirmPassword")}
-                                    className="border border-gray-300 rounded-md px-3 py-2"
-                                />
-                                {errors.confirmPassword && <span className="text-red-500">Required field</span>}
-                            </div>
-                            <div className="flex flex-row justify-between p-2">
-                                <button type="submit">
-                                    Send
-                                </button>
-                                <button type="reset" >
-                                    Reset
-                                </button>
-                            </div>
-                        </form>
+        <div className="grid grid-cols-2 w-1920 h-1024">
+            <div className="p-10">
+                <div className=" rounded-lg border-4 border-slate-300 w-725 h-925 p-10">
+                    <div className="bg-slate-300 w-396 h-125 p-16 mt-0"></div>
+                    <div className="w-550 h-70 gap-16 justify-center text-center p-4">
+                        <p className="text-lg font-bold">Create Account</p>
+                        <p>Please enter the required data</p>
+                    </div>
+                    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" >
                         <div>
-                            <p>Do you already have an account? <Link href="/auth/login">Enter here</Link></p>
+                            <label htmlFor="name" className='p-2'>Name and Lastname</label>
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="Enter your name and lastname"
+                                autoComplete="given-name"
+                                {...register("name")}
+                                className="w-full h-auto bg-transparent border-2 border-slate-300 rounded-full p-2"
+                            />
+                            {errors.name && <span className="text-red-500">Required field</span>}
                         </div>
+                        <div>
+                            <label htmlFor="email" className='p-2'>Email</label>
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Enter your Email"
+                                autoComplete="given-name"
+                                {...register("email")}
+                                className="w-full h-auto bg-transparent border-2 border-slate-300 rounded-full p-2"
+                            />
+                            {errors.email && <span className="text-red-500">Required field</span>}
+                        </div>
+                        <div>
+                            <label htmlFor="phone" className='p-2'>Phone</label>
+                                <PhoneInput
+                                    placeholder="Enter phone number"
+                                    id="phone"
+                                    value={phoneValue}
+                                    onChange={setPhoneValue}
+                                    className="w-full h-auto bg-transparent border-2  p-2 flex items-center border-gray-300 rounded-full "
+                                />
+
+                            {errors.phone && <span className="text-red-500">Required field</span>}
+
+                        </div>
+                        <div>
+                            <label htmlFor="password" className='p-2'>Password</label>
+                            <input
+                                id="password"
+                                type="password"
+                                placeholder="Enter password"
+                                autoComplete="given-name"
+                                {...register("password")}
+                                className="w-full h-auto bg-transparent border-2 border-slate-300 rounded-full p-2"
+
+                            />
+                            {errors.password && <span className="text-red-500">Required field</span>}
+                        </div>
+                        <div >
+                            <label htmlFor="confirmPassword" className='p-2'>Confirm Password</label>
+                            <input
+                                id="confirmPassword"
+                                type="password"
+                                placeholder="Enter password"
+                                {...register("confirmPassword")}
+                                className="w-full h-auto bg-transparent border-2 border-slate-300 rounded-full p-2"
+                            />
+                            {errors.confirmPassword && <span className="text-red-500">Required field</span>}
+                        </div>
+                        <div>
+                            
+                            <input
+                                type="checkbox"
+                                id="agreeTerms"
+                                {...register("agreeTerms")}
+                                className="mr-2 mt-1"
+                            />
+                            <label htmlFor="agreeTerms">I agree </label>
+                            <Link href="/termsandconditions" target="_blank" className="border-b border-gray-500">terms and conditions</Link>
+                        </div>
+                        <div className="mt-4">
+                            <button type="submit" className="w-full p-2 bg-slate-300 rounded-full" >
+                                Register
+                            </button>
+                        </div>
+                    </form>
+                    <div className="mt-4">
+                        <p>Do you already have an account? <Link href="/auth/login">Enter here</Link></p>
                     </div>
                 </div>
+
+            </div>
+            <div className="bg-slate-300 w-960 h-1024">
+
             </div>
         </div>
     )

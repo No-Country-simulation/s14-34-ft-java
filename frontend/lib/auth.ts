@@ -6,16 +6,12 @@ export const AuthOptions: NextAuthOptions = {
     CredentialsProvider({
       name: "Credentials",
       credentials: {
-        email: {
-          label: "Email",
-          type: "email",
-          placeholder: "eve.holt@reqres.in",
-        },
-        password: { label: "Password", type: "password", placeholder:"cityslicka" },
+        email: { label: "email", type: "email", placeholder: "email" },
+        password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
         const res = await fetch(
-            "https://reqres.in/api/login",
+            `${process.env.BACKEND}/api/login`,
           {
             method: "POST",
             body: JSON.stringify({
@@ -26,22 +22,25 @@ export const AuthOptions: NextAuthOptions = {
           }
         );
         const user = await res.json();
-        if (user.error) {
-          throw new Error(user.error);
+
+        if (res.status === 401) {
+          throw new Error("Credenciales incorrectas");
         }
       
-        // Asegúrate de que la respuesta contenga el token
-        const token = user?.token;
-      
-        if (!token) {
-          throw new Error("Token not found in the response");
-        }
-        return { ...user, token };
+        return user;
       },
     }),
   ],
+  callbacks: {
+    async jwt({ token, user }) {
+      return { ...token, ...user };
+    },
+    async session({ session, token }) {
+      session.user = token as any;
+      return session;
+    },
+  },
   pages: {
     signIn: "/auth/login",
-    newUser: "/auth/new-user"
   }
 };
