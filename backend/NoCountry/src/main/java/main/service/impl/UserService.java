@@ -5,6 +5,7 @@ import main.model.entity.User;
 import main.model.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -29,6 +30,11 @@ public class UserService {
         user.setDni(userRequest.getDni());
 
         userRepository.save(user);
+    }
+
+    public List<User> getAllUsers() {
+        List<User> users = userRepository.findAll();
+        return users;
     }
 
 }

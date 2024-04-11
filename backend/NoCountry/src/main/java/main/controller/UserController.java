@@ -10,6 +10,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import main.service.impl.UserService;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/api/user")
 @RequiredArgsConstructor
@@ -31,5 +33,10 @@ public class UserController {
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to update user: " + e.getMessage());
         }
+    }
+
+    @GetMapping(value = "getAllUsers")
+    public ResponseEntity<List<User>> getAll() throws Exception{
+        return ResponseEntity.ok(userService.getAllUsers());
     }
 }
