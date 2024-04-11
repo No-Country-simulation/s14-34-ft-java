@@ -5,14 +5,12 @@ import lombok.RequiredArgsConstructor;
 import main.model.entity.User;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import main.service.impl.UserService;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/api/user")
 @RequiredArgsConstructor
 public class UserController {
