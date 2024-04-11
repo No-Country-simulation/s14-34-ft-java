@@ -18,6 +18,7 @@ public class CorsConfig {
         config.addAllowedHeader("*"); // Allows all headers.
         source.registerCorsConfiguration("/**", config);
         return new CorsFilter(source);
+
     }
 
 
