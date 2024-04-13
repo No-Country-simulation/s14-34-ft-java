@@ -8,11 +8,11 @@
 		<version>3.2.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>org.NoCountry.WaLam</groupId>
-	<artifactId>Walam</artifactId>
+	<groupId>HappyPaws</groupId>
+	<artifactId>HappyPaws</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Walam</name>
-	<description>Walam</description>
+	<name>HappyPaws</name>
+	<description>HappyPaws</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
