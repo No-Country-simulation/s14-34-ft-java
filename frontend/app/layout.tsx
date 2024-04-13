@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import SessionProvider from "@/context/SessionAuthProvider";
+import { roboto } from '@/app/ui/fonts';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,8 +18,8 @@ export default function RootLayout({
 }>) {
   return (
     <SessionProvider>
-      <html lang="en" className="bg-color1 text-color2 font-sans">
-        <body className={inter.className}>{children}</body>
+      <html lang="en" className="">
+        <body className={roboto.className}>{children}</body>
       </html>
     </SessionProvider>
 

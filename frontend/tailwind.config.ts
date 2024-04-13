@@ -9,6 +9,26 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        sm: '480px',
+        md: '768px',
+        lg: '976px',
+        xl: '1440px',
+      },
+      fontFamily: {
+        roboto:['Roboto','sans-serif'],
+      },
+      fontSize: {
+        '14': '14px',
+        '16': '16px',
+        '18': '18px',
+        '20': '20px',
+        '24': '24px',
+        '28': '28px',
+      },
+      fontWeight:{
+        'regular':'400',
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -22,7 +42,6 @@ const config: Config = {
   },
   fontFamily: {
     sans: ['Roboto'],
-    serif: ['Times New Roman'],
   },
   plugins: [],
 };
