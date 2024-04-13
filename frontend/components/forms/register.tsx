@@ -20,7 +20,9 @@ interface Register {
 
 
 export default function FormRegister() {
-    
+
+    const [errorMessage, setErrorMessage] = useState<string>('');
+    const [successMessage, setSuccessMessage] = useState<string>('');
 
     const {
         register,
@@ -36,36 +38,57 @@ export default function FormRegister() {
     const isPhoneValid = (phone: string): boolean => {
         const numericPhone = phone.replace(/\D/g, '');
 
-        const minDigits = 7; 
-        const maxDigits = 20; 
+        const minDigits = 7;
+        const maxDigits = 20;
 
         const numberOfDigits = numericPhone.length;
         return numberOfDigits >= minDigits && numberOfDigits <= maxDigits;
     };
 
-
     const onSubmit: SubmitHandler<Register> = async (data) => {
 
+        try {
+            if (data.password !== data.confirmPassword) {
+                setError("confirmPassword", {
+                    type: "manual",
+                    message: "Passwords do not match",
+                } as any);
+                return;
+            }
 
-        //
-        if (data.password !== data.confirmPassword) {
-            setError("confirmPassword", {
-                type: "manual",
-                message: "Passwords do not match",
-            } as any);
-            return;
+            const [firstname, lastname] = data.fullName.split(' ');
+
+            const formData = {
+                firstname,
+                lastname,
+                email: data.email,
+                password: data.password,
+                phone,
+            };
+
+            const res = await fetch(`${process.env.BACKEND}/auth/register`, {
+                method: "POST",
+                body: JSON.stringify({
+                    firstname: formData.firstname,
+                    lastname: formData.lastname,
+                    phone: formData.phone,
+                    email: formData.email,
+                    password: formData.password
+                }),
+                headers: {
+                    "Content-Type": 'applications/json'
+                }
+            });
+            if (!res.ok) {
+                throw new Error('Error en la solicitud de registro');
+            }
+            // 
+            console.log('Datos del formulario:', formData);
+        } catch (error) {
+            console.error('Error durante la solicitud de registro:', error);
+            setErrorMessage('Error en la solicitud de registro');
+            setSuccessMessage('');
         }
-
-        const [firstname, lastname] = data.fullName.split(' ');
-
-        const formData = {
-            firstname,
-            lastname,
-            email: data.email,
-            password: data.password,
-            phone,
-        };
-        console.log('Datos del formulario:', formData);
     };
 
     return (
@@ -104,7 +127,7 @@ export default function FormRegister() {
                         </div>
                         <div>
                             <p className='p-2'>Phone</p>
-                            
+
                             <PhoneInput
                                 defaultCountry="ar"
                                 value={phone}

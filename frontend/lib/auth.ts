@@ -11,7 +11,7 @@ export const AuthOptions: NextAuthOptions = {
       },
       async authorize(credentials) {
         const res = await fetch(
-            `${process.env.BACKEND}/api/login`,
+            `${process.env.BACKEND}/auth/login`,
           {
             method: "POST",
             body: JSON.stringify({
@@ -22,7 +22,7 @@ export const AuthOptions: NextAuthOptions = {
           }
         );
         const user = await res.json();
-
+        console.log('Datos del Token', user)
         if (res.status === 401) {
           throw new Error("Credenciales incorrectas");
         }
