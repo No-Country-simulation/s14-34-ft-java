@@ -43,7 +43,10 @@ public class User implements UserDetails {
     @Column(name = "phone", length = 20)
     private String phone;
 
+    @Column(name = "dni", length = 10)
     private String dni;
+
+    private String photo;
 
     @Column(name = "rol", columnDefinition = "varchar(5) default 'USER'")
     @Enumerated(EnumType.STRING)
