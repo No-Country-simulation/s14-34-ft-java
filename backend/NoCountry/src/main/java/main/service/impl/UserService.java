@@ -21,10 +21,10 @@ public class UserService {
         Optional<User> userOptional = userRepository.findById(id);
         User user = userOptional.orElseThrow(() -> new Exception("User not found"));
 
+        user.setEmail(userRequest.getEmail());
         user.setFirstName(userRequest.getFirstName());
         user.setLastName(userRequest.getLastName());
         user.setAddress(userRequest.getAddress());
-        user.setEmail(userRequest.getEmail());
         user.setPhone(userRequest.getPhone());
         user.setDni(userRequest.getDni());
 

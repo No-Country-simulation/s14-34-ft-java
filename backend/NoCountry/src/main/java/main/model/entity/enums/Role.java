@@ -1,6 +1,6 @@
 package main.model.entity.enums;
 
 public enum Role {
-    ADMIN,
+    PET_SITTER,
     USER
 }

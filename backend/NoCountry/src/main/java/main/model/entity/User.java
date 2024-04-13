@@ -2,10 +2,7 @@ package main.model.entity;
 
 import jakarta.persistence.*;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import main.model.entity.enums.Role;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -19,24 +16,36 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="users", uniqueConstraints = {@UniqueConstraint(columnNames = {"username"})})
+@Table(name="users", uniqueConstraints = {@UniqueConstraint(columnNames = {"email"})})
 public class User implements UserDetails {
     @Id
+    @Setter(AccessLevel.NONE)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
-    @Column(nullable = false)
     private String username;
 
-    private String firstName;
-    private String lastName;
     private String password;
-    private String country;
-    private String address;
-    private String email;
-    private String phone;
-    private int dni;
 
+    @Getter
+    @Column(nullable = false)
+    private String email;
+
+    @Column(name = "firstname", length = 50)
+    private String firstName;
+
+    @Column(name = "lastname", length = 50)
+    private String lastName;
+
+    @Column(name = "address", length = 150)
+    private String address;
+
+    @Column(name = "phone", length = 20)
+    private String phone;
+
+    private String dni;
+
+    @Column(name = "rol", columnDefinition = "varchar(5) default 'USER'")
     @Enumerated(EnumType.STRING)
     private Role role;
 
