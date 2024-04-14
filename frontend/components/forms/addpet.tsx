@@ -12,7 +12,7 @@ interface Mascota {
     nombre?:string;
     tipo?:string;
     breed?:string;
-
+    color?:string;
     edad?:string;
     tamanio?:string;
     comportamiento?:string;

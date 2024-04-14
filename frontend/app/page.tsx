@@ -1,6 +1,5 @@
 import FootersOne from "@/components/containers/footers/footersOne";
 import HeadersOne from "@/components/containers/headers/headersOne";
-import Services from "@/components/cards/services";
 
 
 export default function Home() {
@@ -8,7 +7,7 @@ export default function Home() {
     <div>
       <HeadersOne />
       <main className="flex min-h-screen flex-col items-center justify-between p-24 gap-2">
-        <Services />
+        
       </main>
       <FootersOne />
     </div>
