@@ -11,11 +11,11 @@ import './input-phone.css';
 
 
 interface Register {
-    fullName: string;
+    nombrecompleto: string;
     email: string;
     password: string;
     confirmPassword: string;
-    agreeTerms: boolean;
+    terminos: boolean;
 }
 
 
@@ -33,10 +33,10 @@ export default function FormRegister() {
         resolver: zodResolver(RegisterSchema),
     });
 
-    const [phone, setPhone] = useState('');
+    const [telefono, setTelefono] = useState('');
 
-    const isPhoneValid = (phone: string): boolean => {
-        const numericPhone = phone.replace(/\D/g, '');
+    const isPhoneValid = (telefono: string): boolean => {
+        const numericPhone = telefono.replace(/\D/g, '');
 
         const minDigits = 7;
         const maxDigits = 20;
@@ -51,27 +51,27 @@ export default function FormRegister() {
             if (data.password !== data.confirmPassword) {
                 setError("confirmPassword", {
                     type: "manual",
-                    message: "Passwords do not match",
+                    message: "Passwords no coinciden",
                 } as any);
                 return;
             }
 
-            const [firstname, lastname] = data.fullName.split(' ');
+            const [nombre, apellido] = data.nombrecompleto.split(' ');
 
             const formData = {
-                firstname,
-                lastname,
+                nombre,
+                apellido,
                 email: data.email,
                 password: data.password,
-                phone,
+                telefono,
             };
 
             const res = await fetch(`${process.env.BACKEND}/auth/register`, {
                 method: "POST",
                 body: JSON.stringify({
-                    firstname: formData.firstname,
-                    lastname: formData.lastname,
-                    phone: formData.phone,
+                    firstname: formData.nombre,
+                    lastname: formData.apellido,
+                    phone: formData.telefono,
                     email: formData.email,
                     password: formData.password
                 }),
@@ -97,27 +97,27 @@ export default function FormRegister() {
                 <div className=" rounded-lg border-4 border-slate-300 w-725 h-925 p-10">
                     <div className="bg-slate-300 w-396 h-125 p-16 mt-0"></div>
                     <div className="w-550 h-70 gap-16 justify-center text-center p-4">
-                        <p className="text-lg font-bold">Create Account</p>
-                        <p>Please enter the required data</p>
+                        <p className="text-lg font-bold">Crear Cuenta</p>
+                        
                     </div>
                     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" >
                         <div>
-                            <label htmlFor="name" className='p-2'>Name and Lastname</label>
+                            <label htmlFor="name" className='p-2'>Nombre y Apellido</label>
                             <input
                                 type="text"
                                 id="name"
                                 autoComplete='name'
-                                placeholder="Enter your name and lastname"
-                                {...register("fullName")}
+                                placeholder="Nombre y Apellido"
+                                {...register("nombrecompleto")}
                                 className="w-full h-auto bg-transparent border-2 border-slate-300 rounded-full p-2"
                             />
-                            {errors.fullName && <span className="text-red-500">{errors.fullName.message}</span>}
+                            {errors.nombrecompleto && <span className="text-red-500">{errors.nombrecompleto.message}</span>}
                         </div>
                         <div>
                             <label htmlFor="email" className='p-2'>Email</label>
                             <input
                                 type="email"
-                                placeholder="Enter your Email"
+                                placeholder="Email"
                                 id="email"
                                 autoComplete='email'
                                 {...register("email")}
@@ -126,21 +126,20 @@ export default function FormRegister() {
                             {errors.email && <span className="text-red-500">{errors.email.message}</span>}
                         </div>
                         <div>
-                            <p className='p-2'>Phone</p>
-
+                            <p className='p-2'>Teléfono</p>
                             <PhoneInput
                                 defaultCountry="ar"
-                                value={phone}
-                                onChange={setPhone}
+                                value={telefono}
+                                onChange={setTelefono}
                             />
-                            {!isPhoneValid(phone) && <div style={{ color: 'red' }}>Phone is not valid</div>}
+                            {!isPhoneValid(telefono) && <div style={{ color: 'red' }}></div>}
                         </div>
                         <div>
-                            <label htmlFor="password" className='p-2'>Password</label>
+                            <label htmlFor="password" className='p-2'>Contraseña</label>
                             <input
                                 id="password"
                                 type="password"
-                                placeholder="Enter password"
+                                placeholder="Contraseña"
                                 autoComplete='new-password'
                                 {...register("password")}
                                 className="w-full h-auto bg-transparent border-2 border-slate-300 rounded-full p-2"
@@ -148,12 +147,12 @@ export default function FormRegister() {
                             {errors.password && <span className="text-red-500">{errors.password.message}</span>}
                         </div>
                         <div>
-                            <label htmlFor="confirmPassword" className='p-2'>Confirm Password</label>
+                            <label htmlFor="confirmPassword" className='p-2'>Confirmar Contraseña</label>
                             <input
                                 id="confirmPassword"
                                 type="password"
                                 autoComplete='new-password'
-                                placeholder="Enter password"
+                                placeholder="Confirmar Contraseña"
                                 {...register("confirmPassword")}
                                 className="w-full h-auto bg-transparent border-2 border-slate-300 rounded-full p-2"
                             />
@@ -162,23 +161,23 @@ export default function FormRegister() {
                         <div>
                             <input
                                 type="checkbox"
-                                id="agreeTerms"
-                                {...register("agreeTerms")}
+                                id="teminos"
+                                {...register("terminos")}
                                 className="mr-2 mt-1"
                             />
-                            <label htmlFor="agreeTerms">I agree </label>
-                            <Link href="/termsandconditions" target="_blank" className="border-b border-gray-500">terms and conditions</Link>
+                            <label htmlFor="terminos">Aceptar <Link href="/termsandconditions" target="_blank" className="border-b border-gray-500">Terminos y condiciones</Link> </label>
+                            
                             <br />
-                            {errors.agreeTerms && <span className="text-red-500">{errors.agreeTerms.message}</span>}
+                            {errors.terminos && <span className="text-red-500">{errors.terminos.message}</span>}
                         </div>
                         <div className="mt-4">
                             <button type="submit" className="w-full p-2 bg-slate-300 rounded-full" >
-                                Register
+                                Registrar
                             </button>
                         </div>
                     </form>
                     <div className="mt-4">
-                        <p>Do you already have an account? <Link href="/auth/login">Enter here</Link></p>
+                        <p>Ya tienes un Cuenta? <Link href="/auth/login">Ingrese Aqui</Link></p>
                     </div>
                 </div>
             </div>

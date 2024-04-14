@@ -50,8 +50,8 @@ export default function FormLogin() {
                     <div className="flex flex-col">
                         <div className="bg-slate-300 w-396 h-125 p-16"></div>
                         <div className="w-550 h-70 gap-16 justify-center text-center p-4">
-                            <p className="text-lg font-bold">Welcome</p>
-                            <p>Please enter the required data</p>
+                            <p className="text-lg font-bold">Bienvenido</p>
+                            
                         </div>
                         <label htmlFor="email" className='p-2'>Email</label>
                         <input
@@ -62,16 +62,16 @@ export default function FormLogin() {
                             {...register("email")}
                             className="w-full h-auto bg-transparent border-2 border-slate-300 rounded-full p-2"
                         />
-                        {errors.email && <span className="text-red-500">required field</span>}
+                        {errors.email && <span className="text-red-500">Campo requerido</span>}
                     </div>
                     <div>
                         <div className="flex flex-row justify-between">
                             <div>
                                 <label htmlFor="password"></label>
-                                <span className='p-2'>Password</span>
+                                <span className='p-2'>contraseña</span>
                             </div>
                             <div>
-                                <span className='p-2'>recover password ?</span>
+                                <span className='p-2'>Recuperar contraseña</span>
                             </div>
                         </div>
                         <input
@@ -82,15 +82,15 @@ export default function FormLogin() {
                             {...register("password")}
                             className="w-full h-auto bg-transparent border-2 border-slate-300 rounded-full p-2"
                         />
-                        {errors.password && <span className="text-red-500">required field</span>}
+                        {errors.password && <span className="text-red-500">Campo requerido</span>}
                     </div>
                     <div className="">
                         <div>
-                            <button type="submit" className="w-full p-2 bg-slate-300 rounded-full"> Login </button>
+                            <button type="submit" className="w-full p-2 bg-slate-300 rounded-full"> Ingresar </button>
                         </div>
                     </div>
                     <div>
-                        <p>You do not have an account ? <Link href="/auth/register">Create your account now</Link></p>
+                        <p>Aun no tienes Cuenta ? <Link href="/auth/register">Ingrese Aqui</Link></p>
                     </div>
                 </form>
                 </div>

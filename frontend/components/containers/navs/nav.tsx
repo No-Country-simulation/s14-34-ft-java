@@ -24,7 +24,7 @@ export default function Nav() {
         return (
             <div className="flex flex-row gap-2">
                 <div>
-                    <Link href="#" onClick={() => signOut()}>Sign out</Link>
+                    <Link href="#" onClick={() => signOut()}>Salir</Link>
                 </div>
             </div>
 
@@ -33,10 +33,10 @@ export default function Nav() {
     return (
         <div className="flex flex-row gap-2">
             <div>
-                <Link href="/auth/register">Register</Link>
+                <Link href="/auth/register">Registrar</Link>
             </div>
             <div>
-                <Link href="#" onClick={() => signIn()}>Sign in</Link>
+                <Link href="#" onClick={() => signIn()}>Ingresar</Link>
             </div>
         </div>
     )
