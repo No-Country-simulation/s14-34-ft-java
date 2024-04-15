@@ -23,6 +23,7 @@ export default function FormRegister() {
 
     const [errorMessage, setErrorMessage] = useState<string>('');
     const [successMessage, setSuccessMessage] = useState<string>('');
+    const [phone, setPhone] = useState('');
 
     const {
         register,
@@ -33,10 +34,10 @@ export default function FormRegister() {
         resolver: zodResolver(RegisterSchema),
     });
 
-    const [telefono, setTelefono] = useState('');
 
-    const isPhoneValid = (telefono: string): boolean => {
-        const numericPhone = telefono.replace(/\D/g, '');
+
+    const isPhoneValid = (phone: string): boolean => {
+        const numericPhone = phone.replace(/\D/g, '');
 
         const minDigits = 7;
         const maxDigits = 20;
@@ -56,38 +57,33 @@ export default function FormRegister() {
                 return;
             }
 
-            const [nombre, apellido] = data.nombrecompleto.split(' ');
+            const [firstname, lastname] = data.nombrecompleto.split(' ');
 
             const formData = {
-                nombre,
-                apellido,
+                firstname,
+                lastname,
+                phone,
                 email: data.email,
                 password: data.password,
-                telefono,
             };
-
+            console.log(formData)
             const res = await fetch(`${process.env.BACKEND}/auth/register`, {
                 method: "POST",
-                body: JSON.stringify({
-                    firstname: formData.nombre,
-                    lastname: formData.apellido,
-                    phone: formData.telefono,
-                    email: formData.email,
-                    password: formData.password
-                }),
+                body: JSON.stringify(formData),
                 headers: {
-                    "Content-Type": 'applications/json'
+                    "Content-Type": 'application/json'
                 }
             });
-            if (!res.ok) {
-                throw new Error('Error en la solicitud de registro');
+            if (res.ok) {
+                setSuccessMessage('¡Registro exitoso!');
+            } else {
+                setErrorMessage('Error en la solicitud de registro');
             }
-            // 
-            console.log('Datos del formulario:', formData);
+            
+            console.log('Código de respuesta:', res.status);
         } catch (error) {
             console.error('Error durante la solicitud de registro:', error);
             setErrorMessage('Error en la solicitud de registro');
-            setSuccessMessage('');
         }
     };
 
@@ -98,14 +94,13 @@ export default function FormRegister() {
                     <div className="bg-slate-300 w-396 h-125 p-16 mt-0"></div>
                     <div className="w-550 h-70 gap-16 justify-center text-center p-4">
                         <p className="text-lg font-bold">Crear Cuenta</p>
-                        
                     </div>
                     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" >
                         <div>
-                            <label htmlFor="name" className='p-2'>Nombre y Apellido</label>
+                            <label htmlFor="nombrecompleto" className='p-2'>Nombre y Apellido</label>
                             <input
                                 type="text"
-                                id="name"
+                                id="nombrecompleto"
                                 autoComplete='name'
                                 placeholder="Nombre y Apellido"
                                 {...register("nombrecompleto")}
@@ -119,7 +114,7 @@ export default function FormRegister() {
                                 type="email"
                                 placeholder="Email"
                                 id="email"
-                                autoComplete='email'
+                                autoComplete="email"
                                 {...register("email")}
                                 className="w-full h-auto bg-transparent border-2 border-slate-300 rounded-full p-2"
                             />
@@ -129,10 +124,10 @@ export default function FormRegister() {
                             <p className='p-2'>Teléfono</p>
                             <PhoneInput
                                 defaultCountry="ar"
-                                value={telefono}
-                                onChange={setTelefono}
+                                value={phone}
+                                onChange={setPhone}
                             />
-                            {!isPhoneValid(telefono) && <div style={{ color: 'red' }}></div>}
+                            {!isPhoneValid(phone) && <div style={{ color: 'red' }}></div>}
                         </div>
                         <div>
                             <label htmlFor="password" className='p-2'>Contraseña</label>
@@ -161,12 +156,12 @@ export default function FormRegister() {
                         <div>
                             <input
                                 type="checkbox"
-                                id="teminos"
+                                id="terminos"
                                 {...register("terminos")}
                                 className="mr-2 mt-1"
                             />
                             <label htmlFor="terminos">Aceptar <Link href="/termsandconditions" target="_blank" className="border-b border-gray-500">Terminos y condiciones</Link> </label>
-                            
+
                             <br />
                             {errors.terminos && <span className="text-red-500">{errors.terminos.message}</span>}
                         </div>
