@@ -1,12 +1,12 @@
-package main.controller;
+package main.controllers;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import main.model.entity.User;
+import main.model.User;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import main.service.impl.UserService;
+import main.service.impl.UserServiceImpl;
 
 import java.util.List;
 
@@ -15,18 +15,18 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserController {
 
-    private final UserService userService;
+    private final UserServiceImpl userServiceImpl;
 
     @PostMapping(value = "save")
     public ResponseEntity<String> saveUser(@RequestBody @Valid User user) {
-        userService.saveUser(user);
+        userServiceImpl.saveUser(user);
         return ResponseEntity.status(HttpStatus.CREATED).body("User saved successfully");
     }
 
     @PutMapping(value = "update/{id}")
     public ResponseEntity<String> updateUser(@PathVariable Long id, @RequestBody User user) {
         try {
-            userService.updateUser(id, user);
+            userServiceImpl.updateUser(id, user);
             return ResponseEntity.ok("User updated successfully");
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to update user: " + e.getMessage());
@@ -35,6 +35,6 @@ public class UserController {
 
     @GetMapping(value = "getAllUsers")
     public ResponseEntity<List<User>> getAll() throws Exception{
-        return ResponseEntity.ok(userService.getAllUsers());
+        return ResponseEntity.ok(userServiceImpl.getAllUsers());
     }
 }

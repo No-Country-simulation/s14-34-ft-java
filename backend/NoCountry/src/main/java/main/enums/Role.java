@@ -1,4 +1,4 @@
-package main.model.entity.enums;
+package main.enums;
 
 public enum Role {
     PET_SITTER,

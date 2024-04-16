@@ -10,9 +10,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import main.model.entity.enums.Role;
-import main.model.entity.User;
-import main.model.repository.UserRepository;
+import main.enums.Role;
+import main.model.User;
+import main.repository.UserRepository;
 
 import lombok.RequiredArgsConstructor;
 

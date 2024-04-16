@@ -1,4 +1,4 @@
-package main.model.entity;
+package main.model;
 
 public class Pet {
     private String name;
