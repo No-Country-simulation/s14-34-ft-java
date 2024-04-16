@@ -46,55 +46,55 @@ export default function FormLogin() {
             <div className="bg-color1  p-10">
                 <div className=" rounded-lg bg-color1 w-725 h-900 p-10 border-4 border-slate-300">
 
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-                    <div className="flex flex-col">
-                        <div className="bg-slate-300 w-396 h-125 p-16"></div>
-                        <div className="w-550 h-70 gap-16 justify-center text-center p-4">
-                            <p className="text-lg font-bold">Bienvenido</p>
-                            
-                        </div>
-                        <label htmlFor="email" className='p-2'>Email</label>
-                        <input
-                            type="email"
-                            id="email"
-                            autoComplete="given-name"
-                            placeholder='Email'
-                            {...register("email")}
-                            className="w-full h-auto bg-transparent border-2 border-slate-300 rounded-full p-2"
-                        />
-                        {errors.email && <span className="text-red-500">Campo requerido</span>}
-                    </div>
-                    <div>
-                        <div className="flex flex-row justify-between">
-                            <div>
-                                <label htmlFor="password"></label>
-                                <span className='p-2'>contraseña</span>
+                    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+                        <div className="flex flex-col">
+                            <div className="bg-slate-300 w-396 h-125 p-16"></div>
+                            <div className="w-550 h-70 gap-16 justify-center text-center p-4">
+                                <p className="text-lg font-bold">Bienvenido</p>
+
                             </div>
-                            <div>
-                                <span className='p-2'>Recuperar contraseña</span>
-                            </div>
+                            <label htmlFor="email" className='p-2'>Email</label>
+                            <input
+                                type="email"
+                                id="email"
+                                autoComplete="given-name"
+                                placeholder='Email'
+                                {...register("email")}
+                                className="w-full h-auto bg-transparent border-2 border-slate-300 rounded-full p-2"
+                            />
+                            {errors.email && <span className="text-red-500">Campo requerido</span>}
                         </div>
-                        <input
-                            type="password"
-                            id="password"
-                            placeholder="**********"
-                            autoComplete="given-name"
-                            {...register("password")}
-                            className="w-full h-auto bg-transparent border-2 border-slate-300 rounded-full p-2"
-                        />
-                        {errors.password && <span className="text-red-500">Campo requerido</span>}
-                    </div>
-                    <div className="">
                         <div>
-                            <button type="submit" className="w-full p-2 bg-slate-300 rounded-full"> Ingresar </button>
+                            <div className="flex flex-row justify-between">
+                                <div>
+                                    <label htmlFor="password"></label>
+                                    <span className='p-2'>contraseña</span>
+                                </div>
+                                <div>
+                                    <span className='p-2'>Recuperar contraseña</span>
+                                </div>
+                            </div>
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="**********"
+                                autoComplete="given-name"
+                                {...register("password")}
+                                className="w-full h-auto bg-transparent border-2 border-slate-300 rounded-full p-2"
+                            />
+                            {errors.password && <span className="text-red-500">Campo requerido</span>}
                         </div>
-                    </div>
-                    <div>
-                        <p>Aun no tienes Cuenta ? <Link href="/auth/register">Ingrese Aqui</Link></p>
-                    </div>
-                </form>
+                        <div className="">
+                            <div>
+                                <button type="submit" className="w-full p-2 bg-slate-300 rounded-full"> Ingresar </button>
+                            </div>
+                        </div>
+                        <div>
+                            <p>Aun no tienes Cuenta ? <Link href="/auth/register">Ingrese Aqui</Link></p>
+                        </div>
+                    </form>
                 </div>
-                
+
             </div>
         </div>
     )
