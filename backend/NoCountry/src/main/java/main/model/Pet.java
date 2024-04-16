@@ -1,6 +1,7 @@
 package main.model;
 
 public class Pet {
+
     private String name;
     private String breed;
     private String colour;
