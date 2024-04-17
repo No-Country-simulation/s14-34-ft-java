@@ -4,6 +4,7 @@ import FootersOne from "@/components/containers/footers/footersOne";
 import HeadersOne from "@/components/containers/headers/headersOne";
 import Foothercopyrigth from "@/components/containers/footers/foothercopyrigth";
 import Welcome from "@/components/cards/welcome";
+import Nuestroservicios from "@/components/cards/nuestroservicios";
 
 
 export default function Home() {
@@ -13,6 +14,9 @@ export default function Home() {
       <main className="flex min-h-screen flex-col">
         <div>
         <Welcome />
+        </div>
+        <div>
+          <Nuestroservicios />
         </div>
       </main>
       <FootersOne />

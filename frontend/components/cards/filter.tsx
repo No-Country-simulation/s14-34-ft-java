@@ -91,16 +91,28 @@ const Filter: React.FC<FilterProps> = ({ onSearch }) => {
       ...provided,
       border: 'none',
       boxShadow: 'none',
-      background: 'transparent', 
-      color: '#6B7280', 
-      borderColor: 'transparent', 
+      background: 'transparent',
+      color: '#6B7280',
+      borderColor: 'transparent',
+    }),
+    dropdownIndicator: (provided: any) => ({
+      ...provided,
+      color: 'orange', 
+      position: 'absolute', 
+      right: '-60px', 
+      top: '50%', 
+      transform: 'translateY(-180%)', // Centrar verticalmente con respecto al contenedor
+    }),
+    indicatorSeparator: (provided: any) => ({
+      ...provided,
+      display: 'none', // Opcional: ocultar el separador entre la flecha y el resto del control
     }),
   };
 
   return (
-    <div className='flex w-[1200px] h-[100px] bg-white bg-opacity-90 rounded-[100px] border border-orange-400 backdrop-blur-[25px]  items-start justify-center'>
-      <div className="w-[233px] h-[100px] p-6 rounded-tl-[100px] rounded-bl-[100px]  flex-col justify-center items-center gap-4 inline-flex">
-        <div className='text-black text-xl font-medium'><span>Ubicacion</span></div>
+    <div className='flex w-[1200px] h-[150px] bg-white rounded-[100px] border border-orange-400 backdrop-blur-[25px]  items-start justify-center bg-opacity-80'>
+      <div className="w-[233px] h-[150px] p-6 rounded-tl-[100px] rounded-bl-[100px]  flex-col justify-center items-center gap-4 inline-flex border-r border-orange-400">
+        <div className='text-black text-xl font-medium'><span>Ubicación</span></div>
         <Select
           options={lugarOptions}
           onChange={(selectedOption) => handleInputChange(selectedOption, 'lugar')}
@@ -108,7 +120,7 @@ const Filter: React.FC<FilterProps> = ({ onSearch }) => {
           styles={customSelectStyles}
         />
       </div>
-      <div className="w-[291px] h-[100px] p-6 rounded-tl-[100px] rounded-bl-[100px]  flex-col justify-center items-center gap-4 inline-flex">
+      <div className="w-[291px] h-[150px] p-6 rounded-tl-[100px] rounded-bl-[100px]  flex-col justify-center items-center gap-4 inline-flex border-r border-orange-400">
         <div className='text-black text-xl font-medium'><span>Tipo de Servicio</span></div>
         <Select
           options={tipoServicioOptions}
@@ -117,7 +129,7 @@ const Filter: React.FC<FilterProps> = ({ onSearch }) => {
           styles={customSelectStyles}
         />
       </div>
-      <div className="w-[291px] h-[100px] p-6 rounded-tl-[100px] rounded-bl-[100px]  flex-col justify-center items-center gap-4 inline-flex">
+      <div className="w-[291px] h-[150px] p-6 rounded-tl-[100px] rounded-bl-[100px]  flex-col justify-center items-center gap-4 inline-flex border-r border-orange-400">
         <div className='text-black text-xl font-medium'><span>Tipo de Mascota</span></div>
         <Select
           options={tipoMascotaOptions}
@@ -126,11 +138,11 @@ const Filter: React.FC<FilterProps> = ({ onSearch }) => {
           styles={customSelectStyles}
         />
       </div>
-      <div className="w-[197px] h-[100px] p-2 rounded-tl-[100px] rounded-bl-[100px]  flex-col justify-center items-center gap-4 inline-flex top-0">
+      <div className="w-[197px] h-[150px] p-2 rounded-tl-[100px] rounded-bl-[100px]  flex-col justify-center items-center gap-4 inline-flex top-0 border-r border-orange-400">
         <div className='text-black text-xl font-medium'><span>Fecha</span></div>
         <input type="date" name="fecha" onChange={handleDateChange} className="border-none shadow-none bg-transparent"/>
       </div>
-      <div className="w-[202px] h-[100px] p-2   rounded-tl-[100px] rounded-bl-[100px]  flex-col justify-center items-center gap-4 inline-flex">
+      <div className="w-[202px] h-[150px] p-2   rounded-tl-[100px] rounded-bl-[100px]  flex-col justify-center items-center gap-4 inline-flex">
         <button onClick={handleSearch} className="bg-color2 p-2 rounded-[50px] text-color4"><div className="flex gap-2"><div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
           <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
         </svg>

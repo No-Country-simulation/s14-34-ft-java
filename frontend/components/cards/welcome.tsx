@@ -15,7 +15,7 @@ export default function Welcome() {
       <div className="absolute  font-medium text-4xl text-white px-2 right-10 top-96">
         <p className="font-medium text-4xl"><span>Donde el amor y la atención se</span><br /><span>unen para el bienestar de tu</span> <br /><span>mascota</span></p>
       </div>
-      <div style={{ position: 'absolute', top: '770px', left: '70px', right: '120px', bottom: '325px' }} className="z-20">
+      <div className="absolute z-20 bg-transparent bottom-60 right-14">
         <Filter onSearch={handleSearch} />
       </div>
     </div>
