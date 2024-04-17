@@ -16,7 +16,7 @@ const config: Config = {
         xl: '1440px',
       },
       fontFamily: {
-        roboto:['Roboto','sans-serif'],
+        roboto:['Roboto'],
       },
       fontSize: {
         '14': '14px',
@@ -30,13 +30,16 @@ const config: Config = {
         'regular':'400',
       },
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "homeimagen": "url('/homeimg.png')",
       },
+      
       colors:{
-        color1:"#FFFFFF",
-        color2:"#000000",
+        color1:"#0A6141",
+        color2:"#DF8B3F",
+        color3:"#FAFAFA",
+        color4:"#FFFFFF",
+        color5:"#25C389",
+        color6:"#CB6100"
       }
     },
   },

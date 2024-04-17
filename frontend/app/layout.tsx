@@ -4,7 +4,7 @@ import "./globals.css";
 import SessionProvider from "@/context/SessionAuthProvider";
 import { roboto } from '@/app/ui/fonts';
 
-const inter = Inter({ subsets: ["latin"] });
+//const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "HappyPaws",
@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <SessionProvider>
-      <html lang="en" className="">
+      <html lang="en" className="w-full h-full">
         <body className={roboto.className}>{children}</body>
       </html>
     </SessionProvider>

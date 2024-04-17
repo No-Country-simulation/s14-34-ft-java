@@ -31,12 +31,12 @@ export default function Nav() {
         )
     }
     return (
-        <div className="flex flex-row gap-2">
-            <div>
-                <Link href="/auth/register">Registrar</Link>
+        <div className="flex flex-row gap-2.5 justify-center items-center">
+            <div className="w-[169px] h-[55px] px-6 py-4 bg-color1 rounded-[50px] justify-center items-center inline-flex text-color4 hover:bg-color5">
+                <Link href="#" onClick={() => signIn()} className="text-xl font-medium">Iniciar Sesión</Link>
             </div>
-            <div>
-                <Link href="#" onClick={() => signIn()}>Iniciar Sesión</Link>
+            <div className="w-[130px] h-[55px] px-6 py-4 bg-color1 rounded-[50px] justify-center items-center inline-flex text-color4 hover:bg-color5">
+                <Link href="/auth/register" className="text-xl font-medium">Registrar</Link>
             </div>
         </div>
     )

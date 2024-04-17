@@ -2,27 +2,21 @@
 
 import FootersOne from "@/components/containers/footers/footersOne";
 import HeadersOne from "@/components/containers/headers/headersOne";
-import Filter from "@/components/cards/filter";
-import Addpet from "@/components/forms/addpet";
-import EditUser from "@/components/forms/editUser";
+import Foothercopyrigth from "@/components/containers/footers/foothercopyrigth";
+import Welcome from "@/components/cards/welcome";
 
-
-
-const handleSearch = (filters:any) => {
-  // Aquí puedes manejar la lógica para realizar la búsqueda utilizando los filtros
-  console.log('Filtros aplicados:', filters);
-};
 
 export default function Home() {
   return (
-    <div>
+    <div className="">
       <HeadersOne />
-      <main className="flex min-h-screen flex-col items-center justify-between p-24 gap-2">
-      <Filter onSearch={handleSearch} />
-      <Addpet/>
-      <EditUser />
+      <main className="flex min-h-screen flex-col">
+        <div>
+        <Welcome />
+        </div>
       </main>
       <FootersOne />
+      <Foothercopyrigth />
     </div>
   );
 }
@@ -38,3 +32,10 @@ export default function Home() {
 <p className="font-roboto text-18 font-normal">Texto de tamaño 18px con Roboto Regular</p>
 <p className="font-roboto text-20 font-normal">Texto de tamaño 20px con Roboto Regular</p> 
 */}
+
+
+// const handleSearch = (filters:any) => {
+//   // Aquí puedes manejar la lógica para realizar la búsqueda utilizando los filtros
+//   console.log('Filtros aplicados:', filters);
+// };
+//<Filter onSearch={handleSearch} />
