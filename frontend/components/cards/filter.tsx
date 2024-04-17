@@ -42,41 +42,48 @@ const Filter: React.FC<FilterProps> = ({ onSearch }) => {
   };
 
   const lugarOptions = [
-    { value: 'Buenos Aires', label: 'Buenos Aires' },
-    { value: 'Catamarca', label: 'Catamarca' },
-    { value: 'Chaco', label: 'Chaco' },
-    { value: 'Chubut', label: 'Chubut' },
-    { value: 'Córdoba', label: 'Córdoba' },
-    { value: 'Corrientes', label: 'Corrientes' },
-    { value: 'Entre Ríos', label: 'Entre Ríos' },
-    { value: 'Formosa', label: 'Formosa' },
-    { value: 'Jujuy', label: 'Jujuy' },
-    { value: 'La Pampa', label: 'La Pampa' },
-    { value: 'La Rioja', label: 'La Rioja' },
-    { value: 'Mendoza', label: 'Mendoza' },
-    { value: 'Misiones', label: 'Misiones' },
-    { value: 'Neuquén', label: 'Neuquén' },
-    { value: 'Río Negro', label: 'Río Negro' },
-    { value: 'Salta', label: 'Salta' },
-    { value: 'San Juan', label: 'San Juan' },
-    { value: 'San Luis', label: 'San Luis' },
-    { value: 'Santa Cruz', label: 'Santa Cruz' },
-    { value: 'Santa Fe', label: 'Santa Fe' },
-    { value: 'Santiago del Estero', label: 'Santiago del Estero' },
-    { value: 'Tierra del Fuego', label: 'Tierra del Fuego' },
-    { value: 'Tucumán', label: 'Tucumán' }
+    { value: 'buenos_aires', label: 'Buenos Aires' }, 
+    { value: 'catamarca', label: 'Catamarca' },
+    { value: 'chaco', label: 'Chaco' },
+    { value: 'chubut', label: 'Chubut' },
+    { value: 'cordoba', label: 'Córdoba' }, 
+    { value: 'corrientes', label: 'Corrientes' },
+    { value: 'entre_rios', label: 'Entre Ríos' }, 
+    { value: 'formosa', label: 'Formosa' },
+    { value: 'jujuy', label: 'Jujuy' },
+    { value: 'la_pampa', label: 'La Pampa' }, 
+    { value: 'la_rioja', label: 'La Rioja' }, 
+    { value: 'mendoza', label: 'Mendoza' },
+    { value: 'misiones', label: 'Misiones' },
+    { value: 'neuquen', label: 'Neuquén' }, 
+    { value: 'rio_negro', label: 'Río Negro' }, 
+    { value: 'salta', label: 'Salta' },
+    { value: 'san_juan', label: 'San Juan' }, 
+    { value: 'san_luis', label: 'San Luis' }, 
+    { value: 'santa_cruz', label: 'Santa Cruz' }, 
+    { value: 'santa_fe', label: 'Santa Fe' }, 
+    { value: 'santiago_del_estero', label: 'Santiago del Estero' }, 
+    { value: 'tierra_del_fuego', label: 'Tierra del Fuego' }, 
+    { value: 'tucuman', label: 'Tucumán' }, 
   ];
-
+  
   const tipoServicioOptions = [
-    { value: 'paseo', label: 'paseo' },
-    { value: 'alojamiento', label: 'alojamiento' },
-    { value: 'visitas a domicilio', label: 'visitas a domicilio' },
+    { value: 'paseo', label: 'Paseo' },
+    { value: 'alojamiento', label: 'Alojamiento' },
+    { value: 'visitas_a_domicilio', label: 'Visitas a domicilio' },
   ];
 
   const tipoMascotaOptions = [
     { value: 'perro', label: 'Perro' },
     { value: 'gato', label: 'Gato' },
-    { value: 'otro', label: 'Pato' },
+    { value: 'conejo', label: 'Conejo' },
+    { value: 'cobayo', label: 'Cobayo' },
+    { value: 'huron', label: 'Huron' }, 
+    { value: 'hamster', label: 'Hamster' }, 
+    { value: 'chinchilla', label: 'Chinchilla' }, 
+    { value: 'erizo', label: 'Erizo' }, 
+    { value: 'ave', label: 'Ave' }, 
+    { value: 'reptil', label: 'Reptil' }, 
   ];
 
   const customSelectStyles = {
