@@ -23,8 +23,10 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "username", length = 25 , unique = true)
     private String username;
 
+    @Column(name = "password", nullable = false)
     private String password;
 
     @Getter
