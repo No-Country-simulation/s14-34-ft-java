@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <SessionProvider>
-      <html lang="en" className="w-full h-full">
+      <html lang="en" className="w-full h-full z-0">
         <body className={roboto.className}>{children}</body>
       </html>
     </SessionProvider>
