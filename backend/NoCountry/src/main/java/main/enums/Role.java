@@ -1,6 +1,3 @@
 package main.enums;
 
-public enum Role {
-    PET_SITTER,
-    USER
-}
+public enum Role {OWNER,PET_SITTER}

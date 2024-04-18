@@ -24,8 +24,8 @@ public class UserServiceImpl implements UserService {
         User user = userOptional.orElseThrow(() -> new Exception("User not found"));
 
         user.setEmail(userRequest.getEmail());
-        user.setFirstName(userRequest.getFirstName());
-        user.setLastName(userRequest.getLastName());
+        user.setFirst_name(userRequest.getFirst_name());
+        user.setLast_name(userRequest.getLast_name());
         user.setAddress(userRequest.getAddress());
         user.setPhone(userRequest.getPhone());
         user.setDni(userRequest.getDni());
