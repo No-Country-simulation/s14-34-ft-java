@@ -32,7 +32,6 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to update user: " + e.getMessage());
         }
     }
-
     @GetMapping(value = "getAllUsers")
     public ResponseEntity<List<User>> getAll() throws Exception{
         return ResponseEntity.ok(userServiceImpl.getAllUsers());

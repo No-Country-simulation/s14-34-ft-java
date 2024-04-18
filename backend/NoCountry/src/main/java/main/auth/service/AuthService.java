@@ -16,6 +16,9 @@ import main.repository.UserRepository;
 
 import lombok.RequiredArgsConstructor;
 
+import java.sql.Timestamp;
+import java.util.Date;
+
 @Service
 @RequiredArgsConstructor
 public class AuthService {
@@ -36,14 +39,18 @@ public class AuthService {
 
 
     public AuthResponse register(RegisterRequest registerRequest) {
+        // Obtener la fecha actual
+        Date currentDate = new Date();
+        Timestamp currentTimestamp = new Timestamp(currentDate.getTime());
+
         User user = User.builder()
                 .email(registerRequest.getEmail())
                 .password(passwordEncoder.encode(registerRequest.getPassword()))
-                .firstName(registerRequest.getFirstname())
-                .lastName(registerRequest.getLastname())
+                .first_name(registerRequest.getFirst_name())
+                .last_name(registerRequest.getLast_name())
                 .phone(registerRequest.getPhone())
-                .address(registerRequest.getAddress())
-                .role(Role.USER) // Por defecto los nuevos usuarios tendrán el rol USER.
+                .role(Role.OWNER) // Por defecto los nuevos usuarios tendrán el rol OWNER.
+                .created_at(currentTimestamp) // Establecer la fecha de creación
                 .build();
 
         userRepository.save(user);
@@ -51,7 +58,5 @@ public class AuthService {
         return AuthResponse.builder()
                 .token(jwtService.getToken(user))
                 .build();
-
     }
-
 }
