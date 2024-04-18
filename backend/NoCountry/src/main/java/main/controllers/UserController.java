@@ -1,16 +1,15 @@
-package main.controller;
+package main.controllers;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import main.model.entity.User;
+import main.models.User;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import main.service.impl.UserService;
+import main.services.UserService;
 
 @Controller
 @RequestMapping("/api/v1")
