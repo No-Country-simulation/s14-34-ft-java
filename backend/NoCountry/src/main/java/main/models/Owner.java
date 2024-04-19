@@ -39,7 +39,7 @@ public class Owner {
     private int phone;
 
     @NotNull
-    @Size(max = 80)
+    @Size(max = 90)
     @Column(name = "address")
     private String address;
 
