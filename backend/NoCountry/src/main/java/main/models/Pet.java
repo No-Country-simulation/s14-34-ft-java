@@ -1,7 +1,6 @@
 package main.models;
 
 import jakarta.persistence.*;
-
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -21,9 +20,8 @@ public class Pet {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
-    @Column(name = "type_of_pet")
+    @Column(name = "type")
     @Enumerated(EnumType.STRING)
-    @NotNull
     private TypeOfPet typeOfPet;
 
     @Column(name = "name")
@@ -81,5 +79,6 @@ public class Pet {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pet_sitter_id")
     private PetSitter petSitterId;
+
 
 }
