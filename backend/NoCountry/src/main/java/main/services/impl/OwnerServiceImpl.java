@@ -14,24 +14,38 @@ public class OwnerServiceImpl implements IOwnerService {
     private OwnerRepository ownerRepository;
 
     @Override
-    public List<Owner> getAllOwners() {
-        return ownerRepository.findAll();
+    public List<Owner> getAllOwners() throws Exception {
+        try {
+            return ownerRepository.findAll();
+        } catch (Exception e) {
+            throw new Exception("Error al obtener todos los propietarios: " + e.getMessage());
+        }
     }
 
     @Override
-    public Owner getOwnerById(Long id) {
-        return ownerRepository.getReferenceById(id);
+    public Owner getOwnerById(Long id) throws IllegalArgumentException {
+        try {
+            return ownerRepository.findById(id)
+                    .orElseThrow(() -> new IllegalArgumentException("Propietario no encontrado"));
+        } catch (Exception e) {
+            throw new IllegalArgumentException("Error al obtener el propietario por ID: " + e.getMessage());
+        }
     }
 
     @Override
-    public Owner saveOwner(Owner owner) {
-        return null;
+    public Owner saveOwner(Owner owner) throws Exception {
+        try {
+            return ownerRepository.save(owner);
+        } catch (Exception e) {
+            throw new Exception("Error al guardar el propietario: " + e.getMessage());
+        }
     }
 
     @Override
-    public Owner updateOwner(Long id, Owner updatedOwner) {
-        Owner existingOwner = ownerRepository.getReferenceById(id);
-        if (existingOwner != null) {
+    public Owner updateOwner(Long id, Owner updatedOwner) throws Exception {
+        try {
+            Owner existingOwner = ownerRepository.findById(id)
+                    .orElseThrow(() -> new IllegalArgumentException("Propietario no encontrado"));
             existingOwner.setFirstName(updatedOwner.getFirstName());
             existingOwner.setLastName(updatedOwner.getLastName());
             existingOwner.setPhoto(updatedOwner.getPhoto());
@@ -42,12 +56,17 @@ public class OwnerServiceImpl implements IOwnerService {
             existingOwner.setPostalCode(updatedOwner.getPostalCode());
             existingOwner.setDni(updatedOwner.getDni());
             return ownerRepository.save(existingOwner);
+        } catch (Exception e) {
+            throw new Exception("Error al actualizar el propietario: " + e.getMessage());
         }
-        return null;
     }
 
-    public Owner deleteOwner(Long id) {
-        ownerRepository.delete(deleteOwner(id));
-        return null;
+    @Override
+    public void deleteOwner(Long id) throws Exception {
+        try {
+            ownerRepository.deleteById(id);
+        } catch (Exception e) {
+            throw new Exception("Error al eliminar el propietario: " + e.getMessage());
+        }
     }
 }

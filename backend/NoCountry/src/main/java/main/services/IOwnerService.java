@@ -6,11 +6,9 @@ import java.util.List;
 
 public interface IOwnerService {
 
-    public List<Owner> getAllOwners();
-
-    public Owner getOwnerById(Long id);
-
-    public Owner saveOwner(Owner owner);
-
-    public Owner updateOwner(Long id, Owner updatedOwner);
+    List<Owner> getAllOwners() throws Exception;
+    Owner getOwnerById(Long id) throws Exception;
+    Owner saveOwner(Owner owner) throws Exception;
+    Owner updateOwner(Long id, Owner updatedOwner) throws Exception;
+    void deleteOwner(Long id) throws Exception;
 }
