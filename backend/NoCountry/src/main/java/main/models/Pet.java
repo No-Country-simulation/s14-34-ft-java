@@ -9,7 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import main.enums.Gender;
 import main.enums.PetSize;
-import main.enums.Type;
+import main.enums.TypeOfPet;
 
 @Data
 @NoArgsConstructor
@@ -21,9 +21,10 @@ public class Pet {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
-    @Column(name = "type")
+    @Column(name = "typeOfPet")
     @Enumerated(EnumType.STRING)
-    private Type type;
+    @NotNull
+    private TypeOfPet typeOfPet;
 
     @Column(name = "name")
     @NotNull
@@ -80,7 +81,5 @@ public class Pet {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pet_sitter_id")
     private PetSitter petSitterId;
-
-
 
 }

@@ -2,6 +2,7 @@ package main.services.impl;
 
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
+import main.mappers.PetMapper;
 import main.models.Pet;
 import main.repository.PetRepository;
 import main.services.PetService;
@@ -15,16 +16,12 @@ import java.util.List;
 @Transactional
 public class PetServiceImpl implements PetService {
 
-/*
-    private final PetRepository petRepository;
 
-
-    public PetServiceImpl(PetRepository petRepository) {
-        this.petRepository = petRepository;
-    }
-*/
     @Autowired
     private PetRepository petRepository;
+
+    @Autowired
+    private PetMapper petMapper;
 
     @Override
     public List<Pet> findAllPets() throws Exception {
