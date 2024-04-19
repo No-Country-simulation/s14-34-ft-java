@@ -5,18 +5,35 @@ import HeadersOne from "@/components/containers/headers/headersOne";
 import Foothercopyrigth from "@/components/containers/footers/foothercopyrigth";
 import Welcome from "@/components/cards/welcome";
 import Nuestroservicios from "@/components/cards/nuestroservicios";
+import Comofunciona from "@/components/cards/comofunciona";
+import Carouselclientes from "@/components/carrusel/clientesfelices/clients";
+import Happypaws from "@/components/cards/happypaws";
 
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="bg-color7">
       <HeadersOne />
       <main className="flex min-h-screen flex-col">
         <div>
-        <Welcome />
+          <Welcome />
         </div>
         <div>
           <Nuestroservicios />
+        </div>
+        <div>
+          <Comofunciona />
+        </div>
+        <div>
+          <div className="justify-self-end text-right px-24 bg-color7">
+            <h1 className="text-[38px]  text-right font-semibold mb-10 bg-color7">Clientes felices</h1>
+          </div>
+          <div className="bg-color7">
+          <Carouselclientes />
+          </div>
+        </div>
+        <div>
+          <Happypaws />
         </div>
       </main>
       <FootersOne />

@@ -33,6 +33,7 @@ public class SecurityConfig {
                                 .requestMatchers("/v3/**","/swagger-ui/**").permitAll()
                                 .requestMatchers("/user/**").permitAll()
                                 .requestMatchers("/booking/**").permitAll()
+                                .requestMatchers("/pet/**").permitAll()
                                 .anyRequest().authenticated()
                 )
                 .sessionManagement(sessionManager->sessionManager

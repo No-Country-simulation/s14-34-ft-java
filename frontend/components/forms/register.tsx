@@ -57,11 +57,11 @@ export default function FormRegister() {
                 return;
             }
 
-            const [firstname, lastname] = data.nombrecompleto.split(' ');
+            const [firs_tname, last_name] = data.nombrecompleto.split(' ');
 
             const formData = {
-                firstname,
-                lastname,
+                firs_tname,
+                last_name,
                 phone,
                 email: data.email,
                 password: data.password,

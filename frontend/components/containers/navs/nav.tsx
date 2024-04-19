@@ -32,7 +32,7 @@ export default function Nav() {
     }
     return (
         <div className="flex flex-row gap-2.5 justify-center items-center">
-            <div className="w-[169px] h-[55px] px-6 py-4 bg-color1 rounded-[50px] justify-center items-center inline-flex text-color4 hover:bg-color5">
+            <div className="w-[180px] h-[55px] px-6 py-4  rounded-[50px] justify-center items-center inline-flex text-color2 hover:bg-color2 border-color2 hover:text-color3 border-2">
                 <Link href="#" onClick={() => signIn()} className="text-xl font-medium">Iniciar Sesión</Link>
             </div>
             <div className="w-[130px] h-[55px] px-6 py-4 bg-color1 rounded-[50px] justify-center items-center inline-flex text-color4 hover:bg-color5">

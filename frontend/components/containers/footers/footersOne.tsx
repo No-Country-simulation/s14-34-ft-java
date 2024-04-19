@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function FootersOne() {
     return (
-        <div className="w-full h-[300px] px-[100px] py-[50px] bg-white shadow flex-col justify-between items-center inline-flex">
+        <div className="w-full h-[300px] px-[100px] py-[50px] bg-white flex-col justify-between items-center inline-flex shadow-lg">
             <div className="justify-center items-start gap-24 inline-flex">
                 <div className="h-[60px] px-[69px] py-4 bg-white rounded-[50px] border border-black justify-center items-center flex">
                     <div className="text-black text-2xl font-medium  ">LOGO</div>
