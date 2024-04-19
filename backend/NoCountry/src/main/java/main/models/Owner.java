@@ -61,7 +61,7 @@ public class Owner {
     @NotNull
     @Size(max = 20)
     @Column(name = "dni")
-    private int dni;
+    private String dni;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
