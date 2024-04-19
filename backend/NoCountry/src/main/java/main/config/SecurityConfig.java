@@ -34,6 +34,7 @@ public class SecurityConfig {
                                 .requestMatchers("/user/**").permitAll()
                                 .requestMatchers("/booking/**").permitAll()
                                 .requestMatchers("/pet/**").permitAll()
+                                .requestMatchers("/petSitters/**").permitAll()
                                 .anyRequest().authenticated()
                 )
                 .sessionManagement(sessionManager->sessionManager

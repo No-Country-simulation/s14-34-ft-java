@@ -33,7 +33,7 @@ public class BookingServiceImpl implements BookingService {
     @Override
     public Booking reservePetSitter(Booking booking) {
         //Check pet sitter availability
-        boolean isAvailable = isPetSitterAvailable(booking.getPetSitter().getPetSitterId(), booking.getStartDate(), booking.getEndDate());
+        boolean isAvailable = isPetSitterAvailable(booking.getPetSitter().getIdPetSitter(), booking.getStartDate(), booking.getEndDate());
         if (!isAvailable) {
             throw new IllegalStateException("The pet sitter is not available on the selected dates.");
         }
@@ -58,9 +58,9 @@ public class BookingServiceImpl implements BookingService {
         return bookingRepository.findAll();
     }
 
-    private boolean isPetSitterAvailable(Long petSitterId, Date startDate, Date endDate) {
+    private boolean isPetSitterAvailable(Long idPetSitter, Date startDate, Date endDate) {
         // Check for existing bookings that overlap with the specified dates
-        List<Booking> conflictingBookings = bookingRepository.findConflictingBookings(petSitterId, startDate, endDate);
+        List<Booking> conflictingBookings = bookingRepository.findConflictingBookings(idPetSitter, startDate, endDate);
 
         // Check for overlapping bookings
         if (conflictingBookings.isEmpty()) {
