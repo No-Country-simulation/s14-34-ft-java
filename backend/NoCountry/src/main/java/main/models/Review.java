@@ -1,4 +1,4 @@
-package main.model;
+package main.models;
 
 import jakarta.persistence.*;
 
@@ -21,9 +21,9 @@ public class Review {
     @JoinColumn(name = "owner_id")
     private Owner owner;
 
-    @ManyToOne
-    @JoinColumn(name = "pet_sitter_id")
-    private PetSitter petSitter;
+    //@ManyToOne
+    //@JoinColumn(name = "pet_sitter_id")
+    //private PetSitter petSitter;
 
     // Constructor, getters y setters
 }

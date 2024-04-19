@@ -1,6 +1,6 @@
 package main.repository;
 
-import main.model.Owner;
+import main.models.Owner;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface OwnerRepository extends JpaRepository<Owner, Long> {

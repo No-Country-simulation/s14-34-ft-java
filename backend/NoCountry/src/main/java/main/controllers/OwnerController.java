@@ -1,22 +1,18 @@
 package main.controllers;
 
-import main.model.Owner;
-import main.service.OwnerService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import main.models.Owner;
+import main.services.impl.OwnerServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/owners")
 public class OwnerController {
 
-    private final OwnerService ownerService;
-
-    @Autowired
-    public OwnerController(OwnerService ownerService) {
-        this.ownerService = ownerService;
-    }
+    private final OwnerServiceImpl ownerService;
 
     @GetMapping("/all")
     public List<Owner> getAllOwners() {
@@ -35,20 +31,7 @@ public class OwnerController {
 
     @PutMapping("/update/{id}")
     public Owner updateOwner(@PathVariable Long id, @RequestBody Owner updatedOwner) {
-        Owner existingOwner = ownerService.getOwnerById(id);
-        if (existingOwner != null) {
-            existingOwner.setFirstName(updatedOwner.getFirstName());
-            existingOwner.setLastName(updatedOwner.getLastName());
-            existingOwner.setPhoto(updatedOwner.getPhoto());
-            existingOwner.setPhone(updatedOwner.getPhone());
-            existingOwner.setAddress(updatedOwner.getAddress());
-            existingOwner.setLocation(updatedOwner.getLocation());
-            existingOwner.setProvince(updatedOwner.getProvince());
-            existingOwner.setPostalCode(updatedOwner.getPostalCode());
-            existingOwner.setDni(updatedOwner.getDni());
-            return ownerService.saveOwner(existingOwner);
-        }
-        return null;
+        return updatedOwner;
     }
 
     @DeleteMapping("/delete")

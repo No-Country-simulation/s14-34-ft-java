@@ -1,9 +1,9 @@
-package main.service.impl;
+package main.services.impl;
 
 import lombok.RequiredArgsConstructor;
-import main.model.User;
+import main.models.User;
 import main.repository.UserRepository;
-import main.service.UserService;
+import main.services.IUserService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements IUserService {
 
     private final UserRepository userRepository;
 
