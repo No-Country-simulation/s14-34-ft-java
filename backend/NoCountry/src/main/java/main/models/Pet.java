@@ -21,7 +21,7 @@ public class Pet {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
-    @Column(name = "typeOfPet")
+    @Column(name = "type_of_pet")
     @Enumerated(EnumType.STRING)
     @NotNull
     private TypeOfPet typeOfPet;

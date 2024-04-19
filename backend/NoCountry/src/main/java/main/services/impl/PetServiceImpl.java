@@ -65,7 +65,7 @@ public class PetServiceImpl implements PetService {
             existingPet.setGeneralDescription(petRequest.getGeneralDescription());
             return existingPet;
         } catch (Exception e) {
-            throw new ServiceException("Error occurred while updating pet with id: " + id, e);
+            throw new ServiceException("Error occurred while updating pet with id: ".concat(id.toString()), e);
         }
     }
 
