@@ -1,7 +1,6 @@
 package main.models;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -77,7 +76,7 @@ public class Pet {
     @Size(max = 300)
     private String generalDescription;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    /*@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pet_sitter_id")
-    private PetSitter petSitterId;
+    private PetSitter petSitterId;*/
 }
