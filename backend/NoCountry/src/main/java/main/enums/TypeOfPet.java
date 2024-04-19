@@ -1,6 +1,7 @@
 package main.enums;
 
-public enum Type {
+public enum TypeOfPet {
+
     DOG,
     CAT,
     CHINCHILLA,
@@ -9,5 +10,6 @@ public enum Type {
     FERRET,
     HEDGEHOG,
     GROUND,
-    GUINEAPIG
+    GUINEA_PIG
+
 }

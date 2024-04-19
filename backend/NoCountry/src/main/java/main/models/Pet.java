@@ -1,7 +1,6 @@
 package main.models;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -9,7 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import main.enums.Gender;
 import main.enums.PetSize;
-import main.enums.Type;
+import main.enums.TypeOfPet;
 
 @Data
 @NoArgsConstructor
@@ -23,7 +22,7 @@ public class Pet {
 
     @Column(name = "type")
     @Enumerated(EnumType.STRING)
-    private Type type;
+    private TypeOfPet typeOfPet;
 
     @Column(name = "name")
     @NotNull
@@ -80,7 +79,6 @@ public class Pet {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pet_sitter_id")
     private PetSitter petSitterId;
-
 
 
 }

@@ -1,21 +1,30 @@
 package main.models;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
-@Entity
 @Data
+@Entity
 @Table(name = "petsitters")
 public class PetSitter {
+
     @Id
-    @Column(name = "pet_sitter_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "petSitter_id")
     private Long petSitterId;
 
-    private String firstName;
-    private String lastName;
-    private String address;
-    private String email;
-    private int phone;
-    private int dni;
+    @ManyToOne
+    @JoinColumn(name = "booking_id")
+    @JsonIgnore
+    private Booking booking;
+
+//    private String firstName;
+//    private String lastName;
+//    private String address;
+//    private String email;
+//    private int phone;
+//    private int dni;
+
 }
