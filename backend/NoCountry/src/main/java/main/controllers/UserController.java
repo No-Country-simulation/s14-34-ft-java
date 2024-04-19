@@ -2,11 +2,11 @@ package main.controllers;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import main.model.User;
+import main.models.User;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import main.service.impl.UserServiceImpl;
+import main.services.impl.UserServiceImpl;
 
 import java.util.List;
 

@@ -1,9 +1,9 @@
-package main.service.impl;
+package main.services.impl;
 
 import lombok.RequiredArgsConstructor;
-import main.model.User;
+import main.models.User;
 import main.repository.UserRepository;
-import main.service.UserService;
+import main.services.UserService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

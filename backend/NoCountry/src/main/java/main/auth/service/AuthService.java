@@ -11,7 +11,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import main.enums.Role;
-import main.model.User;
+import main.models.User;
 import main.repository.UserRepository;
 
 import lombok.RequiredArgsConstructor;
