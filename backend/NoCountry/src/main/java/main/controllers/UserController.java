@@ -2,11 +2,11 @@ package main.controllers;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import main.model.User;
+import main.models.User;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import main.service.impl.UserServiceImpl;
+import main.services.impl.UserServiceImpl;
 
 import java.util.List;
 
@@ -32,7 +32,6 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to update user: " + e.getMessage());
         }
     }
-
     @GetMapping(value = "getAllUsers")
     public ResponseEntity<List<User>> getAll() throws Exception{
         return ResponseEntity.ok(userServiceImpl.getAllUsers());

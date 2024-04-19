@@ -11,7 +11,7 @@ export const AuthOptions: NextAuthOptions = {
       },
       async authorize(credentials) {
         const res = await fetch(
-            `${process.env.BACKEND}/auth/login`,
+          `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/login`,
           {
             method: "POST",
             body: JSON.stringify({
@@ -22,22 +22,19 @@ export const AuthOptions: NextAuthOptions = {
           }
         );
         const user = await res.json();
-        console.log('Datos del Token', user)
         if (res.status === 401) {
           throw new Error("Credenciales incorrectas");
         }
-      
+
         return user;
+
       },
     }),
   ],
   callbacks: {
-    async jwt({ token, user }) {
-      return { ...token, ...user };
-    },
-    async session({ session, token }) {
-      session.user = token as any;
-      return session;
+    async session({ session, token, user }) {
+
+      return session
     },
   },
   pages: {

@@ -66,8 +66,7 @@ export default function FormRegister() {
                 email: data.email,
                 password: data.password,
             };
-            console.log(formData)
-            const res = await fetch(`${process.env.BACKEND}/auth/register`, {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/register`, {
                 method: "POST",
                 body: JSON.stringify(formData),
                 headers: {
@@ -82,7 +81,7 @@ export default function FormRegister() {
             
             console.log('Código de respuesta:', res.status);
         } catch (error) {
-            console.error('Error durante la solicitud de registro:', error);
+            
             setErrorMessage('Error en la solicitud de registro');
         }
     };
