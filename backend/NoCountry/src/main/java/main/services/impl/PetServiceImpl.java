@@ -6,6 +6,7 @@ import main.models.Pet;
 import main.repository.PetRepository;
 import main.services.PetService;
 import org.hibernate.service.spi.ServiceException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,12 +15,16 @@ import java.util.List;
 @Transactional
 public class PetServiceImpl implements PetService {
 
+/*
     private final PetRepository petRepository;
 
 
     public PetServiceImpl(PetRepository petRepository) {
         this.petRepository = petRepository;
     }
+*/
+    @Autowired
+    private PetRepository petRepository;
 
     @Override
     public List<Pet> findAllPets() throws Exception {

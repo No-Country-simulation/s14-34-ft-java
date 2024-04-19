@@ -4,6 +4,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import main.models.Pet;
 import main.services.PetService;
+import main.services.impl.PetServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/pet")
 public class PetController {
 
-    private final PetService petService;
+    private final PetServiceImpl petService;
 
 
     @PostMapping(consumes = "application/json",produces = "application/json")
