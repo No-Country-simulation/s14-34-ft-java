@@ -1,5 +1,6 @@
 package main.services.impl;
 
+import jakarta.transaction.Transactional;
 import main.models.Owner;
 import main.repository.OwnerRepository;
 import main.services.IOwnerService;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+@Transactional
 public class OwnerServiceImpl implements IOwnerService {
     @Autowired
     private OwnerRepository ownerRepository;
@@ -55,7 +57,7 @@ public class OwnerServiceImpl implements IOwnerService {
             existingOwner.setProvince(updatedOwner.getProvince());
             existingOwner.setPostalCode(updatedOwner.getPostalCode());
             existingOwner.setDni(updatedOwner.getDni());
-            return ownerRepository.save(existingOwner);
+            return existingOwner;
         } catch (Exception e) {
             throw new Exception("Error al actualizar el propietario: " + e.getMessage());
         }

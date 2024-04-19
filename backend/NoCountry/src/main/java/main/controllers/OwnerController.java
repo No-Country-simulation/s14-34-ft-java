@@ -1,8 +1,13 @@
 package main.controllers;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import main.models.Owner;
+import main.models.Pet;
 import main.services.impl.OwnerServiceImpl;
+import org.apache.coyote.Response;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,29 +19,50 @@ public class OwnerController {
 
     private final OwnerServiceImpl ownerService;
 
-    @GetMapping("/all")
-    public List<Owner> getAllOwners() throws Exception {
-        return ownerService.getAllOwners();
+    @GetMapping(value ="/all",produces = "application/json")
+    public ResponseEntity<?> getAllOwners() {
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(ownerService.getAllOwners());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("There are no owners");
+        }
     }
 
-    @GetMapping("/{id}")
-    public Owner getOwnerById(@PathVariable Long id) throws IllegalArgumentException {
-        return ownerService.getOwnerById(id);
+    @PostMapping(consumes = "application/json",produces = "application/json")
+    public ResponseEntity<?> save(@Valid @RequestBody Owner owner){
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(ownerService.saveOwner(owner));
+        }catch (Exception e){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Can't add owner");
+        }
     }
 
-    @PostMapping("/save")
-    public Owner saveOwner(@RequestBody Owner owner) throws Exception {
-        return ownerService.saveOwner(owner);
+    @GetMapping(value = "/{id}",produces = "aplication/json")
+    public ResponseEntity<?> getPetById(@PathVariable Long id) {
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(ownerService.getOwnerById(id));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Owner not found");
+        }
     }
 
-    @PutMapping("/update/{id}")
-    public Owner updateOwner(@PathVariable Long id, @RequestBody Owner updatedOwner) throws Exception {
-        return ownerService.updateOwner(id, updatedOwner);
+    @PutMapping("/{id}")
+    public ResponseEntity<Owner> updatePet(@PathVariable Long id, @RequestBody Owner owner) throws Exception {
+        Owner ownerResponse = ownerService.updateOwner(id,owner);
+        return ResponseEntity.ok(ownerResponse);
+
     }
 
-    @DeleteMapping("/delete/{id}")
-    public void deleteOwner(@PathVariable Long id) throws Exception {
-        ownerService.deleteOwner(id);
+    @DeleteMapping(value = "/delete/{id}", produces = "application/json")
+    public ResponseEntity<?> deleteOwner(@PathVariable Long id) {
+        try {
+            ownerService.deleteOwner(id);
+            // Si se elimina correctamente, devolver un mensaje de éxito
+            return ResponseEntity.status(HttpStatus.OK).body("Owner deleted successfully");
+        } catch (Exception e) {
+            // Manejar cualquier excepción interna y devolver un error 500
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal server error");
+        }
     }
 }
 
