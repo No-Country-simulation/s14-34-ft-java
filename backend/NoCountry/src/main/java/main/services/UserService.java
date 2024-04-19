@@ -1,18 +1,16 @@
 package main.services;
 
-import lombok.RequiredArgsConstructor;
 import main.models.User;
-import main.repository.UserRepository;
-import org.springframework.stereotype.Service;
 
-@Service
-@RequiredArgsConstructor
-public class UserService {
+import java.util.List;
 
-    private final UserRepository userRepository;
+public interface UserService {
 
-    public void saveUser(User user){
-        userRepository.save(user);
-    }
+    public void saveUser(User user);
+
+    public void updateUser(Long id, User userRequest) throws Exception;
+
+    public List<User> getAllUsers();
+
 
 }
