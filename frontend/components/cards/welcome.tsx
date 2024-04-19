@@ -13,7 +13,7 @@ export default function Welcome() {
         </p>
       </div>
       <div className="absolute  font-medium text-4xl text-white px-2 right-10 top-96">
-        <p className="font-medium text-4xl"><span>Donde el amor y la atención se</span><br /><span>unen para el bienestar de tu</span> <br /><span>mascota</span></p>
+        <p className="font-medium text-4xl"><span>Donde el amor y la atención se</span><br /><span>unen para el bienestar de tu</span><br/><span>mascota</span></p>
       </div>
       <div className="absolute z-20 bg-transparent bottom-60 right-14">
         <Filter onSearch={handleSearch} />

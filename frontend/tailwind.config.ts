@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: ["class"],
+  darkMode: ["class"],  //  className=" bg-color1 dark:bg-color2 hover:bg-color3 "
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -39,7 +39,8 @@ const config: Config = {
         color3:"#FAFAFA",
         color4:"#FFFFFF",
         color5:"#25C389",
-        color6:"#CB6100"
+        color6:"#CB6100",
+        color7:"#FAFAFA"
       }
     },
   },
@@ -49,3 +50,6 @@ const config: Config = {
   plugins: [],
 };
 export default config;
+
+//github
+//figma
