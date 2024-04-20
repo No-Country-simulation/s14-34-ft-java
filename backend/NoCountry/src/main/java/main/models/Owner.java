@@ -36,7 +36,7 @@ public class Owner {
     @NotNull
     @Size(max = 50)
     @Column(name = "phone")
-    private int phone;
+    private String phone;
 
     @NotNull
     @Size(max = 90)
@@ -56,7 +56,7 @@ public class Owner {
     @NotNull
     @Size(max = 20)
     @Column(name = "postalCode")
-    private int postalCode;
+    private String postalCode;
 
     @NotNull
     @Size(max = 20)

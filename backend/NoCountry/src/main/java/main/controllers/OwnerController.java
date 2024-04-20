@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/owners")
+@RequestMapping("/owner")
 public class OwnerController {
 
     private final OwnerServiceImpl ownerService;
