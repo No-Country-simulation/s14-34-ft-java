@@ -1,9 +1,12 @@
 package main.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -44,6 +47,9 @@ public class PetSitter {
     @JoinColumn(name = "id_service")
     private Service service;
 
+    @OneToMany(mappedBy = "petSitter", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonIgnore
+    private List<Booking> bookings;
 
 
 }
