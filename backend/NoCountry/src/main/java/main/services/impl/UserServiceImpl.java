@@ -19,8 +19,8 @@ public class UserServiceImpl implements UserService {
         userRepository.save(user);
     }
 
-    public void updateUser(Long id, User userRequest) throws Exception{
-        Optional<User> userOptional = userRepository.findById(id);
+    public void updateUser(Long user_id, User userRequest) throws Exception{
+        Optional<User> userOptional = userRepository.findById(user_id);
         User user = userOptional.orElseThrow(() -> new Exception("User not found"));
 
         user.setEmail(userRequest.getEmail());
@@ -42,5 +42,19 @@ public class UserServiceImpl implements UserService {
         User user = userRepository.findById(user_id).orElseThrow(() -> new Exception("User not found"));
         return user;
     }
+
+   /* public void updateUserRole(Long user_id, User userRequest) throws Exception{
+        Optional<User> userOptional = userRepository.findById(user_id);
+        User user = userOptional.orElseThrow(() -> new Exception("User not found"));
+
+        user.setEmail(userRequest.getEmail());
+        user.setFirstName(userRequest.getFirstName());
+        user.setLastName(userRequest.getLastName());
+        user.setAddress(userRequest.getAddress());
+        user.setPhone(userRequest.getPhone());
+        user.setDni(userRequest.getDni());
+
+        userRepository.save(user);
+    }*/
 
 }

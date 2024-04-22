@@ -42,4 +42,13 @@ public class UserController {
         return ResponseEntity.ok(userServiceImpl.getUserById(user_id));
     }
 
+    /*@PutMapping(value = "updateUserRole/{user_id}")
+    public ResponseEntity<Boolean> updateUserRole(@PathVariable Long user_id, @RequestParam String role){
+        try{
+            userServiceImpl.updateUser(user_id, role);
+            return ResponseEntity.ok("User updated successfully");
+        }catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to update user: " + e.getMessage());
+        }
+*/
 }
