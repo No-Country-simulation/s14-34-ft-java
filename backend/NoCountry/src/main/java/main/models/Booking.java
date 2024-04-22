@@ -59,7 +59,7 @@ public class Booking {
     private BigDecimal price;
 
     @Column(name = "pet_quantity")
-    @JsonIgnore
+    //@JsonIgnore
     private String petQuantity;
 
     @Enumerated(EnumType.STRING)

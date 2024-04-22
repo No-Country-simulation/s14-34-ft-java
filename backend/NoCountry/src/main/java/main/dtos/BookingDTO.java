@@ -15,6 +15,7 @@ import java.util.Date;
 @NoArgsConstructor
 public class BookingDTO {
 
+    @NotNull
     private Long bookingId;
 
     @NotNull
@@ -33,6 +34,7 @@ public class BookingDTO {
 
     private BigDecimal price;
 
+    @NotNull
     private String petQuantity;
 
     @NotNull
@@ -40,4 +42,5 @@ public class BookingDTO {
 
     @NotNull
     private TypeOfService typeOfService;
+
 }
