@@ -69,6 +69,6 @@ public class Owner {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    private List<Pet> pets;
+    /*@OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<Pet> pets;*/
 }
