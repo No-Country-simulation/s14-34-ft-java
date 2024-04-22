@@ -1,0 +1,21 @@
+/* Estilos personalizados para SweetAlert2 */
+.my-swal-container {
+    background-color: #FAFAFA; /* color3 */
+    border-color: #DF8B3F; /* color2 */
+  }
+  
+  .my-swal-title {
+    color: #0A6141; /* color1 */
+  }
+  
+  .my-swal-content {
+    color: #FFFFFF; /* color4 */
+  }
+  
+  .my-swal-confirm-button {
+    background-color: #25C389; /* color5 */
+    border-color: #25C389; /* color5 */
+    color: #FAFAFA; /* color3 */
+  }
+  
+  

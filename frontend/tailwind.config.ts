@@ -31,6 +31,8 @@ const config: Config = {
       },
       backgroundImage: {
         "homeimagen": "url('/homeimg.png')",
+        "login":"url('/login.png')",
+        "register":"url('/register.png')",
       },
       
       colors:{
