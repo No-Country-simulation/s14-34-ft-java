@@ -14,10 +14,4 @@ public class Owner {
     @Column(name = "owner_id")
     private Long ownerId;
 
-    /*
-    * orphanRemoval = true
-    * mappedby(owner)
-    * pets onetomany (lazy) (cascade.all) - list - bidirec?
-    *
-    */
 }
