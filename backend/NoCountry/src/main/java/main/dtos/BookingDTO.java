@@ -27,6 +27,9 @@ public class BookingDTO {
     private Long reviewId;
 
     @NotNull
+    private boolean booking;
+
+    @NotNull
     private Date startDate;
 
     @NotNull
