@@ -46,11 +46,11 @@ public class AuthService {
         User user = User.builder()
                 .email(registerRequest.getEmail())
                 .password(passwordEncoder.encode(registerRequest.getPassword()))
-                .first_name(registerRequest.getFirst_name())
-                .last_name(registerRequest.getLast_name())
+                .firstName(registerRequest.getFirstName())
+                .lastName(registerRequest.getLastName())
                 .phone(registerRequest.getPhone())
                 .role(Role.OWNER) // Por defecto los nuevos usuarios tendrán el rol OWNER.
-                .created_at(currentTimestamp) // Establecer la fecha de creación
+                .createdAt(currentTimestamp) // Establecer la fecha de creación
                 .build();
 
         userRepository.save(user);

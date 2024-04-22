@@ -6,7 +6,7 @@ import main.enums.TypeOfPet;
 public record PetDTO(
         Long id,
         String photo,
-        TypeOfPet type,
+        TypeOfPet typeOfPet,
         String name,
         String breed,
         Integer age,
@@ -19,3 +19,5 @@ public record PetDTO(
         String Description
 ) {
 }
+
+

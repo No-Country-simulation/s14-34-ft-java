@@ -22,7 +22,7 @@ public class Pet {
 
     @Column(name = "type")
     @Enumerated(EnumType.STRING)
-    private TypeOfPet type;
+    private TypeOfPet typeOfPet;
 
     @Column(name = "name")
     @NotNull
@@ -76,7 +76,9 @@ public class Pet {
     @Size(max = 300)
     private String generalDescription;
 
-    /*@ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pet_sitter_id")
-    private PetSitter petSitterId;*/
+    private PetSitter petSitterId;
+
+
 }

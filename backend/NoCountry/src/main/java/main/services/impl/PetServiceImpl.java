@@ -4,7 +4,7 @@ import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import main.models.Pet;
 import main.repository.PetRepository;
-import main.services.IPetService;
+import main.services.PetService;
 import org.hibernate.service.spi.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,16 +13,16 @@ import java.util.List;
 
 @Service
 @Transactional
-public class PetServiceImpl implements IPetService {
+public class PetServiceImpl implements PetService {
 
-    /*
-        private final PetRepository petRepository;
+/*
+    private final PetRepository petRepository;
 
 
-        public PetServiceImpl(PetRepository petRepository) {
-            this.petRepository = petRepository;
-        }
-    */
+    public PetServiceImpl(PetRepository petRepository) {
+        this.petRepository = petRepository;
+    }
+*/
     @Autowired
     private PetRepository petRepository;
 
@@ -76,4 +76,6 @@ public class PetServiceImpl implements IPetService {
     public void deletePet(Long id) throws Exception {
 
     }
+
+
 }

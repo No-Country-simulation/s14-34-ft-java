@@ -2,7 +2,9 @@
 
 import React, { useState, ChangeEvent, useEffect } from 'react';
 import Select from 'react-select';
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation';
+import { Toaster } from 'sonner';
+import Swal from 'sweetalert2';
 
 interface FilterProps {
   onSearch: (filters: Filters) => void;
@@ -111,10 +113,22 @@ const Filter: React.FC<FilterProps> = ({ onSearch }) => {
     }),
   };
 
+  //alert
+  
+  function showAlert() {
+    Swal.fire({
+      background:"#FAFAFA10",
+      confirmButtonColor:"#DF8B3F",
+      confirmButtonText: ' Por favor, completatodos Todos los Campos',
+      
+    });
+  }
+
   const handleSearch = () => {
 
     if (!filters.lugar || !filters.tipoServicio || !filters.tipoMascota || !filters.fecha) {
-      alert('Por favor, completa todos los campos.');
+      //toast('Por favor, completa todos los campos.');
+      showAlert();
       return; // Detener la búsqueda si algún campo está vacío
     }
     onSearch(filters);

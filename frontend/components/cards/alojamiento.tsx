@@ -1,5 +1,6 @@
 'use client'
-import React from 'react'
+
+import React from 'react';
 import Image from 'next/image';
 import { useState } from 'react';
 import LocationMap from "@/components/map/LocationMap";
@@ -7,11 +8,11 @@ import LocationMap from "@/components/map/LocationMap";
 
 
 const cuidadores = [
-    { id: 1, imageUrl: '/cuidador/uno.jpg', nombre: 'Nombre del Cuidador 1', ubicacion: 'Ubicación 1' },
-    { id: 2, imageUrl: '/cuidador/dos.jpg', nombre: 'Nombre del Cuidador 2', ubicacion: 'Ubicación 2' },
-    { id: 3, imageUrl: '/cuidador/tres.jpg', nombre: 'Nombre del Cuidador 3', ubicacion: 'Ubicación 3' },
-    { id: 4, imageUrl: '/cuidador/cuatro.jpg', nombre: 'Nombre del Cuidador 1', ubicacion: 'Ubicación 1' },
-    { id: 5, imageUrl: '/cuidador/cinco.jpg', nombre: 'Nombre del Cuidador 2', ubicacion: 'Ubicación 2' }
+    { id: 1, imageUrl: '/cuidador/uno.jpg', nombre: 'Concen', ubicacion: 'Ubicación 1' },
+    { id: 2, imageUrl: '/cuidador/dos.jpg', nombre: 'Aylen', ubicacion: 'Ubicación 2' },
+    { id: 3, imageUrl: '/cuidador/tres.jpg', nombre: 'Mati', ubicacion: 'Ubicación 3' },
+    { id: 4, imageUrl: '/cuidador/cuatro.jpg', nombre: 'Valeri', ubicacion: 'Ubicación 1' },
+    { id: 5, imageUrl: '/cuidador/cinco.jpg', nombre: 'Orlando Cardenas', ubicacion: 'Ubicación 2' }
 ];
 
 //
@@ -29,15 +30,15 @@ export default function Alojamiento({ lugar, fecha, tipoMascota }: { lugar: stri
     const formattedPlace = formatPlace(lugar);
     const [ubicacionSeleccionada, setUbicacionSeleccionada] = useState('');
     const ubicacion = { lat: -34.603722, lng: -58.381592 };
+
     const handleCuidadorClick = (ubicacion: string) => {
         setUbicacionSeleccionada(ubicacion);
     };
 
     return (
         <div>
-            <div className="justify-self-end text-right px-24 bg-color7">
-                <h1 className="text-[38px] text-right font-semibold mb-10 bg-color7">Resultados Servicio de Alojamiento en {formattedPlace}</h1>
-                <div className="grid grid-cols-2 gap-4">
+            <div className="justify-self-end text-right px-24 bg-color7 mb-20">
+                <div className="grid grid-cols-2 gap-20">
                     <div style={{ overflowY: 'auto', WebkitOverflowScrolling: 'touch', maxHeight: '655px', width: '585px', scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
                         <div className="">
                             {cuidadores.map(cuidador => (
@@ -46,7 +47,7 @@ export default function Alojamiento({ lugar, fecha, tipoMascota }: { lugar: stri
                                         <Image src={cuidador.imageUrl} alt="fotocuidador" width={173} height={199} />
                                     </div>
                                     <div className="grow shrink basis-0 p-5 flex-col justify-start items-start gap-2.5 inline-flex">
-                                        <div className="self-stretch text-black text-[22px] font-semibold text-left">Cuidador</div>
+                                        <div className="self-stretch text-black text-[22px] font-semibold text-left">{cuidador.nombre}</div>
                                         <div className="justify-center items-center gap-2 inline-flex">
                                             <div className="justify-center items-end flex">
                                                 {/* Íconos y detalles del cuidador */}
@@ -63,6 +64,8 @@ export default function Alojamiento({ lugar, fecha, tipoMascota }: { lugar: stri
 
                                             </div>
                                             <div className="text-black text-base font-medium">Ubicación : {formattedPlace} </div>
+                                            <br/>
+                                            <div><button className="p-2 rounded-[50px] justify-center items-center inline-flex text-color2 hover:bg-color2 border-color2 hover:text-color3 border-2">Ver detalles</button></div>
                                         </div>
                                     </div>
                                 </div>
@@ -70,8 +73,8 @@ export default function Alojamiento({ lugar, fecha, tipoMascota }: { lugar: stri
                         </div>
 
                     </div>
-                    <div>
-                    <LocationMap />
+                    <div className="w-full h-full">
+                        <LocationMap />
                     </div>
                 </div>
             </div>

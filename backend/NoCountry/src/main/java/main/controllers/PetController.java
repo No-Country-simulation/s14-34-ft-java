@@ -3,6 +3,7 @@ package main.controllers;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import main.models.Pet;
+import main.services.PetService;
 import main.services.impl.PetServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +24,7 @@ public class PetController {
         }catch (Exception e){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Can't add pet");
         }
-    }
+}
 
     @GetMapping(value = "/all",produces = "application/json")
     public ResponseEntity<?> getAllPets() {
@@ -50,4 +51,8 @@ public class PetController {
         return ResponseEntity.ok(petResponse);
 
     }
+
+
+
 }
+

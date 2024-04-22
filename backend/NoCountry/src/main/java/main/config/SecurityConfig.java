@@ -32,7 +32,9 @@ public class SecurityConfig {
                                 .requestMatchers("/auth/**").permitAll()
                                 .requestMatchers("/v3/**","/swagger-ui/**").permitAll()
                                 .requestMatchers("/user/**").permitAll()
-                                .requestMatchers("/owner/**").permitAll()
+                                .requestMatchers("/booking/**").permitAll()
+                                .requestMatchers("/pet/**").permitAll()
+                                .requestMatchers("/petSitters/**").permitAll()
                                 .anyRequest().authenticated()
                 )
                 .sessionManagement(sessionManager->sessionManager
