@@ -1,5 +1,6 @@
 package main.services.impl;
 
+import jakarta.transaction.Transactional;
 import main.models.Booking;
 import main.repository.BookingRepository;
 import main.services.BookingService;
@@ -12,6 +13,7 @@ import java.util.List;
 @Service
 public class BookingServiceImpl implements BookingService {
 
+
     private final BookingRepository bookingRepository;
 
     @Autowired
@@ -19,36 +21,30 @@ public class BookingServiceImpl implements BookingService {
         this.bookingRepository = bookingRepository;
     }
 
-//    @Override
-//    public Booking createBooking(Booking booking) {
-//        //Validate that the foreign keys petSitterId and ownerId are provided.
-//        if (booking.getPetSitterId() == null || booking.getOwnerId() == null) {
-//            throw new IllegalArgumentException("petSitterId and ownerId are required.");
-//        }
-//
-//        //Save the booking in the database
-//        return bookingRepository.save(booking);
-//    }
-
     @Override
+    @Transactional
     public Booking reservePetSitter(Booking booking) {
-        //Check pet sitter availability
+        // Check pet sitter availability
         boolean isAvailable = isPetSitterAvailable(booking.getPetSitter().getIdPetSitter(), booking.getStartDate(), booking.getEndDate());
         if (!isAvailable) {
             throw new IllegalStateException("The pet sitter is not available on the selected dates.");
         }
 
-        //Verify type of service and type of pets
+        // Verify type of service and type of pets
         if (booking.getTypeOfService() == null || booking.getTypeOfPet() == null) {
             throw new IllegalArgumentException("The type of service and type of pets are mandatory.");
         }
 
         // Save the booking in the database
-        return bookingRepository.save(booking);
+        booking = bookingRepository.save(booking);
 
+        // Update the 'booking' field to true
+        booking.setBooking(true);
+        return booking;
     }
 
     @Override
+    @Transactional
     public void cancelBooking(Long bookingId) {
         bookingRepository.deleteById(bookingId);
     }
@@ -63,14 +59,10 @@ public class BookingServiceImpl implements BookingService {
         List<Booking> conflictingBookings = bookingRepository.findConflictingBookings(idPetSitter, startDate, endDate);
 
         // Check for overlapping bookings
-        if (conflictingBookings.isEmpty()) {
-            //Pet sitter is available
-            return true;
-        } else {
-            //Pet sitter not available
-            return false;
-        }
-
+        return conflictingBookings.isEmpty();
     }
 
+
 }
+
+
