@@ -23,10 +23,10 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.CREATED).body("User saved successfully");
     }
 
-    @PutMapping(value = "update/{id}")
-    public ResponseEntity<String> updateUser(@PathVariable Long id, @RequestBody User user) {
+    @PutMapping(value = "update/{user_id}")
+    public ResponseEntity<String> updateUser(@PathVariable Long user_id, @RequestBody User user) {
         try {
-            userServiceImpl.updateUser(id, user);
+            userServiceImpl.updateUser(user_id, user);
             return ResponseEntity.ok("User updated successfully");
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to update user: " + e.getMessage());
@@ -36,4 +36,10 @@ public class UserController {
     public ResponseEntity<List<User>> getAll() throws Exception{
         return ResponseEntity.ok(userServiceImpl.getAllUsers());
     }
+
+    @GetMapping(value = "getUserById/{user_id}")
+    public ResponseEntity<User> getUserById(Long user_id) throws Exception{
+        return ResponseEntity.ok(userServiceImpl.getUserById(user_id));
+    }
+
 }
