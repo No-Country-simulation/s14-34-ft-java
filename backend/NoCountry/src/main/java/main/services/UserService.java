@@ -11,6 +11,4 @@ public interface UserService {
     public void updateUser(Long id, User userRequest) throws Exception;
 
     public List<User> getAllUsers();
-
-
 }
