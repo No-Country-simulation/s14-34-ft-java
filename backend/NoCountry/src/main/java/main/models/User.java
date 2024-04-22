@@ -22,14 +22,13 @@ public class User implements UserDetails {
     @Id
     @Setter(AccessLevel.NONE)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JsonIgnore
-    private Long id;
+    private Long user_id;
 
     @Column(name = "user_name", length = 20)
-    @JsonIgnore
     private String username;
 
     @Column(name = "password", length = 100)
+    @JsonIgnore
     private String password;
 
     @Getter
@@ -37,38 +36,32 @@ public class User implements UserDetails {
     private String email;
 
     @Column(name = "first_name", length = 50)
-    private String first_name;
+    private String firstName;
 
     @Column(name = "last_name", length = 50)
-    private String last_name;
+    private String lastName;
 
     @Column(name = "address", length = 150)
-    @JsonIgnore
     private String address;
 
     @Column(name = "phone", length = 20)
     private String phone;
 
     @Column(name = "dni", length = 10)
-    @JsonIgnore
     private String dni;
 
     @Column(name = "photo")
-    @JsonIgnore
     private String photo;
 
     @Column(name = "rol", columnDefinition = "varchar(10) default 'OWNER'")
     @Enumerated(EnumType.STRING)
-    @JsonIgnore
     private Role role;
 
     @Column(name = "created_at", columnDefinition = "timestamp")
-    @JsonIgnore
-    private Timestamp created_at;
+    private Timestamp createdAt;
 
     @Column(name = "last_login", columnDefinition = "timestamp")
-    @JsonIgnore
-    private Timestamp last_login;
+    private Timestamp lastLogin;
 
     @Override
     @JsonIgnore
