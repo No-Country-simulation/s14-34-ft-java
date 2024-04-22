@@ -80,9 +80,10 @@ public class Pet {
     @JoinColumn(name = "pet_sitter_id")
     private PetSitter petSitterId;
 
-    @ManyToOne //cascade all?
-    @JoinColumn(name = "fk_owner",nullable = false,updatable = false)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "owner_id",nullable = false,updatable = false)
     private Owner owner;
+
 
     /*
     * OWNERS 1------n pets
