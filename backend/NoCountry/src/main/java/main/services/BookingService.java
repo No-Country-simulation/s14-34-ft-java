@@ -13,5 +13,5 @@ public interface BookingService {
 
     List<Booking> getAllBookings();
 
-//    Booking createBooking(Booking booking);
+
 }
