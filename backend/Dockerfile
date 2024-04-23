@@ -5,7 +5,7 @@ FROM openjdk:17
 EXPOSE 8080
 
 # Copy the JAR file from your local machine into the container at /app
-COPY target/app.jar app.jar
+COPY NoCountry/target/app.jar app.jar
 
 # Specify the command to run your application
 ENTRYPOINT ["java", "-jar", "/app.jar"]
