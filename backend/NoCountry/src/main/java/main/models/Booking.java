@@ -29,7 +29,7 @@ public class Booking {
     private PetSitter petSitter;
 
     @ManyToOne
-    @JoinColumn(name = "owner_id")
+    @JoinColumn(name = "owners_id")
     @JsonIgnore
     private Owner owner;
 
@@ -59,7 +59,7 @@ public class Booking {
     private BigDecimal price;
 
     @Column(name = "pet_quantity")
-    @JsonIgnore
+    //@JsonIgnore
     private String petQuantity;
 
     @Enumerated(EnumType.STRING)

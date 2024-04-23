@@ -1,11 +1,14 @@
 package main.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -16,17 +19,16 @@ public class Owner {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "owner_id")
-    private Long clientId;
+    private Long id;
 
     @NotNull
     @Size(max = 50)
-    @Column(name = "firstName")
+    @Column(name = "first_name")
     private String firstName;
 
     @NotNull
     @Size(max = 50)
-    @Column(name = "lastName")
+    @Column(name = "last_name")
     private String lastName;
 
     @Column(name = "photo_url")
@@ -55,7 +57,7 @@ public class Owner {
 
     @NotNull
     @Size(max = 20)
-    @Column(name = "postalCode")
+    @Column(name = "postal_code")
     private String postalCode;
 
     @NotNull
@@ -65,8 +67,10 @@ public class Owner {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
+    @JsonIgnore
     private User user;
 
-    /*@OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    private List<Pet> pets;*/
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<Pet> pets = new ArrayList<>();
+
 }

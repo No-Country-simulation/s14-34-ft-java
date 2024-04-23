@@ -1,5 +1,6 @@
 package main.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -78,20 +79,13 @@ public class Pet {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pet_sitter_id")
+    @JsonIgnore
     private PetSitter petSitterId;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "owner_id",nullable = false,updatable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "owner_id")
+    @JsonIgnore
     private Owner owner;
 
-
-    /*
-    * OWNERS 1------n pets
-    * */
-    /*
-    CASCADE.ALL
-    FETCH ------
-    - LAZY : cuando termina en un ToMany
-    * */
 
 }
