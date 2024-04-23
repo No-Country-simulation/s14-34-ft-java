@@ -1,10 +1,11 @@
-FROM amazoncorretto:17-alpine-jdk
-LABEL authors="no-country-s14-34-ft-java"
-EXPOSE 8080
-MAINTAINER MATIAS
+# Use an OpenJDK runtime as a base image
+FROM openjdk:11
 
-# Copy the source code
-COPY target/HappyPaws-0.0.1-SNAPSHOT.jar app.jar
+# Set the working directory inside the container
+WORKDIR /app
 
-# Run the application
-ENTRYPOINT ["java", "-jar", "/app.jar"]
+# Copy the JAR file from your local machine into the container at /app
+COPY target/HappyPaws-0.0.1-SNAPSHOT.jar /app
+
+# Specify the command to run your application
+CMD ["java", "-jar", "your-application.jar"]
