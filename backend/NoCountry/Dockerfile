@@ -11,14 +11,12 @@ EXPOSE 8080
 WORKDIR /app
 
 # Copia los archivos necesarios para construir la aplicación
-COPY backend/noCountry/.mvnw ./.mvnw
-COPY backend/noCountry/pom.xml ./
-
-# Copia el directorio src desde el contexto de construcción al directorio de trabajo en el contenedor
-COPY backend/noCountry/src ./src
+COPY src ./src
+COPY .mvn/ .mvn
+COPY mvnw pom.xml ./
 
 # Concede permisos de ejecución al script mvnw
-RUN chmod +x .mvnw
+RUN chmod +x mvnw
 
 # Construye la aplicación con Maven, omitiendo los tests
 RUN ./mvnw clean package -DskipTests
