@@ -4,18 +4,16 @@ import React from 'react';
 import Image from 'next/image';
 import { useState } from 'react';
 import LocationMap from "@/components/map/LocationMap";
-
-
+import { useRouter } from 'next/navigation';
 
 const cuidadores = [
-    { id: 1, imageUrl: '/cuidador/uno.jpg', nombre: 'Concen', ubicacion: 'Ubicación 1' },
-    { id: 2, imageUrl: '/cuidador/dos.jpg', nombre: 'Aylen', ubicacion: 'Ubicación 2' },
-    { id: 3, imageUrl: '/cuidador/tres.jpg', nombre: 'Mati', ubicacion: 'Ubicación 3' },
-    { id: 4, imageUrl: '/cuidador/cuatro.jpg', nombre: 'Valeri', ubicacion: 'Ubicación 1' },
-    { id: 5, imageUrl: '/cuidador/cinco.jpg', nombre: 'Orlando Cardenas', ubicacion: 'Ubicación 2' }
+    { id: 1, imageUrl: '/paseo/Cuidadores/1.jpg', nombre: 'Concen', ubicacion: 'Ubicación 1' },
+    { id: 2, imageUrl: '/paseo/Cuidadores/2.jpg', nombre: 'Mati', ubicacion: 'Ubicación 2' },
+    { id: 3, imageUrl: '/paseo/Cuidadores/3.jpg', nombre: 'Mati', ubicacion: 'Ubicación 3' },
+    { id: 4, imageUrl: '/paseo/Cuidadores/4.jpg', nombre: 'Orlando Cardenas', ubicacion: 'Ubicación 1' },
+    { id: 5, imageUrl: '/paseo/Cuidadores/6.jpg', nombre: 'Valeri', ubicacion: 'Ubicación 2' },
 ];
 
-//
 const formatPlace = (place: string) => {
     const words = place.split('_');
     const capitalizedWords = words.map(word => {
@@ -26,13 +24,18 @@ const formatPlace = (place: string) => {
 };
 
 export default function Alojamiento({ lugar, fecha, tipoMascota }: { lugar: string, fecha: string, tipoMascota: string }) {
-
+    const router = useRouter()
     const formattedPlace = formatPlace(lugar);
     const [ubicacionSeleccionada, setUbicacionSeleccionada] = useState('');
     const ubicacion = { lat: -34.603722, lng: -58.381592 };
 
-    const handleCuidadorClick = (ubicacion: string) => {
+    const handleCuidadorClick2 = (ubicacion: string) => {
         setUbicacionSeleccionada(ubicacion);
+    };
+
+    const handleCuidadorClick = (id: number) => {
+        // Redireccionar a una ruta dinámica con el ID del cuidador como parámetro
+        router.push(`/cuidador/${id}`);
     };
 
     return (
@@ -42,7 +45,7 @@ export default function Alojamiento({ lugar, fecha, tipoMascota }: { lugar: stri
                     <div style={{ overflowY: 'auto', WebkitOverflowScrolling: 'touch', maxHeight: '655px', width: '585px', scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
                         <div className="">
                             {cuidadores.map(cuidador => (
-                                <div key={cuidador.id} className="w-[585px] h-[202px] bg-white rounded-2xl border border-emerald-800 justify-center items-start gap-2.5 inline-flex" onClick={() => handleCuidadorClick(cuidador.ubicacion)}>
+                                <div key={cuidador.id} className="hover:scale-90 hover:border-color2 hover:border-2 w-[585px] h-[202px] bg-white rounded-2xl border border-emerald-800 justify-center items-start gap-2.5 inline-flex" onClick={() => handleCuidadorClick(cuidador.id)}>
                                     <div className=" overflow-hidden w-[175px] h-[200px]">
                                         <Image src={cuidador.imageUrl} alt="fotocuidador" width={173} height={199} />
                                     </div>
@@ -61,19 +64,15 @@ export default function Alojamiento({ lugar, fecha, tipoMascota }: { lugar: stri
                                                     <path d="M11.4974 1.91602C7.78865 1.91602 4.78906 4.9156 4.78906 8.62435C4.78906 13.6556 11.4974 21.0827 11.4974 21.0827C11.4974 21.0827 18.2057 13.6556 18.2057 8.62435C18.2057 4.9156 15.2061 1.91602 11.4974 1.91602ZM6.70573 8.62435C6.70573 5.97935 8.8524 3.83268 11.4974 3.83268C14.1424 3.83268 16.2891 5.97935 16.2891 8.62435C16.2891 11.3843 13.5291 15.5148 11.4974 18.0927C9.50406 15.5339 6.70573 11.3556 6.70573 8.62435Z" fill="black" />
                                                     <path d="M11.4974 11.0202C12.8206 11.0202 13.8932 9.94753 13.8932 8.62435C13.8932 7.30117 12.8206 6.22852 11.4974 6.22852C10.1742 6.22852 9.10156 7.30117 9.10156 8.62435C9.10156 9.94753 10.1742 11.0202 11.4974 11.0202Z" fill="black" />
                                                 </svg>
-
                                             </div>
                                             <div className="text-black text-base font-medium">Ubicación : {formattedPlace} </div>
-                                            <br/>
-                                            <div><button className="p-2 rounded-[50px] justify-center items-center inline-flex text-color2 hover:bg-color2 border-color2 hover:text-color3 border-2">Ver detalles</button></div>
                                         </div>
                                     </div>
                                 </div>
                             ))}
                         </div>
-
                     </div>
-                    <div className="w-full h-full">
+                    <div className="w-full h-full border-4 border-color1 rounded-2xl">
                         <LocationMap />
                     </div>
                 </div>

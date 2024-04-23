@@ -30,27 +30,29 @@ export const LoginShema = z.object({
 })
 
 
-export const EditUserShema = z.object({
-    nombre: z.string().min(3, { message: "El nombre debe tener al menos tres caracteres" }).optional(),
-    apellido: z.string().min(3, { message: "El apellido debe tener al menos tres caracteres" }).optional(),
-    direccion: z.string().optional(), 
-    email: z.string().email({ message: "Ingrese un email Valido" }).optional(),
-    telefono: z.string().optional(), 
-    dni: z.string().min(7).max(9).optional(), 
-  });
+export const EditUserSchema = z.object({
+    nombre: z.string().optional(),
+    apellido: z.string().optional(),
+    direccion: z.string().optional(),
+    email: z.string().optional(),
+    telefono: z.string().optional(),
+    dni: z.string().optional(),
+    localizacion: z.string().optional(),
+    provincia: z.string().optional(),
+    postal: z.number().optional(),
+});
 
 
-  export const RegisterPetSchema = z.object({
-    tipo: z.string().min(3, { message: "El tipo de mascota debe tener mínimo 3 caracteres" }),
-    nombre: z.string().min(1, { message: "El nombre de la mascota debe tener como mínimo una letra o número" }),
-    breed: z.string(),
-    color: z.string(),
-    edad: z.string(),
-    tamanio: z.string(),
-    comportamiento: z.string(),
-    salud: z.string(),
-    ubicacion: z.string(),
-    vacuna: z.boolean(),
-    esterilizado: z.boolean(),
-    descripcionGeneral: z.string().max(300, {message: "maximo te caracter es de 300"})
+export const RegisterPetSchema = z.object({
+    nombre: z.string().optional(),
+    breed: z.string().optional(),
+    color: z.string().optional(),
+    edad: z.string().optional(),
+    tamanio: z.string().optional(),
+    comportamiento: z.string().optional(),
+    salud: z.string().optional(),
+    ubicacion: z.string().optional(),
+    vacuna: z.boolean().optional(),
+    esterilizado: z.boolean().optional(),
+    descripcionGeneral: z.string().max(300, {message: "maximo te caracter es de 300"}).optional(),
 });

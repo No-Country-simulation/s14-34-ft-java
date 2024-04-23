@@ -2,7 +2,10 @@ package main.services.impl;
 
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
+import main.mappers.PetMapper;
+import main.models.Owner;
 import main.models.Pet;
+import main.repository.OwnerRepository;
 import main.repository.PetRepository;
 import main.services.PetService;
 import org.hibernate.service.spi.ServiceException;
@@ -10,28 +13,28 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 @Transactional
 public class PetServiceImpl implements PetService {
 
-/*
-    private final PetRepository petRepository;
 
-
-    public PetServiceImpl(PetRepository petRepository) {
-        this.petRepository = petRepository;
-    }
-*/
     @Autowired
     private PetRepository petRepository;
+
+    @Autowired
+    private OwnerRepository ownerRepository;
+
+    @Autowired
+    private PetMapper petMapper;
 
     @Override
     public List<Pet> findAllPets() throws Exception {
         try {
             return petRepository.findAll();
         } catch (Exception e) {
-            throw new Exception(e.getMessage());
+            throw new Exception("No pets found");
         }
     }
 
@@ -43,9 +46,16 @@ public class PetServiceImpl implements PetService {
 
 
     @Override
-    public Pet savePet(Pet pet) throws Exception {
+    public Pet savePet(Long ownerId, Pet pet) throws Exception {
         try {
-            return petRepository.save(pet);
+            Owner owner = ownerRepository.findById(ownerId).orElse(null);
+            if (owner != null) {
+                pet.setOwner(owner);
+                return petRepository.save(pet);
+            }
+            else
+                return null;
+
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }
@@ -57,18 +67,36 @@ public class PetServiceImpl implements PetService {
             Pet existingPet = petRepository.findById(id)
                     .orElseThrow(()-> new EntityNotFoundException("Pet not found"));
 
-            existingPet.setName(petRequest.getName());
-            existingPet.setBreed(petRequest.getBreed());
-            existingPet.setAge(petRequest.getAge());
-            existingPet.setPhoto(petRequest.getPhoto());
-            existingPet.setHealthStatus(petRequest.getHealthStatus());
-            existingPet.setLocation(petRequest.getLocation());
-            existingPet.setVaccinated(petRequest.getVaccinated());
-            existingPet.setSterilized(petRequest.getSterilized());
-            existingPet.setGeneralDescription(petRequest.getGeneralDescription());
+            if (existingPet.getName() != null && !existingPet.getName().isEmpty() && !petRequest.getName().equals(existingPet.getName()))
+                existingPet.setName(petRequest.getName());
+
+            if (existingPet.getBreed() != null && !existingPet.getBreed().isEmpty() && !petRequest.getBreed().equals(existingPet.getBreed()))
+                existingPet.setBreed(petRequest.getBreed());
+
+            if (existingPet.getAge() != null  && !Objects.equals(petRequest.getAge(), existingPet.getAge()))
+                existingPet.setAge(petRequest.getAge());
+
+            if (existingPet.getPhoto() != null && !existingPet.getPhoto().isEmpty() && !petRequest.getPhoto().equals(existingPet.getPhoto()))
+                existingPet.setPhoto(petRequest.getPhoto());
+
+            if (existingPet.getHealthStatus() != null && !existingPet.getHealthStatus().isEmpty() && !petRequest.getHealthStatus().equals(existingPet.getHealthStatus()))
+                existingPet.setHealthStatus(petRequest.getHealthStatus());
+
+            if (existingPet.getLocation() != null && !existingPet.getLocation().isEmpty() && !petRequest.getLocation().equals(existingPet.getLocation()))
+                existingPet.setLocation(petRequest.getLocation());
+
+            if (existingPet.getVaccinated() != null && !petRequest.getVaccinated().equals(existingPet.getVaccinated()))
+                existingPet.setVaccinated(petRequest.getVaccinated());
+
+            if (existingPet.getSterilized() != null && !petRequest.getSterilized().equals(existingPet.getSterilized()))
+                existingPet.setSterilized(petRequest.getSterilized());
+
+            if (existingPet.getGeneralDescription() != null && !existingPet.getGeneralDescription().isEmpty() && !petRequest.getBreed().equals(existingPet.getGeneralDescription()))
+                existingPet.setGeneralDescription(petRequest.getGeneralDescription());
+
             return existingPet;
         } catch (Exception e) {
-            throw new ServiceException("Error occurred while updating pet with id: " + id, e);
+            throw new ServiceException("Error occurred while updating pet with id: ".concat(id.toString()), e);
         }
     }
 

@@ -25,19 +25,20 @@ export const AuthOptions: NextAuthOptions = {
         if (res.status === 401) {
           throw new Error("Credenciales incorrectas");
         }
-
         return user;
-
       },
     }),
   ],
   callbacks: {
     async session({ session, token, user }) {
-
+      console.log(user)
+      console.log(session)
+      console.log(token)
       return session
     },
   },
   pages: {
     signIn: "/auth/login",
-  }
+  },
+  secret: process.env.NEXTAUTH_SECRET
 };

@@ -47,7 +47,7 @@ export default function FormLogin() {
             return;
         }
         // Redirigir a la página de dashboard después del inicio de sesión exitoso
-        router.push("/dashboard");
+        router.push("/");
     };
     return (
         <div className="bg-login bg-cover bg-center mt-24">

@@ -42,12 +42,20 @@ export default function FootersOne() {
                                 <div className="w-7 h-7 rounded-[50px] justify-center items-center gap-2.5 flex">
                                     <div className="h-8 justify-start items-start flex">
                                         {/* icono de figma */}
-                                        <svg width="32px" height="32px" viewBox="0 0 32 32" fill="#000000" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M16 16C16 13.7909 17.7909 12 20 12C22.2091 12 24 13.7909 24 16C24 18.2091 22.2091 20 20 20C17.7909 20 16 18.2091 16 16Z" fill="#1ABCFE" />
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8 24C8 21.7909 9.79086 20 12 20H16V24C16 26.2091 14.2091 28 12 28C9.79086 28 8 26.2091 8 24Z" fill="#0ACF83" />
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M16 4V12H20C22.2091 12 24 10.2091 24 8C24 5.79086 22.2091 4 20 4H16Z" fill="#FF7262" />
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8 8C8 10.2091 9.79086 12 12 12H16V4H12C9.79086 4 8 5.79086 8 8Z" fill="#F24E1E" />
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8 16C8 18.2091 9.79086 20 12 20H16V12H12C9.79086 12 8 13.7909 8 16Z" fill="#A259FF" />
+                                        <svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect y="0.5" width="28" height="28" rx="14" fill="black" />
+                                            <g clip-path="url(#clip0_672_3521)">
+                                                <path d="M8.66406 9.16667C8.66406 7.69467 9.85873 6.5 11.3307 6.5H13.9974V11.8333H11.3307C9.85873 11.8333 8.66406 10.6387 8.66406 9.16667Z" fill="#F24E1E" />
+                                                <path d="M14 6.5H16.6667C18.1387 6.5 19.3333 7.69467 19.3333 9.16667C19.3333 10.6387 18.1387 11.8333 16.6667 11.8333H14V6.5Z" fill="#FF7262" />
+                                                <path d="M8.66406 14.5007C8.66406 13.0287 9.85873 11.834 11.3307 11.834H13.9974V17.1673H11.3307C9.85873 17.1673 8.66406 15.9727 8.66406 14.5007Z" fill="#A259FF" />
+                                                <path d="M19.3333 14.5007C19.3333 15.9727 18.1387 17.1673 16.6667 17.1673C15.1947 17.1673 14 15.9727 14 14.5007C14 13.0287 15.1947 11.834 16.6667 11.834C18.1387 11.834 19.3333 13.0287 19.3333 14.5007Z" fill="#1ABCFE" />
+                                                <path d="M11.3307 22.4993C12.8027 22.4993 13.9974 21.3047 13.9974 19.8327V17.166H11.3307C9.85873 17.166 8.66406 18.3607 8.66406 19.8327C8.66406 21.3047 9.85873 22.4993 11.3307 22.4993Z" fill="#0ACF83" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_672_3521">
+                                                    <rect width="10.6667" height="16" fill="white" transform="translate(8.66406 6.5)" />
+                                                </clipPath>
+                                            </defs>
                                         </svg>
                                     </div>
                                 </div>

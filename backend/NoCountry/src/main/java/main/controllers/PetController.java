@@ -1,9 +1,8 @@
 package main.controllers;
 
-import jakarta.validation.Valid;
+
 import lombok.RequiredArgsConstructor;
 import main.models.Pet;
-import main.services.PetService;
 import main.services.impl.PetServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,10 +16,10 @@ public class PetController {
     private final PetServiceImpl petService;
 
 
-    @PostMapping(consumes = "application/json",produces = "application/json")
-    public ResponseEntity<?> save(@Valid @RequestBody Pet pet){
+    @PostMapping("/save/{ownerId}")
+    public ResponseEntity<?> save( @PathVariable Long ownerId, @RequestBody Pet pet){
         try {
-            return ResponseEntity.status(HttpStatus.OK).body(petService.savePet(pet));
+            return ResponseEntity.status(HttpStatus.OK).body(petService.savePet(ownerId, pet));
         }catch (Exception e){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Can't add pet");
         }
@@ -45,7 +44,7 @@ public class PetController {
     }
 
 
-    @PutMapping("/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<Pet> updatePet(@PathVariable Long id, @RequestBody Pet pet) throws Exception {
         Pet petResponse = petService.updatePet(id,pet);
         return ResponseEntity.ok(petResponse);
