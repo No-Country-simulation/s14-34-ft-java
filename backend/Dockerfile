@@ -1,17 +1,25 @@
+# Utiliza una imagen base con el JDK de Amazon Corretto 17 en Alpine Linux
 FROM amazoncorretto:17-alpine-jdk
+
+# Metadatos del autor
 LABEL authors="no-country-s14-34-ft-java"
+
+# Expone el puerto 8080 para que Render pueda acceder a la aplicación
 EXPOSE 8080
-MAINTAINER MATIAS
+
+# Establece el directorio de trabajo dentro del contenedor
 WORKDIR /app
 
-# Copy the source code
+# Copia los archivos necesarios para construir la aplicación
 COPY src ./src
 COPY .mvn/ .mvn
 COPY mvnw pom.xml ./
 
-# Build the application
+# Concede permisos de ejecución al script mvnw
 RUN chmod +x mvnw
+
+# Construye la aplicación con Maven, omitiendo los tests
 RUN ./mvnw clean package -DskipTests
 
-# Run the application
+# Ejecuta la aplicación al iniciar el contenedor
 CMD ["java", "-jar", "target/edtech-0.0.1-SNAPSHOT.jar"]
