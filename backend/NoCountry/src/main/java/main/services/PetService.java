@@ -1,6 +1,7 @@
 package main.services;
 
 import main.models.Pet;
+import org.hibernate.service.spi.ServiceException;
 
 import java.util.List;
 

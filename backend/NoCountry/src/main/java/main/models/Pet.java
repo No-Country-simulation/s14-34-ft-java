@@ -80,5 +80,18 @@ public class Pet {
     @JoinColumn(name = "pet_sitter_id")
     private PetSitter petSitterId;
 
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "owner_id",nullable = false,updatable = false)
+    private Owner owner;
+
+
+    /*
+    * OWNERS 1------n pets
+    * */
+    /*
+    CASCADE.ALL
+    FETCH ------
+    - LAZY : cuando termina en un ToMany
+    * */
 
 }
