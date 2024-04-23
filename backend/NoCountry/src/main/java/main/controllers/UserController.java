@@ -39,7 +39,7 @@ public class UserController {
         return ResponseEntity.ok(userServiceImpl.getAllUsers());
     }
 
-    @GetMapping(value = "getUserById")
+    @GetMapping(value = "token")
     public ResponseEntity<User> getUserById(@RequestHeader("token") String token) throws Exception {
         // Obtener userId del token
         Long user_id = jwtService.getUserIdFromToken(token);
