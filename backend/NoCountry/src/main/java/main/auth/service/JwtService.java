@@ -7,15 +7,12 @@ import io.jsonwebtoken.security.Keys;
 import main.models.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
-
-
+import io.jsonwebtoken.Jwts;
 import java.security.Key;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
-
-import io.jsonwebtoken.Jwts;
 
 @Service
 public class JwtService {
@@ -30,6 +27,7 @@ public class JwtService {
         return Jwts
                 .builder()
                 .setClaims(extraClaims)
+                .claim("userId", user.getUser_id()) // Incluye el ID del usuario
                 .setSubject(user.getEmail())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis()+1000*60*60*24*10))
@@ -46,6 +44,10 @@ public class JwtService {
         return getClaim(token, Claims::getSubject);
     }
 
+    public Long getUserIdFromToken(String token) {
+        return getClaim(token, claims -> claims.get("userId", Long.class));
+    }
+
     public boolean isTokenValid(String token, UserDetails userDetails) {
         final String email = getEmailFromToken(token);
         return (email.equals(((User) userDetails).getEmail()) && !isTokenExpired(token));
@@ -53,8 +55,7 @@ public class JwtService {
 
     private Claims getAllClaims(String token)
     {
-        return Jwts
-                .parser()
+        return Jwts.parserBuilder()
                 .setSigningKey(getKey())
                 .build()
                 .parseClaimsJws(token)
