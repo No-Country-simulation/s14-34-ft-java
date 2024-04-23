@@ -1,6 +1,9 @@
 # Use an OpenJDK runtime as a base image
 FROM openjdk:11
 
+#Puerto
+EXPOSE 8080
+
 # Set the working directory inside the container
 WORKDIR /app
 
@@ -8,4 +11,4 @@ WORKDIR /app
 COPY target/HappyPaws-0.0.1-SNAPSHOT.jar /app
 
 # Specify the command to run your application
-CMD ["java", "-jar", "your-application.jar"]
+CMD ["java", "-jar", "app.jar"]
