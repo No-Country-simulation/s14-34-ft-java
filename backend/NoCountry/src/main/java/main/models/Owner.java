@@ -21,12 +21,12 @@ public class Owner {
 
     @NotNull
     @Size(max = 50)
-    @Column(name = "firstName")
+    @Column(name = "first_name")
     private String firstName;
 
     @NotNull
     @Size(max = 50)
-    @Column(name = "lastName")
+    @Column(name = "last_name")
     private String lastName;
 
     @Column(name = "photo_url")
@@ -63,7 +63,7 @@ public class Owner {
     @Column(name = "dni")
     private String dni;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private User user;
 
