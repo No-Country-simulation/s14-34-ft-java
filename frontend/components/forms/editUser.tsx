@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react';
-import { EditUserShema } from "@/shemas/shemas";
+import { EditUserSchema } from "@/shemas/shemas";
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useState } from 'react';
@@ -11,11 +11,14 @@ import './input-phone.css';
 interface Editar {
     nombre?: string;
     apellido?: string;
+    foto?: File;
     direccion?: string;
     email?: string;
     telefono?: string;
     dni?: string;
-    foto?: File;
+    localizacion?: string;
+    provincia?: string;
+    postal?: number;
 }
 
 export default function EditUser() {
@@ -30,7 +33,7 @@ export default function EditUser() {
         formState: { errors },
         setError,
     } = useForm<Editar>({
-        resolver: zodResolver(EditUserShema),
+        resolver: zodResolver(EditUserSchema),
     });
 
     const [telefono, setTelefono] = useState('');

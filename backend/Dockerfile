@@ -1,17 +1,11 @@
-FROM amazoncorretto:17-alpine-jdk
-LABEL authors="no-country-s14-34-ft-java"
+# Use an OpenJDK runtime as a base image
+FROM openjdk:17
+
+#Puerto
 EXPOSE 8080
-MAINTAINER MATIAS
-WORKDIR /app
 
-# Copy the source code
-COPY src ./src
-COPY .mvn/ .mvn
-COPY mvnw pom.xml ./
+# Copy the JAR file from your local machine into the container at /app
+COPY NoCountry/target/app.jar app.jar
 
-# Build the application
-RUN chmod +x mvnw
-RUN ./mvnw clean package -DskipTests
-
-# Run the application
-CMD ["java", "-jar", "target/edtech-0.0.1-SNAPSHOT.jar"]
+# Specify the command to run your application
+ENTRYPOINT ["java", "-jar", "/app.jar"]

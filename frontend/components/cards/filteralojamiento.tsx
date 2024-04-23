@@ -258,7 +258,6 @@ const Filteralojamiento: React.FC = () => {
       <div>
         <div><h1 className="text-[28px] text-right font-semibold mb-10 bg-color7 pr-20">Alojamiento </h1></div>
         <div className="flex justify-center mb-20 mt-10">
-
           <div className="w-[1200px] h-[364px] p-[60px] bg-white rounded-2xl shadow border border-orange-400 flex-col justify-start items-start gap-[50px] inline-flex">
             <div className="self-stretch justify-start items-start gap-20 inline-flex">
               <div className="grow shrink basis-0 flex-col justify-start items-start gap-12 inline-flex">
