@@ -8,7 +8,7 @@ EXPOSE 8080
 WORKDIR /app
 
 # Copy the JAR file from your local machine into the container at /app
-COPY target/HappyPaws-0.0.1-SNAPSHOT.jar /app
+COPY target/app.jar /app
 
 # Specify the command to run your application
 CMD ["java", "-jar", "app.jar"]
