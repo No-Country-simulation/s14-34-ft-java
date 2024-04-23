@@ -8,11 +8,19 @@ import Volver from "@/components/buttons/volver";
 import { useSession, signIn, signOut } from "next-auth/react";
 import Addpet from "@/components/forms/addpet";
 import { useState } from 'react';
-import CardMascotas from "@/components/cards/CardMascotas";
+
 
 const Mascotas = [
-    {id:'1', foto:'/foto', nombre:'lola'},
-    {id:'2', foto:'/foto2', nombre:'chichi'}
+    { id: '1', foto: '/mascotas/1.png', nombre: 'uno' },
+    { id: '2', foto: '/mascotas/2.png', nombre: 'dos' },
+    { id: '4', foto: '/mascotas/4.png', nombre: 'cuatro' },
+    { id: '5', foto: '/mascotas/5.png', nombre: 'cinco' },
+    { id: '6', foto: '/mascotas/6.png', nombre: 'seis' },
+    { id: '7', foto: '/mascotas/7.png', nombre: 'siete' },
+    { id: '8', foto: '/mascotas/8.png', nombre: 'ocho' },
+    { id: '9', foto: '/mascotas/9.png', nombre: 'nueve' },
+    { id: '10', foto: '/mascotas/10.png', nombre: 'diez' },
+    { id: '11', foto: '/mascotas/11.png', nombre: 'once' },
 ]
 
 export default function Mascota() {
@@ -20,19 +28,13 @@ export default function Mascota() {
 
     // peticion para ver las mascotas creadas
 
-    const toggleFormulario = () =>{
+    const toggleFormulario = () => {
         setMostrarFormulario(!mostrarFormulario)
     }
 
     const { data: session, status } = useSession();
 
-    // datos para mostrar
-    const data = {
-        id: 1, foto: "foto", nombre: "Lola"
-    }
-
-    if (session) {
-        
+    if (!session) {
 
         return (
             <div className=" mt-36 ml-10 mr-20">
@@ -51,13 +53,24 @@ export default function Mascota() {
                             </div>
                             <div className="text-white text-xl font-medium">Agregar mascota</div>
                         </button>
-                        
                     </div>
                 </div>
                 <div className="">{mostrarFormulario && <Addpet onClose={toggleFormulario} />}</div>
-                <div className="">
+                <div className="text-center ml-2 mr-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                     {Mascotas.map(mascota => (
-                        <CardMascotas key={mascota.id} id={mascota.id} foto={mascota.foto} nombre={mascota.nombre} />
+                        <div key={mascota.id} className="p -2 w-full bg-white rounded-2xl border border-orange-400 hover:border-orange-200 overflow-hidden flex flex-col justify-between items-center gap-2">
+                            <div className="self-stretch flex flex-col justify-start items-center gap-3">
+                                <div className="image-container w-[125px] h-[125px] mt-4">
+                                    <Image className="image" src={mascota.foto} alt={mascota.nombre} width={125} height={125} />
+                                </div>
+                                <div className="w-[332px] text-center text-black text-[28px] font-medium">{mascota.nombre}</div>
+                            </div>
+                            <div className="view-more w-[332px] px-4 py-2 bg-orange-300 hover:bg-orange-500 rounded-xl justify-center items-center text-white text-xl font-medium">
+                                <Link href={`/dashboard/pets/${mascota.id}`}>
+                                    Ver más
+                                </Link>
+                            </div>
+                        </div>
                     ))}
                 </div>
             </div >
@@ -65,7 +78,7 @@ export default function Mascota() {
     }
 
     // 
-    if (!session) {
+    if (session) {
         return (
             <main className="flex min-h-screen flex-col items-center justify-between p-24 gap-2 m-24">
                 <div className='justify-center text-center justify-items-center'>

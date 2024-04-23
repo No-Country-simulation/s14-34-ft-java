@@ -72,7 +72,7 @@ const Filter: React.FC<FilterProps> = ({ onSearch }) => {
   const tipoServicioOptions = [
     { value: 'paseo', label: 'Paseo' },
     { value: 'alojamiento', label: 'Alojamiento' },
-    { value: 'visitas', label: 'visitas' },
+    { value: 'visitas_a_domicilio', label: 'Visitas' },
   ];
 
   const tipoMascotaOptions = [
@@ -82,8 +82,8 @@ const Filter: React.FC<FilterProps> = ({ onSearch }) => {
     { value: 'HAMSTER', label: 'Hamster' },
     { value: 'RABIIT', label: 'Conejo'},
     { value: 'FERRET', label: 'Hurón' },
-    { value: 'HEDGEHOG GROUND', label:'Erizo'},
-    { value: 'GUINEA PIG', label: 'Conejillo de Indias' },
+    { value: 'HEDGEHOGGROUND', label:'Erizo'},
+    { value: 'GUINEAPIG', label: 'Conejillo de Indias' },
   ];
 
   const customSelectStyles = {
@@ -139,7 +139,7 @@ const Filter: React.FC<FilterProps> = ({ onSearch }) => {
       case 'alojamiento':
         router.push(`/search/alojamiento/${filters.lugar}/${filters.fecha}/${filters.tipoMascota}`); 
         break;
-      case 'visitas_a_domicilio':
+      case 'visitas':
         router.push(`/search/visitas/${filters.lugar}/${filters.fecha}/${filters.tipoMascota}`);
         break;
       default:

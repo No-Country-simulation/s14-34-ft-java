@@ -25,9 +25,7 @@ export const AuthOptions: NextAuthOptions = {
         if (res.status === 401) {
           throw new Error("Credenciales incorrectas");
         }
-
         return user;
-
       },
     }),
   ],
@@ -41,5 +39,6 @@ export const AuthOptions: NextAuthOptions = {
   },
   pages: {
     signIn: "/auth/login",
-  }
+  },
+  secret: process.env.NEXTAUTH_SECRET
 };
