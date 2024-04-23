@@ -3,7 +3,7 @@
 import FootersOne from "@/components/containers/footers/footersOne";
 import HeadersOne from "@/components/containers/headers/headersOne";
 import Foothercopyrigth from "@/components/containers/footers/foothercopyrigth";
-import Welcome from "@/components/cards/welcome";
+import Welcome2 from "@/components/cards/welcome2";
 import { useRouter } from 'next/navigation';
 import Alojamiento from "@/components/cards/alojamiento";
 import Filteralojamiento from "@/components/cards/filteralojamiento";
@@ -18,7 +18,7 @@ export default function Resultados({ params }: { params: { lugar: string, tipoMa
       <HeadersOne />
       <main className="flex min-h-screen flex-col">
         <div>
-          <Welcome />
+          <Welcome2 />
         </div>
         <div>
           <Filteralojamiento />

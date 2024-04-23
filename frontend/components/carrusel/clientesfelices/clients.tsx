@@ -26,7 +26,7 @@ const Carouselclientes = () => {
                         <div className="justify-center items-center gap-[21px] flex">
                             <div className="w-[75px] h-[75px] justify-center items-center">
                                 <Image
-                                    src="/Carruselclientes/Ellipse 15.png"
+                                    src="/pprincipal/review/clientesfelices/1.png"
                                     alt="Imagen_1"
                                     width={75}
                                     height={75}
@@ -66,7 +66,7 @@ const Carouselclientes = () => {
                         <div className="justify-center items-center gap-[21px] flex">
                             <div className="w-[75px] h-[75px] justify-center items-center">
                                 <Image
-                                    src="/Carruselclientes/Ellipse 15-1.png"
+                                    src="/pprincipal/review/clientesfelices/2.png"
                                     alt="Imagen_1"
                                     width={75}
                                     height={75}
@@ -106,7 +106,7 @@ const Carouselclientes = () => {
                         <div className="justify-center items-center gap-[21px] flex">
                             <div className="w-[75px] h-[75px] justify-center items-center">
                                 <Image
-                                    src="/Carruselclientes/Ellipse 15-2.png"
+                                    src="/pprincipal/review/clientesfelices/3.png"
                                     alt="Imagen_1"
                                     width={75}
                                     height={75}
@@ -146,7 +146,7 @@ const Carouselclientes = () => {
                         <div className="justify-center items-center gap-[21px] flex">
                             <div className="w-[75px] h-[75px] justify-center items-center">
                                 <Image
-                                    src="/Carruselclientes/Ellipse 15-3.png"
+                                    src="/pprincipal/review/clientesfelices/4.png"
                                     alt="Imagen_1"
                                     width={75}
                                     height={75}
@@ -186,7 +186,7 @@ const Carouselclientes = () => {
                         <div className="justify-center items-center gap-[21px] flex">
                             <div className="w-[75px] h-[75px] justify-center items-center">
                                 <Image
-                                    src="/Carruselclientes/Ellipse 15-4.png"
+                                    src="/pprincipal/review/clientesfelices/5.png"
                                     alt="Imagen_1"
                                     width={75}
                                     height={75}
@@ -226,7 +226,7 @@ const Carouselclientes = () => {
                         <div className="justify-center items-center gap-[21px] flex">
                             <div className="w-[75px] h-[75px] justify-center items-center">
                                 <Image
-                                    src="/Carruselclientes/Ellipse 15-5.png"
+                                    src="/pprincipal/review/clientesfelices/6.png"
                                     alt="Imagen_1"
                                     width={75}
                                     height={75}
@@ -266,7 +266,7 @@ const Carouselclientes = () => {
                         <div className="justify-center items-center gap-[21px] flex">
                             <div className="w-[75px] h-[75px] justify-center items-center">
                                 <Image
-                                    src="/Carruselclientes/Ellipse 15-6.png"
+                                    src="/pprincipal/review/clientesfelices/7.png"
                                     alt="Imagen_1"
                                     width={75}
                                     height={75}
@@ -306,7 +306,7 @@ const Carouselclientes = () => {
                         <div className="justify-center items-center gap-[21px] flex">
                             <div className="w-[75px] h-[75px] justify-center items-center">
                                 <Image
-                                    src="/Carruselclientes/Ellipse 15-7.png"
+                                    src="/pprincipal/review/clientesfelices/8.png"
                                     alt="Imagen_1"
                                     width={75}
                                     height={75}
@@ -346,7 +346,7 @@ const Carouselclientes = () => {
                         <div className="justify-center items-center gap-[21px] flex">
                             <div className="w-[75px] h-[75px] justify-center items-center">
                                 <Image
-                                    src="/Carruselclientes/Ellipse 15-8.png"
+                                    src="/pprincipal/review/clientesfelices/9.png"
                                     alt="Imagen_1"
                                     width={75}
                                     height={75}
