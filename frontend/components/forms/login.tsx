@@ -8,6 +8,7 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Swal from 'sweetalert2';
+import Image from 'next/image';
 
 interface Login {
     email: string;
@@ -26,15 +27,15 @@ export default function FormLogin() {
         Swal.fire({
             title: "Error al Ingresar, Verifique sus datos",
             icon: "error",
-            background:"#FAFAFA",
-            confirmButtonColor:"#DF8B3F",
+            background: "#FAFAFA",
+            confirmButtonColor: "#DF8B3F",
             confirmButtonText: 'Cerrar',
         });
-      }
+    }
 
     const onSubmit: SubmitHandler<Login> = async (formData) => {
         const response = await signIn("credentials", {
-            username:"loquesea",
+            username: "loquesea",
             email: formData.email,
             password: formData.password,
             redirect: false
@@ -50,16 +51,16 @@ export default function FormLogin() {
         router.push("/");
     };
     return (
-        <div className="bg-login bg-cover bg-center mt-24">
-            <div className="mt-20 mb-20 ml-36 w-[658px] h-[862px] p-[60px] bg-white rounded-2xl shadow-sm backdrop-blur-[25px] flex-col justify-start items-start gap-[50px] inline-flex">
+        <div className="bg-login bg-cover bg-center mt-24 shadow-2xl">
+            <div className="mt-20 mb-20 ml-20 w-[658px] h-[862px] p-[60px] bg-white rounded-2xl shadow-sm backdrop-blur-[25px] flex-col justify-start items-start gap-[50px] inline-flex">
                 <div className="self-stretch grow shrink basis-0 flex-col justify-start items-center gap-8 flex">
-                    <div className="self-stretch h-[100px] bg-zinc-300"></div>
-                    <div className="self-stretch h-[95px] flex-col justify-start items-center gap-12 flex">
-                        <div className="self-stretch h-[95px] flex-col justify-start items-start gap-6 flex">
-                            <div className="self-stretch justify-between items-center inline-flex">
-                                <div className="grow shrink basis-0 self-stretch text-center text-black text-[38px] font-semibold">Bienvenido</div>
-                            </div>
-                            <div className="self-stretch text-center text-black text-[22px] font-semibold">Por favor, ingresa los datos requeridos</div>
+                    <div className="flex flex-col items-center justify-center h-[195px]">
+                        <div className="h-[100px] mb-10">
+                            <Image src="/logo/5_Imagotipo Negro.svg" alt="logo" className="object-contain" width="500" height="100"/>
+                        </div>
+                        <div className="flex flex-col items-center gap-6">
+                            <div className="text-black text-[38px] font-semibold">Bienvenido</div>
+                            <div className="text-black text-[22px] font-semibold">Por favor, ingresa los datos requeridos</div>
                         </div>
                     </div>
                     <form onSubmit={handleSubmit(onSubmit)} className="self-stretch h-[231px] flex-col justify-start items-start gap-6 flex">

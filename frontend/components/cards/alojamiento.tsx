@@ -7,11 +7,11 @@ import LocationMap from "@/components/map/LocationMap";
 import { useRouter } from 'next/navigation';
 
 const cuidadores = [
-    { id: 1, imageUrl: '/paseo/Cuidadores/1.jpg', nombre: 'Concen', ubicacion: 'Ubicación 1' },
-    { id: 2, imageUrl: '/paseo/Cuidadores/2.jpg', nombre: 'Mati', ubicacion: 'Ubicación 2' },
-    { id: 3, imageUrl: '/paseo/Cuidadores/3.jpg', nombre: 'Mati', ubicacion: 'Ubicación 3' },
-    { id: 4, imageUrl: '/paseo/Cuidadores/4.jpg', nombre: 'Orlando Cardenas', ubicacion: 'Ubicación 1' },
-    { id: 5, imageUrl: '/paseo/Cuidadores/6.jpg', nombre: 'Valeri', ubicacion: 'Ubicación 2' },
+    { id: 1, imageUrl: '/paseo/Cuidadores/1.png', nombre: 'Concen', ubicacion: 'Ubicación 1' },
+    { id: 2, imageUrl: '/paseo/Cuidadores/2.png', nombre: 'Mati', ubicacion: 'Ubicación 2' },
+    { id: 3, imageUrl: '/paseo/Cuidadores/3.png', nombre: 'Mati', ubicacion: 'Ubicación 3' },
+    { id: 4, imageUrl: '/paseo/Cuidadores/4.png', nombre: 'Orlando', ubicacion: 'Ubicación 1' },
+    { id: 5, imageUrl: '/paseo/Cuidadores/6.png', nombre: 'Valeri', ubicacion: 'Ubicación 2' },
 ];
 
 const formatPlace = (place: string) => {
@@ -45,7 +45,7 @@ export default function Alojamiento({ lugar, fecha, tipoMascota }: { lugar: stri
                     <div style={{ overflowY: 'auto', WebkitOverflowScrolling: 'touch', maxHeight: '655px', width: '585px', scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
                         <div className="">
                             {cuidadores.map(cuidador => (
-                                <div key={cuidador.id} className="hover:scale-90 hover:border-color2 hover:border-2 w-[585px] h-[202px] bg-white rounded-2xl border border-emerald-800 justify-center items-start gap-2.5 inline-flex" onClick={() => handleCuidadorClick(cuidador.id)}>
+                                <div key={cuidador.id} className=" hover:border-color2 hover:border-2 w-[585px] h-[202px] bg-white rounded-2xl border-1 border-emerald-800 justify-center items-start gap-2.5 inline-flex" onClick={() => handleCuidadorClick(cuidador.id)}>
                                     <div className=" overflow-hidden w-[175px] h-[200px]">
                                         <Image src={cuidador.imageUrl} alt="fotocuidador" width={173} height={199} />
                                     </div>
@@ -72,7 +72,7 @@ export default function Alojamiento({ lugar, fecha, tipoMascota }: { lugar: stri
                             ))}
                         </div>
                     </div>
-                    <div className="w-full h-full border-4 border-color1 rounded-2xl">
+                    <div className="w-full h-full border-4 rounded-2xl">
                         <LocationMap />
                     </div>
                 </div>

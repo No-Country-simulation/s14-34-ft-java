@@ -5,12 +5,69 @@ import Link from "next/link";
 import { Menu, Transition } from '@headlessui/react';
 import { Fragment, useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from "next/image";
 
+const data = { imageUrl: '/mascotas/8.png' }
+interface UserData {
+    user_id: number;
+    email: string;
+    firstName: string | null;
+    lastName: string | null;
+    address: string | null;
+    phone: string;
+    dni: string | null;
+    photo: string | null;
+    role: string;
+    createdAt: string;
+    lastLogin: string | null;
+}
 
 export default function Nav() {
-    const router = useRouter();
 
+    const router = useRouter();
+    const [selectedImage, setSelectedImage] = useState<string>('/mascotas/8.png');
     const { data: session, status } = useSession();
+    const [userData, setUserData] = useState<UserData | null>(null);
+    const token = session?.user.token
+
+    useEffect(() => {
+        const fetchUserData = async () => {
+            if (session?.user?.token) {
+                try {
+                    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/user/token`, {
+                        method: "GET",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "token": session.user.token,
+                        },
+                    });
+                    const data = await res.json();
+                    setUserData(data);
+                } catch (error) {
+                    console.error("Error fetching user data:", error);
+                }
+            }
+        };
+
+        fetchUserData();
+    }, [session]);
+
+    // 
+    useEffect(() => {
+        // Leer la imagen seleccionada del localStorage al montar el componente
+        const savedImage = window && window.localStorage.getItem('selectedImage');
+        if (savedImage) {
+            setSelectedImage(savedImage);
+        }
+    }, []);
+
+    const handleImageClick = () => {
+        const newImage = selectedImage === '/mascotas/8.png' ? '/perfil/fotoperfil.png' : '/mascotas/8.png';
+        setSelectedImage(newImage);
+        // Guardar la imagen seleccionada en el localStorage
+        window && window.localStorage.setItem('selectedImage', newImage);
+    };
+    // 
 
     if (status === "loading") {
         return <div className="flex flex-row gap-2">
@@ -24,6 +81,7 @@ export default function Nav() {
             </div>
         </div>;
     }
+
 
     if (!session) {
         return (
@@ -45,8 +103,17 @@ export default function Nav() {
         return (
             <div className="flex flex-row gap-2.5 justify-center items-center mr-4">
                 <div className="flex gap-2">
-                    <div>Foto</div>
-                    <div>Nombre Apellido</div>
+                {userData && (
+                    <div className="flex gap-2 justify-center justify-items-center">
+                        <div onClick={handleImageClick}>
+                            <Image className="w-[60px] h-[60px] relative rounded-[200px]" src={selectedImage} alt="foto perfil" width={30} height={30} />
+                        </div>
+                        <div className="text-black text-[18px] self-center">
+                            <p>{userData.firstName} {userData.lastName}</p>
+                        </div>
+                        {/* Show other user data as needed */}
+                    </div>
+                )}
                 </div>
                 <div>
                     <Menu as="div" >
@@ -77,8 +144,8 @@ export default function Nav() {
                                 <div className="px-1 py-1 ">
                                     <Menu.Item>
                                         {({ active }) => (
-                                            <Link 
-                                            href="/dashboard"
+                                            <Link
+                                                href="/dashboard"
                                                 className={`${active ? 'bg-color1 text-white' : 'text-gray-900'
                                                     } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
                                             >
@@ -106,11 +173,11 @@ export default function Nav() {
                                             </button>
                                         )}
                                     </Menu.Item>
-                                    
+
                                     <Menu.Item>
                                         {({ active }) => (
-                                            <button 
-                                            onClick={() => signOut()}
+                                            <button
+                                                onClick={() => signOut()}
                                                 className={`${active ? 'bg-color1 text-white' : 'text-gray-900'
                                                     } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
                                             >

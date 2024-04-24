@@ -6,12 +6,28 @@ import Link from "next/link";
 import Image from 'next/image';
 import Volver from "@/components/buttons/volver";
 import { useSession, signIn, signOut } from "next-auth/react";
-import { useState } from 'react';
 import { EditUserSchema } from "@/shemas/shemas";
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm, SubmitHandler } from 'react-hook-form';
+import { Fragment, useEffect, useRef, useState } from 'react';
 
 import './input-phone.css';
+
+interface UserData {
+    user_id: number;
+    email: string;
+    firstName: string;
+    lastName: string;
+    address: string;
+    phone: string;
+    dni: string;
+    photo: string;
+    role: string;
+    createdAt: string;
+    lastLogin: string;
+}
+
+
 import {
     PhoneInput,
     defaultCountries,
@@ -37,12 +53,37 @@ interface ComponentState {
 }
 
 export default function Datosuser() {
+    const [userData, setUserData] = useState<UserData | null>(null);
     const [state, setState] = useState<ComponentState>({ editing: false });
     const [errorMessage, setErrorMessage] = useState<string>('');
     const [successMessage, setSuccessMessage] = useState<string>('');
     const [foto, setFoto] = useState<File | undefined>();
     const { data: session, status } = useSession();
     const [phone, setPhone] = useState('');
+    const token =session?.user.token
+
+    useEffect(() => {
+        const fetchUserData = async () => {
+            if (session?.user?.token) {
+                try {
+                    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/user/token`, {
+                        method: "GET",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "token": session.user.token,
+                        },
+                    });
+                    const data = await res.json();
+                    console.log(data)
+                    setUserData(data);
+                } catch (error) {
+                    console.error("Error fetching user data:", error);
+                }
+            }
+        };
+
+        fetchUserData();
+    }, [session]);
 
     const countries = defaultCountries.filter((country) => {
         const { iso2 } = parseCountry(country);
@@ -126,22 +167,24 @@ export default function Datosuser() {
     };
 
 
-    if (!session) {
+    if (session) {
 
         return (
             <div className="mt-36 ml-10 mr-20">
                 <div>
                     <Volver />
                 </div>
+                {userData && (
                 <div>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         {/* editar */}
                         {state.editing ? (
+                            
                             <div className="grid grid-cols-5 mt-20 ml-230 mb-10 gap-10 w-full h-auto mr-60">
                                 <div >
                                     <div className="w-[204px] h-[289px] grid gri-cols justify-start items-start gap-8">
                                         <div className="z-0 flex-col justify-start items-center flex">
-                                            <Image className="w-[200px] h-[200px] relative rounded-[200px]" src={data.imageUrl} width={400} height={400} alt={data.nombre} quality={100} priority />
+                                            <Image className="w-[200px] h-[200px] relative rounded-[200px]" src={data.imageUrl} width={400} height={400} alt="fotoperfil" quality={100} priority />
                                             <div className="z-10 mt-[-30px] relative p-2 bg-emerald-800 rounded-[50px] border-2 border-emerald-800 justify-start items-start gap-2.5">
                                                 <div className="w-8 h-8 relative">
                                                     <label htmlFor="foto">
@@ -167,7 +210,7 @@ export default function Datosuser() {
                                             </div>
                                         </div>
                                         <div className="z-10 mt-[-22px] w-[204px] justify-center items-center gap-2.5 inline-flex">
-                                            <div className="text-black text-[26px] font-medium">{data.nombre} {data.apellido}</div>
+                                            <div className="text-black text-[26px] font-medium">{userData.firstName} {userData.lastName}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -177,7 +220,7 @@ export default function Datosuser() {
                                         type="text"
                                         id="nombre"
                                         autoComplete="given-name"
-                                        placeholder={`Nombre: ${data.nombre}`}
+                                        placeholder={`Nombre: ${userData.firstName}`}
                                         {...register("nombre")}
                                         className="w-full self-stretch px-4 py-3 bg-white rounded-xl border border-orange-400 justify-start items-center gap-3 inline-flex"
                                     />
@@ -188,7 +231,7 @@ export default function Datosuser() {
                                         type="text"
                                         id="direccion"
                                         autoComplete="given-name"
-                                        placeholder={`Direccion: ${data.direccion}`}
+                                        placeholder={`Direccion: ${userData.address}`}
                                         {...register("direccion")}
                                         className="w-full self-stretch px-4 py-3 bg-white rounded-xl border border-orange-400 justify-start items-center gap-3 inline-flex"
                                     />
@@ -200,7 +243,7 @@ export default function Datosuser() {
                                         type="text"
                                         id="dni"
                                         autoComplete="given-name"
-                                        placeholder={`DNI: ${data.dni}`}
+                                        placeholder={`DNI: ${userData.dni}`}
                                         {...register("dni")}
                                         className="w-full self-stretch px-4 py-3 bg-white rounded-xl border border-orange-400 justify-start items-center gap-3 inline-flex"
                                     />
@@ -225,7 +268,7 @@ export default function Datosuser() {
                                         type="text"
                                         id="apellido"
                                         autoComplete="given-name"
-                                        placeholder={`Apellido: ${data.apellido}`}
+                                        placeholder={`Apellido: ${userData.lastName}`}
                                         {...register("apellido")}
                                         className="w-full self-stretch px-4 py-3 bg-white rounded-xl border border-orange-400 justify-start items-center gap-3 inline-flex"
                                     />
@@ -237,7 +280,7 @@ export default function Datosuser() {
                                         type="email"
                                         id="email"
                                         autoComplete="given-name"
-                                        placeholder={`Email: ${data.email}`}
+                                        placeholder={`Email: ${userData.phone}`}
                                         {...register("email")}
                                         className="w-full self-stretch px-4 py-3 bg-white rounded-xl border border-orange-400 justify-start items-center gap-3 inline-flex"
                                     />
@@ -277,7 +320,9 @@ export default function Datosuser() {
                                     />
                                 </div>
                                 </div>
+                            
                             </div>
+                    
 
                         ) : (
                             // mostrar
@@ -289,7 +334,7 @@ export default function Datosuser() {
 
                                         </div>
                                         <div className="w-[204px] justify-center items-center gap-2.5 inline-flex">
-                                            <div className="text-black text-[26px] font-medium">{data.nombre} {data.apellido}</div>
+                                            <div className="text-black text-[26px] font-medium">{userData.firstName} {userData.lastName}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -299,8 +344,8 @@ export default function Datosuser() {
                                         type="text"
                                         id="nombre"
                                         autoComplete="given-name"
-                                        placeholder={`Nombre: ${data.nombre}`}
-                                        value={data.nombre}
+                                        placeholder={`Nombre: ${userData.firstName}`}
+                                        value={userData.firstName}
                                         {...register("nombre")}
                                         disabled={true}
                                         className="w-full self-stretch px-4 py-3 bg-white rounded-xl border border-orange-400 justify-start items-center gap-3 inline-flex"
@@ -312,9 +357,9 @@ export default function Datosuser() {
                                         type="text"
                                         id="direccion"
                                         autoComplete="given-name"
-                                        placeholder={`Direccion: ${data.direccion}`}
+                                        placeholder={`Direccion: ${userData.address}`}
                                         {...register("direccion")}
-                                        value={data.direccion}
+                                        value={userData.address}
                                         disabled={true}
                                         className="w-full self-stretch px-4 py-3 bg-white rounded-xl border border-orange-400 justify-start items-center gap-3 inline-flex"
                                     />
@@ -326,9 +371,9 @@ export default function Datosuser() {
                                         type="text"
                                         id="dni"
                                         autoComplete="given-name"
-                                        placeholder={`DNI: ${data.dni}`}
+                                        placeholder={`DNI: ${userData.dni}`}
                                         {...register("dni")}
-                                        value={data.dni}
+                                        value={userData.dni}
                                         disabled={true}
                                         className="w-full self-stretch px-4 py-3 bg-white rounded-xl border border-orange-400 justify-start items-center gap-3 inline-flex"
                                     />
@@ -339,9 +384,9 @@ export default function Datosuser() {
                                         type="text"
                                         id="localizacion"
                                         autoComplete="given-name"
-                                        placeholder={`Localizacion: ${data.localizacion}`}
+                                        placeholder={`Localizacion: ${userData.address}`}
                                         {...register("localizacion")}
-                                        value={data.localizacion}
+                                        value={userData.address}
                                         disabled={true}
                                         className="w-full self-stretch px-4 py-3 bg-white rounded-xl border border-orange-400 justify-start items-center gap-3 inline-flex"
                                     />
@@ -355,9 +400,9 @@ export default function Datosuser() {
                                         type="text"
                                         id="apellido"
                                         autoComplete="given-name"
-                                        placeholder={`Apellido: ${data.apellido}`}
+                                        placeholder={`Apellido: ${userData.lastName}`}
                                         {...register("apellido")}
-                                        value={data.apellido}
+                                        value={userData.lastName}
                                         disabled={true}
                                         className="w-full self-stretch px-4 py-3 bg-white rounded-xl border border-orange-400 justify-start items-center gap-3 inline-flex"
                                     />
@@ -369,10 +414,10 @@ export default function Datosuser() {
                                         type="email"
                                         id="email"
                                         autoComplete="given-name"
-                                        placeholder={`Email: ${data.email}`}
+                                        placeholder={`Email: ${userData.email}`}
                                         {...register("email")}
                                         disabled={true}
-                                        value={data.email}
+                                        value={userData.email}
                                         className="w-full self-stretch px-4 py-3 bg-white rounded-xl border border-orange-400 justify-start items-center gap-3 inline-flex"
                                     />
                                 </div>
@@ -382,7 +427,7 @@ export default function Datosuser() {
                                         
                                         className="w-full self-stretch px-4 py-3 bg-white rounded-xl border border-orange-400 justify-start items-center gap-3 inline-flex"
                                         disabled={true}
-                                        value={data.telefono}
+                                        value={userData.phone}
                                     />
                                     
                                 </div>
@@ -427,12 +472,13 @@ export default function Datosuser() {
                         </div>
                     </form>
                 </div>
+                )}
             </div >
         )
     }
 
     // 
-    if (session) {
+    if (!session) {
         return (
             <main className="flex min-h-screen flex-col items-center justify-between p-24 gap-2 m-24">
                 <div className='justify-center text-center justify-items-center'>

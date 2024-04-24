@@ -5,6 +5,8 @@ import Image from "next/image";
 
 
 export default function CuidadorId({params}: {params: {id:string}}) { 
+
+
     console.log(params.id)
 
     return (

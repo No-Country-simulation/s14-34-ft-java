@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import Image from "next/image";
 
 export default function FootersOne() {
     return (
-        <div id="contacto" className="w-full h-[300px] px-[100px] py-[50px] bg-white flex-col justify-between items-center inline-flex shadow-lg">
-            <div className="justify-center items-start gap-24 inline-flex">
-                <div className="h-[60px] px-[69px] py-4 bg-white rounded-[50px] border border-black justify-center items-center flex">
-                    <div className="text-black text-2xl font-medium  ">LOGO</div>
+        <div id="contacto" className="w-full h-[350px] px-[100px] py-[50px] bg-white flex-col justify-between items-center inline-flex shadow-lg">
+            <div className="self-stretch justify-center items-start gap-24 inline-flex">
+                <div className="mt-30 h-[180px] px-[69px] py-4 bg-white  justify-center items-center flex">
+                <Image src="/logo/1_Isotipo Color.svg" alt="log" width={250} height={180}/>
                 </div>
                 <div className="justify-start items-start gap-20 flex">
                     <div className="flex-col justify-center items-start gap-6 inline-flex">

@@ -13,6 +13,7 @@ import {
 //import 'react-international-phone/style.css';
 import './input-phone.css';
 import Swal from 'sweetalert2';
+import Image from 'next/image';
 
 
 interface Register {
@@ -47,34 +48,34 @@ export default function FormRegister() {
     // mensaje de exito
     function showAlert() {
         Swal.fire({
-          title: "Registro exitoso",
-          icon: "success",
-          background:"#FAFAFA",
-          confirmButtonColor:"#DF8B3F",
-          footer:'<a href="/auth/login">Puedes Ingresar</a>',
-          
+            title: "Registro exitoso",
+            icon: "success",
+            background: "#FAFAFA",
+            confirmButtonColor: "#DF8B3F",
+            footer: '<a href="/auth/login">Puedes Ingresar</a>',
+
         });
-      }
-      //   mensaje de error
-      function showAlert2() {
+    }
+    //   mensaje de error
+    function showAlert2() {
         Swal.fire({
             title: "Oops... Ocurrio un problema en el servidor",
             icon: "error",
-            background:"#FAFAFA",
-            confirmButtonColor:"#DF8B3F",
+            background: "#FAFAFA",
+            confirmButtonColor: "#DF8B3F",
             confirmButtonText: 'Cerrar',
         });
-      }
+    }
 
-      function showAlert3() {
+    function showAlert3() {
         Swal.fire({
             title: "Oops... Cuenta Existente",
             icon: "error",
-            background:"#FAFAFA",
-            confirmButtonColor:"#DF8B3F",
+            background: "#FAFAFA",
+            confirmButtonColor: "#DF8B3F",
             confirmButtonText: 'Cerrar',
         });
-      }
+    }
 
 
 
@@ -99,11 +100,11 @@ export default function FormRegister() {
                 return;
             }
 
-            const [First_name, Last_name] = data.nombrecompleto.split(' ');
+            const [firstName, lastName] = data.nombrecompleto.split(' ');
 
             const formData = {
-                First_name,
-                Last_name,
+                firstName,
+                lastName,
                 phone,
                 email: data.email,
                 password: data.password,
@@ -122,7 +123,7 @@ export default function FormRegister() {
                 setErrorMessage('Error en la solicitud de registro');
                 showAlert2();
             }
-            if (res.status ==403) {
+            if (res.status == 403) {
                 showAlert3();
             }
 
@@ -137,7 +138,9 @@ export default function FormRegister() {
         <div className="bg-register bg-cover bg-center mt-24">
             <div className="mt-20 mb-20 ml-36 w-[658px] h-[1262px] p-[60px] bg-white rounded-2xl shadow-sm backdrop-blur-[25px] flex-col justify-start items-start gap-[50px] inline-flex">
                 <div className="self-stretch grow shrink basis-0 flex-col justify-start items-center gap-8 flex">
-                    <div className="self-stretch h-[100px] bg-zinc-300"></div>
+                    <div className="h-[100px] mb-10">
+                        <Image src="/logo/5_Imagotipo Negro.svg" alt="logo" className="object-contain" width="500" height="100" />
+                    </div>
                     <div className="self-stretch h-[95px] flex-col justify-start items-center gap-12 flex">
                         <div className="self-stretch h-[95px] flex-col justify-start items-start gap-6 flex">
                             <div className="self-stretch justify-between items-center inline-flex">

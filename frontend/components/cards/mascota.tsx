@@ -7,8 +7,25 @@ import Image from 'next/image';
 import Volver from "@/components/buttons/volver";
 import { useSession, signIn, signOut } from "next-auth/react";
 import Addpet from "@/components/forms/addpet";
-import { useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 
+
+interface Pet {
+    id: number;
+    typeOfPet: string;
+    name: string;
+    breed: string;
+    age: number;
+    size: string;
+    gender: string;
+    photo: string;
+    behaviour: string;
+    healthStatus: string;
+    location: string;
+    vaccinated: boolean;
+    sterilized: boolean;
+    generalDescription: string;
+}
 
 const Mascotas = [
     { id: '1', foto: '/mascotas/1.png', nombre: 'uno' },
@@ -25,6 +42,7 @@ const Mascotas = [
 
 export default function Mascota() {
     const [mostrarFormulario, setMostrarFormulario] = useState(false);
+    const [petData, setPetData] = useState<Pet[]>([]);
 
     // peticion para ver las mascotas creadas
 
@@ -34,10 +52,29 @@ export default function Mascota() {
 
     const { data: session, status } = useSession();
 
-    if (!session) {
+    // 
+    useEffect(() => {
+        const fetchPets = async () => {
+            try {
+                const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/pet/all`, {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                });
+                const userData = await res.json();
+                setPetData(userData);
+            } catch (error) {
+                console.error("Error fetching pet data:", error);
+            }
+        };
+        fetchPets();
+    }, []);
+
+    if (session) {
 
         return (
-            <div className=" mt-36 ml-10 mr-20">
+            <div className=" mt-36 ml-10 mr-20 mb-20">
                 <div>
                     <Volver />
                 </div>
@@ -56,16 +93,20 @@ export default function Mascota() {
                     </div>
                 </div>
                 <div className="">{mostrarFormulario && <Addpet onClose={toggleFormulario} />}</div>
+
                 <div className="text-center ml-2 mr-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                    {Mascotas.map(mascota => (
-                        <div key={mascota.id} className="p -2 w-full bg-white rounded-2xl border border-orange-400 hover:border-orange-200 overflow-hidden flex flex-col justify-between items-center gap-2">
+                    {(petData.length > 0 ? petData : Mascotas).map(mascota => (
+                        <div key={mascota.id} className="p-2 w-full bg-white rounded-2xl border border-orange-400 hover:border-orange-200 overflow-hidden flex flex-col justify-between items-center gap-2">
                             <div className="self-stretch flex flex-col justify-start items-center gap-3">
                                 <div className="image-container w-[125px] h-[125px] mt-4">
+                                    {/* Cambia la propiedad 'foto' por 'photo' según la estructura de tus datos */}
                                     <Image className="image" src={mascota.foto} alt={mascota.nombre} width={125} height={125} />
                                 </div>
+                                {/* Ajusta el nombre de la propiedad según la estructura de tus datos */}
                                 <div className="w-[332px] text-center text-black text-[28px] font-medium">{mascota.nombre}</div>
                             </div>
                             <div className="view-more w-[332px] px-4 py-2 bg-orange-300 hover:bg-orange-500 rounded-xl justify-center items-center text-white text-xl font-medium">
+                                {/* Ajusta el enlace para ver más según tu estructura de rutas */}
                                 <Link href={`/dashboard/pets/${mascota.id}`}>
                                     Ver más
                                 </Link>
@@ -78,7 +119,7 @@ export default function Mascota() {
     }
 
     // 
-    if (session) {
+    if (!session) {
         return (
             <main className="flex min-h-screen flex-col items-center justify-between p-24 gap-2 m-24">
                 <div className='justify-center text-center justify-items-center'>

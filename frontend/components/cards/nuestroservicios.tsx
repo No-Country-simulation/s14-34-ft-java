@@ -43,8 +43,8 @@ const fechaActualEnFormato = obtenerFechaActualEnFormato();
         <h1 className="text-[38px]  text-right font-semibold">Nuestro servicios</h1>
       </div>
       <div className="flex justify-around p-[80px]">
-        <div onClick={handleDivClick1} className="cursor-pointer hover:scale-110 hover:border-color2 hover:border-2 w-[380px] h-[400px] shadow-2xl bg-white rounded-2xl flex-col justify-start items-center border-2">
-          <Image className="self-stretch rounded-tl-2xl rounded-tr-2xl w-[380px] h-[187px] object-cover" src="/pprincipal/nuestroservicios/1.jpg" width={380} height={187} alt="Pasos"
+        <div onClick={handleDivClick1} className="cursor-pointer  w-[380px] h-[400px] shadow-2xl bg-white rounded-2xl flex-col justify-start items-center border-2">
+          <Image className="self-stretch rounded-tl-2xl rounded-tr-2xl w-[380px] h-[187px] object-cover" src="/pprincipal/nuestroservicios/1.png" width={380} height={187} alt="Pasos"
           />
           <div className="p-5 flex-col justify-start items-start gap-2.5 flex">
             <div className="flex-col justify-start items-start gap-2.5 flex">
@@ -56,7 +56,7 @@ const fechaActualEnFormato = obtenerFechaActualEnFormato();
             </div>
           </div>
         </div>
-        <div onClick={handleDivClick2} className="cursor-pointer hover:scale-110 hover:border-color2 hover:border-2 w-[380px] h-[400px] shadow-2xl bg-white rounded-2xl flex-col justify-start items-center border-2">
+        <div onClick={handleDivClick2} className="cursor-pointer  w-[380px] h-[400px] shadow-2xl bg-white rounded-2xl flex-col justify-start items-center border-2">
           <Image className="self-stretch rounded-tl-2xl rounded-tr-2xl w-[380px] h-[187px] object-cover" src="/pprincipal/nuestroservicios/2.jpg" width={380} height={187} alt="Pasos2" 
           />
           <div className="p-5 flex-col justify-start items-start gap-2.5 flex">
@@ -69,7 +69,7 @@ const fechaActualEnFormato = obtenerFechaActualEnFormato();
             </div>
           </div>
         </div>
-        <div onClick={handleDivClick3} className="cursor-pointer hover:scale-110 hover:border-color2 hover:border-2 w-[380px] h-[400px] shadow-2xl bg-white rounded-2xl flex-col justify-start items-center border-2">
+        <div onClick={handleDivClick3} className="cursor-pointer  w-[380px] h-[400px] shadow-2xl bg-white rounded-2xl flex-col justify-start items-center border-2">
           <Image className="self-stretch rounded-tl-2xl rounded-tr-2xl w-[380px] h-[187px] object-cover" src="/pprincipal/nuestroservicios/3.jpg" width={380} height={187} alt="Pasos3" 
           />
           <div className="p-5 flex-col justify-start items-start gap-2.5 flex">

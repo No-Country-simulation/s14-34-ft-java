@@ -29,7 +29,7 @@ export default function Reservas() {
 
     const { data: session, status } = useSession();
 
-    if (!session) {
+    if (session) {
 
         return (
             <div className=" mt-36 ml-10 mr-20">
@@ -94,7 +94,7 @@ export default function Reservas() {
     }
 
     // 
-    if (session) {
+    if (!session) {
         return (
             <main className="flex min-h-screen flex-col items-center justify-between p-24 gap-2 m-24">
                 <div className='justify-center text-center justify-items-center'>
