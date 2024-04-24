@@ -24,7 +24,7 @@ Lo mejor de todo, nuestro sistema intuitivo te permite crear una cuenta en la qu
     <td>
       <div align="center">
         <a href="https://www.behance.net/aylen-sol-martel" target="_blank" rel="author">
-          <img width="110" src="https://pps.services.adobe.com/api/profile/B1A150B44F42968B0A490D45@AdobeID/image/d271079f-b77d-4d0f-8fc8-1cad23b3c3f1/115"/>
+          <img width="110" src="https://i.ibb.co/k8mx4vh/Aylen.jpg"/>
         </a>
         <a href="https://www.behance.net/aylen-sol-martel" target="_blank" rel="author">
           <h4 style="margin-top: 1rem;">Aylén Sol Martel</h4>
@@ -41,7 +41,7 @@ Lo mejor de todo, nuestro sistema intuitivo te permite crear una cuenta en la qu
     <td>
       <div align="center">
         <a href="https://www.behance.net/consuelo-leon-abarca" target="_blank" rel="author">
-          <img width="110" src="https://pps.services.adobe.com/api/profile/12B4265763DA65080A495E98@AdobeID/image/5dc5e92b-dae9-451d-b63c-594db4d9da92/115"/>
+          <img width="110" src="https://i.ibb.co/k8mx4vh/Aylen.jpg"/>
         </a>
         <a href="https://www.behance.net/consuelo-leon-abarca" target="_blank" rel="author">
           <h4 style="margin-top: 1rem;">Consuelo León Abarca</h4>
@@ -221,6 +221,14 @@ Lo mejor de todo, nuestro sistema intuitivo te permite crear una cuenta en la qu
   </tr>
 </table>
 
+### UI/UX
+
+| Tecnología                                                                                                                  | Descripción                                            |
+| --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| ![Figma](https://camo.githubusercontent.com/293656f93522cb949e24c56b187b1732df20a67e345f72cb2e54bdf3170c9a61/68747470733a2f2f696d672e736869656c64732e696f2f7374617469632f76313f7374796c653d666f722d7468652d6261646765266d6573736167653d4669676d6126636f6c6f723d463234453145266c6f676f3d4669676d61266c6f676f436f6c6f723d464646464646266c6162656c3d) | Plataforma para el diseño de interfaces web y mobile                           |
+| ![Illustrator](https://camo.githubusercontent.com/2448c550e7394d2e77fefb2785c7dd508ebecf3a262ff0708aca950ca75873d1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f41646f6265253230496c6c7573747261746f722d3331303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d41646f6265253230496c6c7573747261746f72) | Herramienta de diseño gráfico        |
+| ![Miro](https://camo.githubusercontent.com/dea1fd920c49f5b7f62a29b14a51bc73bf403e8d67b89081c4c2c87d7a068405/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4d69726f2d4637433932323f7374796c653d666f722d7468652d6261646765266c6f676f3d4d69726f266c6f676f436f6c6f723d303530303336) | Plataforma permite a los usuarios visualizar ideas, estructuras organizativas y sistemas complejos                           |
+
 ## Tecnologías Utilizadas
 
 ### Front-End
@@ -250,14 +258,6 @@ Lo mejor de todo, nuestro sistema intuitivo te permite crear una cuenta en la qu
 | ![Insomnia](https://img.shields.io/badge/Insomnia-4000BF?logo=insomnia&logoColor=white&style=for-the-badge)                                        | Plataforma de pruebas para facilitar la creación, el envío y la depuración de solicitudes HTTP y API                     |
 | ![Swagger](https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white)| Plataforma para documentar APIs y realizar pruebas          |
 |![Apache Maven](https://img.shields.io/badge/Apache%20Maven-C71A36?style=for-the-badge&logo=Apache%20Maven&logoColor=white)| Herramienta para crear aplicaciones y, también, proporciona un repositorio para contener artefactos a los que desea que acceda la aplicación. |
-
-### UI/UX
-
-| Tecnología                                                                                                                  | Descripción                                            |
-| --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
-| ![Figma](https://camo.githubusercontent.com/293656f93522cb949e24c56b187b1732df20a67e345f72cb2e54bdf3170c9a61/68747470733a2f2f696d672e736869656c64732e696f2f7374617469632f76313f7374796c653d666f722d7468652d6261646765266d6573736167653d4669676d6126636f6c6f723d463234453145266c6f676f3d4669676d61266c6f676f436f6c6f723d464646464646266c6162656c3d) | Plataforma para el diseño de interfaces web y mobile                           |
-| ![Illustrator](https://camo.githubusercontent.com/2448c550e7394d2e77fefb2785c7dd508ebecf3a262ff0708aca950ca75873d1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f41646f6265253230496c6c7573747261746f722d3331303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d41646f6265253230496c6c7573747261746f72) | Herramienta de diseño gráfico        |
-| ![Miro](https://camo.githubusercontent.com/dea1fd920c49f5b7f62a29b14a51bc73bf403e8d67b89081c4c2c87d7a068405/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4d69726f2d4637433932323f7374796c653d666f722d7468652d6261646765266c6f676f3d4d69726f266c6f676f436f6c6f723d303530303336) | Plataforma permite a los usuarios visualizar ideas, estructuras organizativas y sistemas complejos                           |
 
 ### Base de datos
 
