@@ -3,9 +3,7 @@ package main.controllers;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import main.models.Owner;
-import main.models.Pet;
 import main.services.impl.OwnerServiceImpl;
-import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -38,7 +36,7 @@ public class OwnerController {
     }
 
     @GetMapping(value = "/{id}",produces = "aplication/json")
-    public ResponseEntity<?> getPetById(@PathVariable Long id) {
+    public ResponseEntity<?> getOwnerById(@PathVariable Long id) {
         try {
             return ResponseEntity.status(HttpStatus.OK).body(ownerService.getOwnerById(id));
         } catch (Exception e) {
@@ -47,7 +45,7 @@ public class OwnerController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Owner> updatePet(@PathVariable Long id, @RequestBody Owner owner) throws Exception {
+    public ResponseEntity<Owner> updateOwner(@PathVariable Long id, @RequestBody Owner owner) throws Exception {
         Owner ownerResponse = ownerService.updateOwner(id,owner);
         return ResponseEntity.ok(ownerResponse);
 
