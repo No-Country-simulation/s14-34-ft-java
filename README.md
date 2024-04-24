@@ -324,6 +324,34 @@ Lo mejor de todo, nuestro sistema intuitivo te permite crear una cuenta en la qu
   git clone https://github.com/No-Country/s14-34-ft-java.git
 ```
 
+## Para ejecutar el back-end
+
+Utilizar intellijIdea
+
+https://www.jetbrains.com/idea/
+
+Ingresar a la carpeta s14-34-ft-java/backend/NoCountry/scr/main/java/main y ejecutar
+```bash
+  NoCountryApplication
+```
+
+## Para ejecutar el front-end
+
+Visual Studio Code
+
+https://code.visualstudio.com/
+
+Ingresar a la carpeta s14-34-ft-java/frontend y ejecutar los siguientes comandos
+
+```bash
+  npm install
+```
+Y para ejecutar el sistema
+
+```bash
+  npm run dev
+```
+
 ## Agradecimientos
 
 <table align="center">
