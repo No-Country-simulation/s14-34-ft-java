@@ -101,7 +101,7 @@ Lo mejor de todo, nuestro sistema intuitivo te permite crear una cuenta en la qu
         </a>
         <a href="https://github.com/msgiorgini77" target="_blank" rel="author">
           <h4 style="margin-top: 1rem;">Matias Giorgini</h4>
-          <h4 style="margin-top: 1rem;">Backend</h4>
+          <h4 style="margin-top: 1rem;">Backend & PM</h4>
         </a>
         <a href="https://github.com/msgiorgini77" target="_blank">
           <img src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
