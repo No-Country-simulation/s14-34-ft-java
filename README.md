@@ -58,7 +58,7 @@ Lo mejor de todo, nuestro sistema intuitivo te permite crear una cuenta en la qu
     <td>
       <div align="center">
         <a href="https://github.com/Orlandoc0107" target="_blank" rel="author">
-          <img width="110" src="https://i.ibb.co/h7cqJX3/Orlando.jpg/>
+          <img width="110" src="https://i.ibb.co/h7cqJX3/Orlando.jpg"/>
         </a>
         <a href="https://www.linkedin.com/in/orlandocardenasvillegas/" target="_blank" rel="author">
           <h4 style="margin-top: 1rem;">Orlando Cardenas Villegas</h4>
@@ -164,6 +164,7 @@ Lo mejor de todo, nuestro sistema intuitivo te permite crear una cuenta en la qu
     </td>
   </tr>
 </table>
+
 ## Tecnologías Utilizadas
 
 ### Front-End
