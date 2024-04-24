@@ -39,7 +39,7 @@ Lo mejor de todo, nuestro sistema intuitivo te permite crear una cuenta en la qu
         <a href="https://www.behance.net/aylen-sol-martel" target="_blank">
           <img src="https://img.shields.io/static/v1?style=for-the-badge&message=Behance&color=172B4D&logo=Behance&logoColor=FFFFFF&label="/>
         </a>
-        <a href="https://www.linkedin.com/in/valeriedramosg/" target="_blank">
+        <a href="https://www.linkedin.com/in/aylen-sol-martel/" target="_blank">
           <img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
         </a>
       </div>
@@ -210,7 +210,8 @@ Lo mejor de todo, nuestro sistema intuitivo te permite crear una cuenta en la qu
     <td>
       <div align="center">
         <a href="https://www.linkedin.com/in/fer-a-ramirez/" target="_blank" rel="author">
-          <img width="110" src="https://i.ibb.co/NpqF4tW/Mariano.jpg"/>
+          <img width="110" src="https://i.ibb.co/7tJYKSK/Fer.jpg
+"/>
         </a>
         <a href="https://github.com/Fwer00" target="_blank" rel="author">
           <h4 style="margin-top: 1rem;">Fernando A. Ramirez</h4>
