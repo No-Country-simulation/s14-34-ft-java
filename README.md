@@ -24,7 +24,7 @@ Lo mejor de todo, nuestro sistema intuitivo te permite crear una cuenta en la qu
     <td>
       <div align="center">
         <a href="https://www.behance.net/aylen-sol-martel" target="_blank" rel="author">
-          <img width="110" src="https://pps.services.adobe.com/api/profile/B1A150B44F42968B0A490D45@AdobeID/image/d271079f-b77d-4d0f-8fc8-1cad23b3c3f1/115"/>
+          <img width="110" src="https://i.ibb.co/ykpFRBh/1656353282010.jpg"/>
         </a>
         <a href="https://www.behance.net/Mariela-Erramuspe" target="_blank" rel="author">
           <h4 style="margin-top: 1rem;">Valerie Ramos</h4>
