@@ -1,6 +1,7 @@
 package main.services;
 
 import jakarta.transaction.Transactional;
+import main.dtos.PetSitterDTO;
 import main.models.PetSitter;
 import org.springframework.http.ResponseEntity;
 
