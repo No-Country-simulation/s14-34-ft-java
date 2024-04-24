@@ -27,7 +27,7 @@ Lo mejor de todo, nuestro sistema intuitivo te permite crear una cuenta en la qu
           <img width="110" src="https://pps.services.adobe.com/api/profile/B1A150B44F42968B0A490D45@AdobeID/image/d271079f-b77d-4d0f-8fc8-1cad23b3c3f1/115"/>
         </a>
         <a href="https://www.behance.net/aylen-sol-martel" target="_blank" rel="author">
-          <h4 style="margin-top: 1rem;">Aylén Sol martel</h4>
+          <h4 style="margin-top: 1rem;">Aylén Sol Martel</h4>
           <h4 style="margin-top: 1rem;">UX/UI</h4>
         </a>
         <a href="https://www.behance.net/aylen-sol-martel" target="_blank">
@@ -58,7 +58,7 @@ Lo mejor de todo, nuestro sistema intuitivo te permite crear una cuenta en la qu
     <td>
       <div align="center">
         <a href="https://github.com/Orlandoc0107" target="_blank" rel="author">
-          <img width="110" src="https://avatars.githubusercontent.com/u/48032098"/>
+          <img width="110" src="https://i.ibb.co/h7cqJX3/Orlando.jpg/>
         </a>
         <a href="https://www.linkedin.com/in/orlandocardenasvillegas/" target="_blank" rel="author">
           <h4 style="margin-top: 1rem;">Orlando Cardenas Villegas</h4>
