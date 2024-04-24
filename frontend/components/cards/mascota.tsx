@@ -27,22 +27,23 @@ interface Pet {
     generalDescription: string;
 }
 
-const Mascotas = [
-    { id: '1', foto: '/mascotas/1.png', nombre: 'uno' },
-    { id: '2', foto: '/mascotas/2.png', nombre: 'dos' },
-    { id: '4', foto: '/mascotas/4.png', nombre: 'cuatro' },
-    { id: '5', foto: '/mascotas/5.png', nombre: 'cinco' },
-    { id: '6', foto: '/mascotas/6.png', nombre: 'seis' },
-    { id: '7', foto: '/mascotas/7.png', nombre: 'siete' },
-    { id: '8', foto: '/mascotas/8.png', nombre: 'ocho' },
-    { id: '9', foto: '/mascotas/9.png', nombre: 'nueve' },
-    { id: '10', foto: '/mascotas/10.png', nombre: 'diez' },
-    { id: '11', foto: '/mascotas/11.png', nombre: 'once' },
-]
+const MascotasFicticias = [
+    { id: '1', foto: '/mascotas/1.png', nombre: 'Luna' },
+    { id: '2', foto: '/mascotas/2.png', nombre: 'Simba' },
+    { id: '4', foto: '/mascotas/4.png', nombre: 'Max' },
+    { id: '5', foto: '/mascotas/5.png', nombre: 'Bella' },
+    { id: '6', foto: '/mascotas/6.png', nombre: 'Rocky' },
+    { id: '7', foto: '/mascotas/7.png', nombre: 'Coco' },
+    { id: '8', foto: '/mascotas/8.png', nombre: 'Lola' },
+    { id: '9', foto: '/mascotas/9.png', nombre: 'Toby' },
+    { id: '10', foto: '/mascotas/10.png', nombre: 'Daisy' },
+    { id: '11', foto: '/mascotas/11.png', nombre: 'Thor' },
+];
 
 export default function Mascota() {
     const [mostrarFormulario, setMostrarFormulario] = useState(false);
     const [petData, setPetData] = useState<Pet[]>([]);
+    const todasLasMascotas = [...petData, ...MascotasFicticias];
 
     // peticion para ver las mascotas creadas
 
@@ -100,7 +101,7 @@ export default function Mascota() {
                             <div className="self-stretch flex flex-col justify-start items-center gap-3">
                                 <div className="image-container w-[125px] h-[125px] mt-4">
 
-                                    <Image className="image" src={mascota.photo} alt={mascota.name} width={125} height={125} />
+                                    <Image className="image" src="/mascotas/1.png" alt={mascota.name} width={125} height={125} />
                                 </div>
 
                                 <div className="w-[332px] text-center text-black text-[28px] font-medium">{mascota.name}</div>
@@ -108,6 +109,26 @@ export default function Mascota() {
                             <div className="view-more w-[332px] px-4 py-2 bg-orange-300 hover:bg-orange-500 rounded-xl justify-center items-center text-white text-xl font-medium">
 
                                 <Link href={`/dashboard/pets/${mascota.id}`}>
+                                    Ver más
+                                </Link>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+                <div className=" mt-20 text-center ml-2 mr-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {MascotasFicticias.map((mascotas) => (
+                        <div key={mascotas.id} className="p-2 w-full bg-white rounded-2xl border border-orange-400 hover:border-orange-200 overflow-hidden flex flex-col justify-between items-center gap-2">
+                            <div className="self-stretch flex flex-col justify-start items-center gap-3">
+                                <div className="image-container w-[125px] h-[125px] mt-4">
+
+                                    <Image className="image" src={mascotas.foto} alt={mascotas.nombre} width={125} height={125} />
+                                </div>
+
+                                <div className="w-[332px] text-center text-black text-[28px] font-medium">{mascotas.nombre}</div>
+                            </div>
+                            <div className="view-more w-[332px] px-4 py-2 bg-orange-300 hover:bg-orange-500 rounded-xl justify-center items-center text-white text-xl font-medium">
+
+                                <Link href={`/dashboard/pets/${mascotas.id}`}>
                                     Ver más
                                 </Link>
                             </div>
