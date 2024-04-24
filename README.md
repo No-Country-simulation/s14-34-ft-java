@@ -41,8 +41,7 @@ Lo mejor de todo, nuestro sistema intuitivo te permite crear una cuenta en la qu
 | ![Postman](https://camo.githubusercontent.com/f3144a44fbb26b37fe2a0e05b38d490a98871efe1875bb6048f79d6cfe7fe672/68747470733a2f2f696d672e736869656c64732e696f2f7374617469632f76313f7374796c653d666f722d7468652d6261646765266d6573736167653d506f73746d616e26636f6c6f723d464636433337266c6f676f3d506f73746d616e266c6f676f436f6c6f723d464646464646266c6162656c3d)                                        | Plantaforma para realizar pruebas APIs                      |
 | ![Insomnia](https://img.shields.io/badge/Insomnia-4000BF?logo=insomnia&logoColor=white&style=for-the-badge)                                        | Plataforma de pruebas para facilitar la creación, el envío y la depuración de solicitudes HTTP y API                     |
 | ![Swagger](https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white)| Plataforma para documentar APIs y realizar pruebas          |
-|![Apache Maven](https://img.shields.io/badge/Apache%20Maven-C71A36?style=for-the-badge&logo=Apache%20Maven&logoColor=white)| Herramienta para crear aplicaciones y, también, proporciona un repositorio para contener artefactos a los que desea que acceda la aplicación.
-|
+|![Apache Maven](https://img.shields.io/badge/Apache%20Maven-C71A36?style=for-the-badge&logo=Apache%20Maven&logoColor=white)| Herramienta para crear aplicaciones y, también, proporciona un repositorio para contener artefactos a los que desea que acceda la aplicación. |
 
 ### UI/UX
 
