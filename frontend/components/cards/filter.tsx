@@ -2,7 +2,9 @@
 
 import React, { useState, ChangeEvent, useEffect } from 'react';
 import Select from 'react-select';
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation';
+import { Toaster } from 'sonner';
+import Swal from 'sweetalert2';
 
 interface FilterProps {
   onSearch: (filters: Filters) => void;
@@ -70,20 +72,18 @@ const Filter: React.FC<FilterProps> = ({ onSearch }) => {
   const tipoServicioOptions = [
     { value: 'paseo', label: 'Paseo' },
     { value: 'alojamiento', label: 'Alojamiento' },
-    { value: 'visitas_a_domicilio', label: 'Visitas a domicilio' },
+    { value: 'visitas_a_domicilio', label: 'Visitas' },
   ];
 
   const tipoMascotaOptions = [
-    { value: 'perro', label: 'Perro' },
-    { value: 'gato', label: 'Gato' },
-    { value: 'conejo', label: 'Conejo' },
-    { value: 'cobayo', label: 'Cobayo' },
-    { value: 'huron', label: 'Huron' },
-    { value: 'hamster', label: 'Hamster' },
-    { value: 'chinchilla', label: 'Chinchilla' },
-    { value: 'erizo', label: 'Erizo' },
-    { value: 'ave', label: 'Ave' },
-    { value: 'reptil', label: 'Reptil' },
+    { value: 'DOG', label: 'perro' },
+    { value: 'CAT', label: 'gato' },
+    { value: 'CHINCHILLA', label: 'chinchilla' },
+    { value: 'HAMSTER', label: 'Hamster' },
+    { value: 'RABIIT', label: 'Conejo'},
+    { value: 'FERRET', label: 'Hurón' },
+    { value: 'HEDGEHOGGROUND', label:'Erizo'},
+    { value: 'GUINEAPIG', label: 'Conejillo de Indias' },
   ];
 
   const customSelectStyles = {
@@ -111,11 +111,23 @@ const Filter: React.FC<FilterProps> = ({ onSearch }) => {
     }),
   };
 
+  //alert
+  
+  function showAlert() {
+    Swal.fire({
+      background:"#FAFAFA10",
+      confirmButtonColor:"#DF8B3F",
+      confirmButtonText: ' Por favor, completatodos Todos los Campos',
+      
+    });
+  }
+
   const handleSearch = () => {
 
     if (!filters.lugar || !filters.tipoServicio || !filters.tipoMascota || !filters.fecha) {
-      alert('Por favor, completa todos los campos.');
-      return; // Detener la búsqueda si algún campo está vacío
+      //toast('Por favor, completa todos los campos.');
+      showAlert();
+      return;
     }
     onSearch(filters);
     console.log('Filtros enviados:', filters);
@@ -125,10 +137,10 @@ const Filter: React.FC<FilterProps> = ({ onSearch }) => {
         router.push(`/search/paseos/${filters.lugar}/${filters.fecha}/${filters.tipoMascota}`);
         break;
       case 'alojamiento':
-        router.push(`/search/alojamiento/${filters.lugar}/${filters.fecha}/${filters.tipoMascota}`); // Corregir esta línea
+        router.push(`/search/alojamiento/${filters.lugar}/${filters.fecha}/${filters.tipoMascota}`); 
         break;
-      case 'visitas_a_domicilio':
-        router.push(`/search/visitas/${filters.lugar}/${filters.fecha}/${filters.tipoMascota}`); // Corregir esta línea
+      case 'visitas':
+        router.push(`/search/visitas/${filters.lugar}/${filters.fecha}/${filters.tipoMascota}`);
         break;
       default:
         router.push('/');

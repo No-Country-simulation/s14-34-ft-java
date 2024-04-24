@@ -21,24 +21,17 @@ public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "booking_id")
-    @JsonIgnore
     private Long bookingId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "pet_sitter_id")
-    @JsonIgnore
+    //@JsonIgnore
     private PetSitter petSitter;
 
-//    @Column(name = "pet_sitter_id", insertable = false, updatable = false)
-//    private Long petSitterId;
-
     @ManyToOne
-    @JoinColumn(name = "owner_id")
+    @JoinColumn(name = "owners_id")
     @JsonIgnore
     private Owner owner;
-
-//    @Column(name = "owner_id", insertable = false, updatable = false)
-//    private Long ownerId;
 
     @ManyToOne
     @JoinColumn(name = "review_id")
@@ -66,7 +59,7 @@ public class Booking {
     private BigDecimal price;
 
     @Column(name = "pet_quantity")
-    @JsonIgnore
+    //@JsonIgnore
     private String petQuantity;
 
     @Enumerated(EnumType.STRING)

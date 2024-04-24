@@ -30,7 +30,12 @@ const config: Config = {
         'regular':'400',
       },
       backgroundImage: {
-        "homeimagen": "url('/homeimg.png')",
+        "homeimagen": "url('/pprincipal/imagenprincipal.png')",
+        "homeimagen2":"url('/alojamiento/fondo.png')",
+        "homeimagen3":"url('/paseo/background.png')",
+        "login":"url('/loginregister/iniicio.png')",
+        "register":"url('/loginregister/registro.png')",
+        "invitacion":"url('/perfil/sercuidador.png')",
       },
       
       colors:{
@@ -40,7 +45,8 @@ const config: Config = {
         color4:"#FFFFFF",
         color5:"#25C389",
         color6:"#CB6100",
-        color7:"#FAFAFA"
+        color7:"#FAFAFA",
+        color8:"#FFFFFF80"
       }
     },
   },
@@ -50,6 +56,3 @@ const config: Config = {
   plugins: [],
 };
 export default config;
-
-//github
-//figma

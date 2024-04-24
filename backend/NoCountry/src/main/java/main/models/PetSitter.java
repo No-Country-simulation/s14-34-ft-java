@@ -1,10 +1,13 @@
 package main.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import main.enums.TypeOfService;
+
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -45,6 +48,9 @@ public class PetSitter {
     @Enumerated(EnumType.STRING)
     private TypeOfService typeOfService;
 
+    @OneToMany(mappedBy = "petSitter", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonIgnore
+    private List<Booking> bookings;
 
 
 }

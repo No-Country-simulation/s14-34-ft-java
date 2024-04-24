@@ -12,13 +12,13 @@ function LocationMap() {
     }, []);
     const initializeMap = () => {
         const map = new window.google.maps.Map(mapRef.current, {
-            center: { lat: 37.7749, lng: -122.4194 }, // Default to San Francisco
+            center: { lat: -34.603722, lng: -58.381592 }, // Centro en Buenos Aires
             zoom: 12,
         });
         // Add your location-based features here
     };
     return (
-        <div ref={mapRef} style={{ height: '400px', width: '100%' }}></div>
+        <div ref={mapRef} style={{ height: '100%', width: '100%' }}></div>
     );
 }
 export default LocationMap;
