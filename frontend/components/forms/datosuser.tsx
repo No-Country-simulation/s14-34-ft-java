@@ -92,8 +92,8 @@ export default function Datosuser() {
 
     // datos para mostrar
     const data = {
-        imageUrl: '/fotoPerfil.jpeg', nombre: 'Cristina', apellido: 'Gonzales', email: "cristiana@gmail.com",
-        direccion: "Buenos Aires", role: "cliente", genero: "mujer",
+        imageUrl: '/perfil/fotoperfil.png', nombre: 'Cristina', apellido: 'Gonzales', email: "cristiana@gmail.com",
+        direccion: "Buenos Aires", role: "cliente", genero: "Mujer",
         telefono: "+581234567890", dni: "12345678", localizacion: "Barrio 301", provincia:"ejemplo1", postal:"N3440"
     }
 
