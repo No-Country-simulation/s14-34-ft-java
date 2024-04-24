@@ -210,8 +210,7 @@ Lo mejor de todo, nuestro sistema intuitivo te permite crear una cuenta en la qu
     <td>
       <div align="center">
         <a href="https://www.linkedin.com/in/fer-a-ramirez/" target="_blank" rel="author">
-          <img width="110" src="https://i.ibb.co/7tJYKSK/Fer.jpg
-"/>
+          <img width="110" src="https://i.ibb.co/7tJYKSK/Fer.jpg"/>
         </a>
         <a href="https://github.com/Fwer00" target="_blank" rel="author">
           <h4 style="margin-top: 1rem;">Fernando A. Ramirez</h4>
