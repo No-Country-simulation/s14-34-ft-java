@@ -2,6 +2,7 @@ package main.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import main.enums.Role;
 import org.springframework.security.core.GrantedAuthority;
@@ -29,22 +30,27 @@ public class User implements UserDetails {
 
     @Column(name = "password", length = 100)
     @JsonIgnore
+    @NotNull
     private String password;
 
     @Getter
     @Column(name = "email", nullable = false)
+    @NotNull
     private String email;
 
     @Column(name = "first_name", length = 50)
+    @NotNull
     private String firstName;
 
     @Column(name = "last_name", length = 50)
+    @NotNull
     private String lastName;
 
     @Column(name = "address", length = 150)
     private String address;
 
     @Column(name = "phone", length = 20)
+    @NotNull
     private String phone;
 
     @Column(name = "dni", length = 10)

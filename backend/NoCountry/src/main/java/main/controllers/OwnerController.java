@@ -2,9 +2,11 @@ package main.controllers;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import main.auth.service.JwtService;
 import main.models.Owner;
 import main.models.Pet;
 import main.services.impl.OwnerServiceImpl;
+import main.services.impl.UserServiceImpl;
 import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +20,7 @@ import java.util.List;
 public class OwnerController {
 
     private final OwnerServiceImpl ownerService;
+    private final JwtService jwtService;
 
     @GetMapping(value ="/all",produces = "application/json")
     public ResponseEntity<?> getAllOwners() {
@@ -28,9 +31,10 @@ public class OwnerController {
         }
     }
 
-    @PostMapping("/save/{userId}")
-    public ResponseEntity<?> save(@PathVariable Long userId,@Valid @RequestBody Owner owner){
+    @PostMapping("/save")
+    public ResponseEntity<?> save(@RequestHeader("token") String token, @Valid @RequestBody Owner owner){
         try {
+            Long userId = jwtService.getUserIdFromToken(token);
             return ResponseEntity.status(HttpStatus.OK).body(ownerService.saveOwner(userId,owner));
         }catch (Exception e){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Can't add owner");
