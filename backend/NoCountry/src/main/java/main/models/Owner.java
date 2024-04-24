@@ -1,6 +1,6 @@
 package main.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.util.ArrayList;
 import java.util.List;
+
 
 @Data
 @NoArgsConstructor
@@ -72,6 +73,7 @@ public class Owner {
     private User user;
 
     @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private List<Pet> pets = new ArrayList<>();
 
 }
