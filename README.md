@@ -13,6 +13,11 @@ Lo mejor de todo, nuestro sistema intuitivo te permite crear una cuenta en la qu
 
 Únete a nuestra comunidad de amantes de los animales y experimenta la tranquilidad que proviene de saber que tus mascotas están en manos expertas y amorosas. Descubre la comodidad y la confianza en el cuidado de mascotas, solo en nuestro proyecto web.
 
+<h1 align="center"> 
+<img src="https://i.ibb.co/JCntk7b/Isotipo-Color.png" width="30px">Ver Proyecto
+<a href="https://s14-34-ft-java.vercel.app/"/>
+</h1>
+
 <!-- TEAMS -->
 
 <h1 align="center"> 
@@ -41,7 +46,7 @@ Lo mejor de todo, nuestro sistema intuitivo te permite crear una cuenta en la qu
     <td>
       <div align="center">
         <a href="https://www.behance.net/consuelo-leon-abarca" target="_blank" rel="author">
-          <img width="110" src="https://i.ibb.co/k8mx4vh/Aylen.jpg"/>
+          <img width="110" src="https://i.ibb.co/SVxpfYF/Consu.jpg"/>
         </a>
         <a href="https://www.behance.net/consuelo-leon-abarca" target="_blank" rel="author">
           <h4 style="margin-top: 1rem;">Consuelo León Abarca</h4>
@@ -238,6 +243,13 @@ Lo mejor de todo, nuestro sistema intuitivo te permite crear una cuenta en la qu
         </a>
       </div>
     </td>
+    <td>
+      <div align="center">
+        <a href="https://www.figma.com/file/EFQ6EVCAlbDCggp0Ud3EwC/No-Country---HappyPaws-WebApp?type=design&node-id=1%3A2&mode=design&t=WYhpT3HAGdbkTStj-1" target="_blank" rel="author">
+          <img width="110" src="https://camo.githubusercontent.com/293656f93522cb949e24c56b187b1732df20a67e345f72cb2e54bdf3170c9a61/68747470733a2f2f696d672e736869656c64732e696f2f7374617469632f76313f7374796c653d666f722d7468652d6261646765266d6573736167653d4669676d6126636f6c6f723d463234453145266c6f676f3d4669676d61266c6f676f436f6c6f723d464646464646266c6162656c3d"/>
+        </a>
+      </div>
+    </td>
   </tr>
 </table>
 
@@ -311,7 +323,8 @@ Lo mejor de todo, nuestro sistema intuitivo te permite crear una cuenta en la qu
   git clone https://github.com/No-Country/s14-34-ft-java.git
 ```
 
-<!-- Screenshots -->
-<h1 align="center"> 
-<img src="https://media1.giphy.com/media/xcFJX6T9z2iqiB9Ud9/giphy.gif" width="30px">Capturas de Pantalla
-</h1>
+## Agradecimientos
+
+https://www.nocountry.tech/
+
+https://camo.githubusercontent.com/dcac5aa5efaf6bc71ef17c4005693c1690d27b4f2f5e5f1f63e2e0d81f4d0684/68747470733a2f2f656e637279707465642d74626e302e677374617469632e636f6d2f696d616765733f713d74626e3a414e643947635173756b594233484c39304c537759765f524952324f324f6c43563853626b7832654e4876386e52764f75384c313646784c51306e507a59303277515f424a4f66515a7726757371703d434155
