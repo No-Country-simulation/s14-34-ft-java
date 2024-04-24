@@ -5,7 +5,7 @@ export default function Foothercopyrigth() {
     return (
         <div className="w-full h-[50px] p-[50px] bg-emerald-800 flex-col justify-between items-center inline-flex">
             <div className="justify-start items-center gap-2 inline-flex">
-                <div className="justify-start items-center gap-2 flex">
+                <div className="justify-start items-center gap-1 flex">
                     <div className="text-white text-xl font-normal ">2024</div>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="#0A6141" xmlns="http://www.w3.org/2000/svg">
                         <g id="ic:baseline-copyright">
