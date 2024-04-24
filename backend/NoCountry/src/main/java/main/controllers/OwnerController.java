@@ -35,7 +35,7 @@ public class OwnerController {
         }
     }
 
-    @GetMapping(value = "/{id}",produces = "aplication/json")
+    @GetMapping(value = "/{id}",produces = "application/json")
     public ResponseEntity<?> getOwnerById(@PathVariable Long id) {
         try {
             return ResponseEntity.status(HttpStatus.OK).body(ownerService.getOwnerById(id));
