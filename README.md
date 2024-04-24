@@ -14,8 +14,8 @@ Lo mejor de todo, nuestro sistema intuitivo te permite crear una cuenta en la qu
 Únete a nuestra comunidad de amantes de los animales y experimenta la tranquilidad que proviene de saber que tus mascotas están en manos expertas y amorosas. Descubre la comodidad y la confianza en el cuidado de mascotas, solo en nuestro proyecto web.
 
 <h1 align="center"> 
-<img src="https://i.ibb.co/JCntk7b/Isotipo-Color.png" width="30px">Ver Proyecto
 <a href="https://s14-34-ft-java.vercel.app/"/>
+<img src="https://i.ibb.co/JCntk7b/Isotipo-Color.png" width="80px">Ver Proyecto 👉
 </h1>
 
 <!-- TEAMS -->
@@ -325,6 +325,22 @@ Lo mejor de todo, nuestro sistema intuitivo te permite crear una cuenta en la qu
 
 ## Agradecimientos
 
-https://www.nocountry.tech/
-
-https://camo.githubusercontent.com/dcac5aa5efaf6bc71ef17c4005693c1690d27b4f2f5e5f1f63e2e0d81f4d0684/68747470733a2f2f656e637279707465642d74626e302e677374617469632e636f6d2f696d616765733f713d74626e3a414e643947635173756b594233484c39304c537759765f524952324f324f6c43563853626b7832654e4876386e52764f75384c313646784c51306e507a59303277515f424a4f66515a7726757371703d434155
+<table>
+  <tr>
+    <td>
+      <div align="center">
+        <a href="https://www.nocountry.tech/" target="_blank" rel="author">
+          <img width="110" src="https://camo.githubusercontent.com/dcac5aa5efaf6bc71ef17c4005693c1690d27b4f2f5e5f1f63e2e0d81f4d0684/68747470733a2f2f656e637279707465642d74626e302e677374617469632e636f6d2f696d616765733f713d74626e3a414e643947635173756b594233484c39304c537759765f524952324f324f6c43563853626b7832654e4876386e52764f75384c313646784c51306e507a59303277515f424a4f66515a7726757371703d434155"/>
+        </a>
+      </div>
+    </td>
+    <td>
+      <div align="center">
+        <a href="https://www.linkedin.com/in/johana-baccei-11b005248/" target="_blank" rel="author">
+          <img width="110" src="https://i.ibb.co/xJ0cD1v/Joha.jpg
+"/>
+        </a>
+      </div>
+    </td>
+  </tr>
+</table>
