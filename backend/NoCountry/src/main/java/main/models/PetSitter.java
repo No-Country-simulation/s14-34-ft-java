@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import main.enums.TypeOfService;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -35,14 +36,14 @@ public class PetSitter {
     private String dni;
     @Column(name = "email", length = 50, nullable = false, unique = true)
     private String email;
-    @Column(name = "photo_url", length = 20, nullable = false, unique = true)
+    @Column(name = "photo_url")
     private String photo;
     @Column(name = "available")
     private Boolean available = true;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "id_service")
-    private Service service;
+    @Column(name = "type_of_service", columnDefinition = "varchar(13) default 'HOUSE_SITTING'")
+    @Enumerated(EnumType.STRING)
+    private TypeOfService typeOfService;
 
 
 

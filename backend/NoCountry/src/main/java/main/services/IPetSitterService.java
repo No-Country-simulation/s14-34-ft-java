@@ -29,6 +29,9 @@ public interface IPetSitterService {
                          String dni,
                          String email,
                          String photo);
+
+
+
 }
 
 
