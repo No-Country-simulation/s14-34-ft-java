@@ -27,7 +27,6 @@ main\config\CorsConfig.class
 main\services\impl\PetSitterServiceImpl.class
 main\controllers\exceptions\PetSitterNotFoundException.class
 main\repository\BookingRepository.class
-main\services\IPetService.class
 main\enums\Gender.class
 main\services\impl\PetServiceImpl.class
 main\auth\request\RegisterRequest.class
