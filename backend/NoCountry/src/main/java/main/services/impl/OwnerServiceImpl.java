@@ -11,6 +11,8 @@ import main.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 @Service
@@ -46,7 +48,6 @@ public class OwnerServiceImpl implements IOwnerService {
         try {
             User user = userRepository.findById(userId)
                     .orElseThrow(() -> new EntityNotFoundException("User not found"));
-
             owner.setEmail(user.getEmail());
             owner.setFirstName(user.getFirstName());
             owner.setLastName(user.getLastName());
