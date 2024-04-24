@@ -24,10 +24,10 @@ Lo mejor de todo, nuestro sistema intuitivo te permite crear una cuenta en la qu
     <td>
       <div align="center">
         <a href="https://www.behance.net/aylen-sol-martel" target="_blank" rel="author">
-          <img width="110" src="https://i.ibb.co/ykpFRBh/1656353282010.jpg"/>
+          <img width="110" src="https://pps.services.adobe.com/api/profile/B1A150B44F42968B0A490D45@AdobeID/image/d271079f-b77d-4d0f-8fc8-1cad23b3c3f1/115"/>
         </a>
-        <a href="https://www.behance.net/Mariela-Erramuspe" target="_blank" rel="author">
-          <h4 style="margin-top: 1rem;">Valerie Ramos</h4>
+        <a href="https://www.behance.net/aylen-sol-martel" target="_blank" rel="author">
+          <h4 style="margin-top: 1rem;">Aylén Sol martel</h4>
           <h4 style="margin-top: 1rem;">UX/UI</h4>
         </a>
         <a href="https://www.behance.net/aylen-sol-martel" target="_blank">
@@ -47,7 +47,7 @@ Lo mejor de todo, nuestro sistema intuitivo te permite crear una cuenta en la qu
           <h4 style="margin-top: 1rem;">Consuelo León Abarca</h4>
           <h4 style="margin-top: 1rem;">UX/UI</h4>
         </a>
-        <a href="https://www.behance.net/CristianMOrlando" target="_blank">
+        <a href="https://www.behance.net/consuelo-leon-abarca" target="_blank">
           <img src="https://img.shields.io/static/v1?style=for-the-badge&message=Behance&color=172B4D&logo=Behance&logoColor=FFFFFF&label="/>
         </a>
         <a href="https://www.linkedin.com/in/consuelo-leon-abarca/" target="_blank">
@@ -72,8 +72,98 @@ Lo mejor de todo, nuestro sistema intuitivo te permite crear una cuenta en la qu
         </a>
       </div>
     </td>
+    <td>
+      <div align="center">
+        <a href="https://github.com/nicolemos" target="_blank" rel="author">
+          <img width="110" src="https://i.ibb.co/ykpFRBh/1656353282010.jpg"/>
+        </a>
+        <a href="https://www.linkedin.com/in/nicolas-lemos/" target="_blank" rel="author">
+          <h4 style="margin-top: 1rem;">Nicolás Lemos</h4>
+          <h4 style="margin-top: 1rem;">Backend</h4>
+        </a>
+        <a href="https://github.com/nicolemos" target="_blank">
+          <img src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
+        </a>
+        <a href="https://www.linkedin.com/in/nicolas-lemos/" target="_blank">
+          <img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
+        </a>
+      </div>
+    </td>
+  </tr>
 </table>
 
+<table>
+  <tr>
+    <td>
+      <div align="center">
+        <a href="https://github.com/msgiorgini77" target="_blank" rel="author">
+          <img width="110" src="https://i.ibb.co/t2mf3dS/cara.jpg"/>
+        </a>
+        <a href="https://github.com/msgiorgini77" target="_blank" rel="author">
+          <h4 style="margin-top: 1rem;">Matias Giorgini</h4>
+          <h4 style="margin-top: 1rem;">Backend</h4>
+        </a>
+        <a href="https://github.com/msgiorgini77" target="_blank">
+          <img src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
+        </a>
+        <a href="https://www.linkedin.com/in/matias-giorgini/" target="_blank">
+          <img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
+        </a>
+      </div>
+    </td>
+    <td>
+      <div align="center">
+        <a href="https://github.com/PatEche" target="_blank" rel="author">
+          <img width="110" src="https://i.ibb.co/5Wk68Gq/Patricio.jpg"/>
+        </a>
+        <a href="https://github.com/PatEche" target="_blank" rel="author">
+          <h4 style="margin-top: 1rem;">Patricio Echeverria</h4>
+          <h4 style="margin-top: 1rem;">Backend</h4>
+        </a>
+        <a href="https://github.com/PatEche" target="_blank">
+          <img src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
+        </a>
+        <a href="https://www.linkedin.com/in/patricio-luis-echeverria/" target="_blank">
+          <img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
+        </a>
+      </div>
+    </td>
+    <td>
+      <div align="center">
+        <a href="https://github.com/JAPMagdaleno" target="_blank" rel="author">
+          <img width="110" src="https://i.ibb.co/gSdbfQ6/Alex.jpg"/>
+        </a>
+        <a href="https://github.com/JAPMagdaleno" target="_blank" rel="author">
+          <h4 style="margin-top: 1rem;">Alejandro Pacheco</h4>
+          <h4 style="margin-top: 1rem;">Backend</h4>
+        </a>
+        <a href="https://github.com/JAPMagdaleno" target="_blank">
+          <img src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
+        </a>
+        <a href="https://www.linkedin.com/in/alejandro-pachecom/" target="_blank">
+          <img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
+        </a>
+      </div>
+    </td>
+    <td>
+      <div align="center">
+        <a href="https://github.com/valeday" target="_blank" rel="author">
+          <img width="110" src="https://i.ibb.co/RcStLKh/Valerie.jpg"/>
+        </a>
+        <a href="https://github.com/valeday" target="_blank" rel="author">
+          <h4 style="margin-top: 1rem;">Valerie Ramos</h4>
+          <h4 style="margin-top: 1rem;">Backend</h4>
+        </a>
+        <a href="https://github.com/valeday" target="_blank">
+          <img src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
+        </a>
+        <a href="https://www.linkedin.com/in/valeriedramosg/" target="_blank">
+          <img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
+        </a>
+      </div>
+    </td>
+  </tr>
+</table>
 ## Tecnologías Utilizadas
 
 ### Front-End
