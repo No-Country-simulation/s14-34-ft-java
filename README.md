@@ -15,7 +15,8 @@ Lo mejor de todo, nuestro sistema intuitivo te permite crear una cuenta en la qu
 
 <h1 align="center"> 
 <a href="https://s14-34-ft-java.vercel.app/"/>
-<img src="https://i.ibb.co/JCntk7b/Isotipo-Color.png" width="80px">Ver Proyecto 👉
+<img src="https://i.ibb.co/JCntk7b/Isotipo-Color.png" width="80px">Ver Proyecto
+<img src="https://i.ibb.co/JCntk7b/Isotipo-Color.png" width="80px">
 </h1>
 
 <!-- TEAMS -->
