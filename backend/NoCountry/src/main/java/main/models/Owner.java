@@ -31,6 +31,12 @@ public class Owner {
     @Column(name = "last_name")
     private String lastName;
 
+    @NotNull
+    @Size(max = 50)
+    @Column(name = "email")
+    private String email;
+
+
     @Column(name = "photo_url")
     @NotNull
     private String photo;
@@ -40,27 +46,22 @@ public class Owner {
     @Column(name = "phone")
     private String phone;
 
-    @NotNull
     @Size(max = 90)
     @Column(name = "address")
     private String address;
 
-    @NotNull
     @Size(max = 80)
     @Column(name = "location")
     private String location;
 
-    @NotNull
     @Size(max = 80)
     @Column(name = "province")
     private String province;
 
-    @NotNull
     @Size(max = 20)
     @Column(name = "postal_code")
     private String postalCode;
 
-    @NotNull
     @Size(max = 20)
     @Column(name = "dni")
     private String dni;

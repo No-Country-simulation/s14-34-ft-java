@@ -28,10 +28,10 @@ public class OwnerController {
         }
     }
 
-    @PostMapping(consumes = "application/json",produces = "application/json")
-    public ResponseEntity<?> save(@Valid @RequestBody Owner owner){
+    @PostMapping("/save/{userId}")
+    public ResponseEntity<?> save(@PathVariable Long userId,@Valid @RequestBody Owner owner){
         try {
-            return ResponseEntity.status(HttpStatus.OK).body(ownerService.saveOwner(owner));
+            return ResponseEntity.status(HttpStatus.OK).body(ownerService.saveOwner(userId,owner));
         }catch (Exception e){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Can't add owner");
         }
