@@ -62,8 +62,8 @@ export default function Mascota() {
                         "Content-Type": "application/json",
                     },
                 });
-                const userData = await res.json();
-                setPetData(userData);
+                const pet = await res.json();
+                setPetData(pet);
             } catch (error) {
                 console.error("Error fetching pet data:", error);
             }
@@ -93,20 +93,20 @@ export default function Mascota() {
                     </div>
                 </div>
                 <div className="">{mostrarFormulario && <Addpet onClose={toggleFormulario} />}</div>
-
+                
                 <div className="text-center ml-2 mr-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                    {(petData.length > 0 ? petData : Mascotas).map(mascota => (
+                    {petData.map((mascota) => (
                         <div key={mascota.id} className="p-2 w-full bg-white rounded-2xl border border-orange-400 hover:border-orange-200 overflow-hidden flex flex-col justify-between items-center gap-2">
                             <div className="self-stretch flex flex-col justify-start items-center gap-3">
                                 <div className="image-container w-[125px] h-[125px] mt-4">
-                                    {/* Cambia la propiedad 'foto' por 'photo' según la estructura de tus datos */}
-                                    <Image className="image" src={mascota.foto} alt={mascota.nombre} width={125} height={125} />
+
+                                    <Image className="image" src={mascota.photo} alt={mascota.name} width={125} height={125} />
                                 </div>
-                                {/* Ajusta el nombre de la propiedad según la estructura de tus datos */}
-                                <div className="w-[332px] text-center text-black text-[28px] font-medium">{mascota.nombre}</div>
+
+                                <div className="w-[332px] text-center text-black text-[28px] font-medium">{mascota.name}</div>
                             </div>
                             <div className="view-more w-[332px] px-4 py-2 bg-orange-300 hover:bg-orange-500 rounded-xl justify-center items-center text-white text-xl font-medium">
-                                {/* Ajusta el enlace para ver más según tu estructura de rutas */}
+
                                 <Link href={`/dashboard/pets/${mascota.id}`}>
                                     Ver más
                                 </Link>
