@@ -13,6 +13,214 @@ Lo mejor de todo, nuestro sistema intuitivo te permite crear una cuenta en la qu
 
 Únete a nuestra comunidad de amantes de los animales y experimenta la tranquilidad que proviene de saber que tus mascotas están en manos expertas y amorosas. Descubre la comodidad y la confianza en el cuidado de mascotas, solo en nuestro proyecto web.
 
+<!-- TEAMS -->
+
+<h1 align="center"> 
+<img src="https://media1.giphy.com/media/gF2m2JOyGReppog8hU/giphy.gif" width="30px">Equipo
+</h1>
+
+<table>
+  <tr>
+    <td>
+      <div align="center">
+        <a href="https://www.behance.net/aylen-sol-martel" target="_blank" rel="author">
+          <img width="110" src="https://pps.services.adobe.com/api/profile/B1A150B44F42968B0A490D45@AdobeID/image/d271079f-b77d-4d0f-8fc8-1cad23b3c3f1/115"/>
+        </a>
+        <a href="https://www.behance.net/Mariela-Erramuspe" target="_blank" rel="author">
+          <h4 style="margin-top: 1rem;">Valerie Ramos</h4>
+          <h4 style="margin-top: 1rem;">UX/UI</h4>
+        </a>
+        <a href="https://www.behance.net/aylen-sol-martel" target="_blank">
+          <img src="https://img.shields.io/static/v1?style=for-the-badge&message=Behance&color=172B4D&logo=Behance&logoColor=FFFFFF&label="/>
+        </a>
+        <a href="https://www.linkedin.com/in/valeriedramosg/" target="_blank">
+          <img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
+        </a>
+      </div>
+    </td>
+    <td>
+      <div align="center">
+        <a href="https://www.behance.net/consuelo-leon-abarca" target="_blank" rel="author">
+          <img width="110" src="https://pps.services.adobe.com/api/profile/12B4265763DA65080A495E98@AdobeID/image/5dc5e92b-dae9-451d-b63c-594db4d9da92/115"/>
+        </a>
+        <a href="https://www.behance.net/consuelo-leon-abarca" target="_blank" rel="author">
+          <h4 style="margin-top: 1rem;">Consuelo León Abarca</h4>
+          <h4 style="margin-top: 1rem;">UX/UI</h4>
+        </a>
+        <a href="https://www.behance.net/CristianMOrlando" target="_blank">
+          <img src="https://img.shields.io/static/v1?style=for-the-badge&message=Behance&color=172B4D&logo=Behance&logoColor=FFFFFF&label="/>
+        </a>
+        <a href="https://www.linkedin.com/in/consuelo-leon-abarca/" target="_blank">
+          <img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
+        </a>
+      </div>
+    </td>
+    <td>
+      <div align="center">
+        <a href="https://github.com/Orlandoc0107" target="_blank" rel="author">
+          <img width="110" src="https://avatars.githubusercontent.com/u/48032098"/>
+        </a>
+        <a href="https://www.linkedin.com/in/orlandocardenasvillegas/" target="_blank" rel="author">
+          <h4 style="margin-top: 1rem;">Orlando Cardenas Villegas</h4>
+          <h4 style="margin-top: 1rem;">Frontend</h4>
+        </a>
+        <a href="https://github.com/Orlandoc0107" target="_blank">
+          <img src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
+        </a>
+        <a href="https://www.linkedin.com/in/orlandocardenasvillegas/" target="_blank">
+          <img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
+        </a>
+      </div>
+    </td>
+    <td>
+      <div align="center">
+        <a href="https://github.com/leandroni1983" target="_blank" rel="author">
+          <img width="110" src="https://avatars.githubusercontent.com/u/27628361?v=4"/>
+        </a>
+        <a href="https://www.linkedin.com/in/leandronicolas1983/" target="_blank" rel="author">
+          <h4 style="margin-top: 1rem;">Leandro Maranda</h4>
+          <h4 style="margin-top: 1rem;">Frontend</h4>
+        </a>
+        <a href="https://github.com/leandroni1983" target="_blank">
+          <img src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
+        </a>
+        <a href="https://www.linkedin.com/in/leandronicolas1983/" target="_blank">
+          <img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
+        </a>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td>
+      <div align="center">
+        <a href="https://github.com/maggieruizdiaz22" target="_blank" rel="author">
+          <img width="110" src="https://avatars.githubusercontent.com/u/114106304?v=4"/>
+        </a>
+        <a href="https://github.com/maggieruizdiaz22" target="_blank" rel="author">
+          <h4 style="margin-top: 1rem;">Magali Ruiz</h4>
+          <h4 style="margin-top: 1rem;">Backend</h4>
+        </a>
+        <a href="https://github.com/maggieruizdiaz22" target="_blank">
+          <img src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
+        </a>
+        <a href="https://www.linkedin.com/in/magal%C3%ADruizdiaz/" target="_blank">
+          <img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
+        </a>
+      </div>
+    </td>
+    <td>
+      <div align="center">
+        <a href="https://github.com/thomasbarenghi" target="_blank" rel="author">
+          <img width="110" src="https://avatars.githubusercontent.com/u/90881270?v=4"/>
+        </a>
+        <a href="https://github.com/thomasbarenghi" target="_blank" rel="author">
+          <h4 style="margin-top: 1rem;">Thomas Barenghi</h4>
+          <h4 style="margin-top: 1rem;">Backend</h4>
+        </a>
+        <a href="https://github.com/thomasbarenghi" target="_blank">
+          <img src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
+        </a>
+        <a href="https://www.linkedin.com/in/thomasbarenghi/" target="_blank">
+          <img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
+        </a>
+      </div>
+    </td>
+    <td>
+      <div align="center">
+        <a href="https://github.com/GoRiDeveloper" target="_blank" rel="author">
+          <img width="110" src="https://avatars.githubusercontent.com/u/103330976?v=4"/>
+        </a>
+        <a href="https://github.com/GoRiDeveloper" target="_blank" rel="author">
+          <h4 style="margin-top: 1rem;">Govanni González</h4>
+          <h4 style="margin-top: 1rem;">Backend</h4>
+        </a>
+        <a href="https://github.com/GoRiDeveloper" target="_blank">
+          <img src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
+        </a>
+        <a href="https://www.linkedin.com/in/govanni-rivera-desarrollador-full-stack/" target="_blank">
+          <img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
+        </a>
+      </div>
+    </td>
+    <td>
+      <div align="center">
+        <a href="https://github.com/mjParedes" target="_blank" rel="author">
+          <img width="110" src="https://avatars.githubusercontent.com/u/99201087?v=4"/>
+        </a>
+        <a href="https://github.com/mjParedes" target="_blank" rel="author">
+          <h4 style="margin-top: 1rem;">Matias Paredes</h4>
+          <h4 style="margin-top: 1rem;">Backend</h4>
+        </a>
+        <a href="https://github.com/mjParedes" target="_blank">
+          <img src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
+        </a>
+        <a href="https://www.linkedin.com/in/matias-paredes-m8j5" target="_blank">
+          <img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
+        </a>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td>
+      <div align="center">
+        <a href="https://github.com/MayderC" target="_blank" rel="author">
+          <img width="110" src="https://avatars.githubusercontent.com/u/44930667?v=4"/>
+        </a>
+        <a href="https://github.com/MayderC" target="_blank" rel="author">
+          <h4 style="margin-top: 1rem;">Mayder Cortés</h4>
+          <h4 style="margin-top: 1rem;">Backend</h4>
+        </a>
+        <a href="https://github.com/MayderC" target="_blank">
+          <img src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
+        </a>
+        <a href="https://github.com/MayderC" target="_blank">
+          <img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
+        </a>
+      </div>
+    </td>
+    <td>
+      <div align="center">
+        <a href="https://github.com/santiago-sonzini" target="_blank" rel="author">
+          <img width="110" src="https://avatars.githubusercontent.com/u/65967521?v=4"/>
+        </a>
+        <a href="https://github.com/santiago-sonzini" target="_blank" rel="author">
+          <h4 style="margin-top: 1rem;">Santiago Sonzini</h4>
+          <h4 style="margin-top: 1rem;">Backend Developer</h4>
+        </a>
+        <a href="https://github.com/santiago-sonzini" target="_blank">
+          <img src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
+        </a>
+        <a href="https://github.com/santiago-sonzini" target="_blank">
+          <img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
+        </a>
+      </div>
+    </td>
+    <td>
+      <div align="center">
+        <a href="https://github.com/SIA83" target="_blank" rel="author">
+          <img width="110" src="https://avatars.githubusercontent.com/u/140283228?v=4"/>
+        </a>
+        <a href="https://www.linkedin.com/in/irina-sov/" target="_blank" rel="author">
+          <h4 style="margin-top: 1rem;">Irina Sovenko</h4>
+          <h4 style="margin-top: 1rem;">Q/A Analyst</h4>
+        </a>
+        <a href="https://github.com/SIA83" target="_blank">
+          <img src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
+        </a>
+        <a href="https://www.linkedin.com/in/irina-sov/" target="_blank">
+          <img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
+        </a>
+      </div>
+    </td>
+  </tr>
+</table>
+
 ## Tecnologías Utilizadas
 
 ### Front-End
@@ -90,12 +298,6 @@ Lo mejor de todo, nuestro sistema intuitivo te permite crear una cuenta en la qu
 ```bash
   git clone https://github.com/No-Country/s14-34-ft-java.git
 ```
-
-<!-- TEAMS -->
-
-<h1 align="center"> 
-<img src="https://media1.giphy.com/media/gF2m2JOyGReppog8hU/giphy.gif" width="30px">Equipo
-</h1>
 
 <!-- Screenshots -->
 <h1 align="center"> 
