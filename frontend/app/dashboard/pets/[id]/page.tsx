@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Fragment, useEffect, useState } from 'react';
-
+//valire
 interface Pet {
     id: number;
     typeOfPet: string;
@@ -59,7 +59,7 @@ export default function MascotaId({params}: {params: {id:string}}) {
         <div className="bg-slate-400 p-8 m-2-0">
             <h1>{petData.name}</h1>
             <div className="bg-color2 p-4 mt-2 mb-8 rounded-lg border-2"><p>tipo de Mascota {petData.typeOfPet}</p></div>
-            
+
             <p>Breed: {petData.breed}</p>
             <p>Edad: {petData.age}</p>
             <p>Tamanio: {petData.size}</p>

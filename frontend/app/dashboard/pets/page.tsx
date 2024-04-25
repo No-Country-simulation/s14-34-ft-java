@@ -19,6 +19,5 @@ export default function page() {
       <FootersOne />
       <Foothercopyrigth />
     </div>
-
   )
 }
