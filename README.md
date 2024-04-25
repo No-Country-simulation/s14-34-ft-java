@@ -1,5 +1,4 @@
-
-![image](https://i.ibb.co/gt6XZDw/Imagotipo-Color.png)
+![image](https://i.ibb.co/N9Zm16K/Portada.png)
 
 ## Sobre el Proyecto 🐕‍🦺🐱🐰🐭🐇
 
@@ -377,3 +376,7 @@ Y para ejecutar el sistema
     </td>
   </tr>
 </table>
+
+![image](https://i.ibb.co/gt6XZDw/Imagotipo-Color.png)
+
+**Todas las imágenes son libres de derecho**
