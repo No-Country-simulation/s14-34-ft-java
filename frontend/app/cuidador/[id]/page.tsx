@@ -35,7 +35,7 @@ export default function CuidadorId({ params }: { params: { id: string } }) {
             <div>
                 <HeadersOne />
             </div>
-            <div className="mt-36 ml-10 flex">
+            <div className="mt-36 ml-10">
                 <div>
                     <Volver />
                 </div>
