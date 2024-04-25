@@ -37,7 +37,7 @@ public class OwnerController {
         }
     }
 
-    @GetMapping(value = "/{id}",produces = "application/json")
+    @GetMapping(value = "/id",produces = "application/json")
     public ResponseEntity<?> getOwnerById(@RequestHeader("token") String token) {
         try {
             Long userId = jwtService.getUserIdFromToken(token);
@@ -47,9 +47,10 @@ public class OwnerController {
         }
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Owner> updateOwner(@PathVariable Long id, @RequestBody Owner owner) throws Exception {
-        Owner ownerResponse = ownerService.updateOwner(id,owner);
+    @PutMapping("/update/id")
+    public ResponseEntity<Owner> updateOwner(@RequestHeader("token") String token, @RequestBody Owner owner) throws Exception {
+        Long userId = jwtService.getUserIdFromToken(token);
+        Owner ownerResponse = ownerService.updateOwner(userId,owner);
         return ResponseEntity.ok(ownerResponse);
 
     }

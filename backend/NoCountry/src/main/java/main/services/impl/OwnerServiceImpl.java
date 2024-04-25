@@ -60,9 +60,11 @@ public class OwnerServiceImpl implements IOwnerService {
     }
 
     @Override
-    public Owner updateOwner(Long id, Owner updatedOwner) throws Exception {
+    public Owner updateOwner(Long userId, Owner updatedOwner) throws Exception {
         try {
-            Owner existingOwner = ownerRepository.findById(id)
+            Long ownerId = ownerRepository.findOwnerIdByUserId(userId);
+
+            Owner existingOwner = ownerRepository.findById(ownerId)
                     .orElseThrow(() -> new IllegalArgumentException("Propietario no encontrado"));
             existingOwner.setFirstName(updatedOwner.getFirstName());
             existingOwner.setLastName(updatedOwner.getLastName());
