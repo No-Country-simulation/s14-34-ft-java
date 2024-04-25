@@ -243,7 +243,6 @@ Lo mejor de todo, nuestro sistema intuitivo te permite crear una cuenta en la qu
         <a href="https://miro.com/app/board/uXjVKYNf3v0=/?share_link_id=847828277339" target="_blank" rel="author">
           <img width="110" src="https://camo.githubusercontent.com/dea1fd920c49f5b7f62a29b14a51bc73bf403e8d67b89081c4c2c87d7a068405/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4d69726f2d4637433932323f7374796c653d666f722d7468652d6261646765266c6f676f3d4d69726f266c6f676f436f6c6f723d303530303336"/>
         </a>
-        <p>Miro</p>
       </div>
     </td>
     <td>
@@ -251,12 +250,11 @@ Lo mejor de todo, nuestro sistema intuitivo te permite crear una cuenta en la qu
         <a href="https://www.figma.com/file/EFQ6EVCAlbDCggp0Ud3EwC/No-Country---HappyPaws-WebApp?type=design&node-id=1%3A2&mode=design&t=WYhpT3HAGdbkTStj-1" target="_blank" rel="author">
           <img width="110" src="https://camo.githubusercontent.com/293656f93522cb949e24c56b187b1732df20a67e345f72cb2e54bdf3170c9a61/68747470733a2f2f696d672e736869656c64732e696f2f7374617469632f76313f7374796c653d666f722d7468652d6261646765266d6573736167653d4669676d6126636f6c6f723d463234453145266c6f676f3d4669676d61266c6f676f436f6c6f723d464646464646266c6162656c3d"/>
         </a>
-        <p>Figma</p>
       </div>
     </td>
   </tr>
   <tr align="center">
-    <td colspan="2"><p>Links</p></td>
+    <td colspan="2"><h1>Links</h1></td>
   </tr>
 </table>
 
@@ -385,9 +383,9 @@ Y para ejecutar el sistema
 </table>
 
 <div style="text-align: center;">
-  <img align="center" src="https://i.ibb.co/gt6XZDw/Imagotipo-Color.png" alt="image">
+  <img src="https://i.ibb.co/gt6XZDw/Imagotipo-Color.png" alt="image">
 </div>
 
 <div style="text-align: center;">
-  <p style="font-weight: bold;">Todas las imágenes son libres de derecho</p>
+  <h1 style="font-weight: bold;">Todas las imágenes son libres de derecho</h1>
 </div>
