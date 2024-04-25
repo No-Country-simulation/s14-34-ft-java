@@ -22,7 +22,7 @@ const ReservasData = [
         fechaInicio: "2024-04-10", fechaFin: "2024-04-20"
     },
     {
-        id: '3', foto: '/reservas/image=3.svg', nombre: 'María', apellido: "López",
+        id: '3', foto: '/reservas/image=3.svg', nombre: 'Elena', apellido: "López",
         servicio: "cuidado", precio: "20.000", mascota: "Erizo", estado: "activo",
         fechaInicio: "2024-04-20", fechaFin: "2024-04-30"
     },
