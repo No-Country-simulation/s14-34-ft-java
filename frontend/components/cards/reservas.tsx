@@ -95,6 +95,7 @@ export default function Reservas() {
                 <div className="flex flex-col">
                     <div className="text-black text-lg font-normal">{reserva.nombre}</div>
                     <div className="text-black text-lg font-normal">{reserva.apellido}</div>
+                    <div className="mt-4">Cuidador</div>
                 </div>
             </div>
             <div className="flex items-center space-x-4">
