@@ -231,7 +231,7 @@ export default function Datosuser() {
                                         type="text"
                                         id="direccion"
                                         autoComplete="given-name"
-                                        placeholder={`Direccion: ${userData.address}`}
+                                        placeholder="Direccion"
                                         {...register("direccion")}
                                         className="w-full self-stretch px-4 py-3 bg-white rounded-xl border border-orange-400 justify-start items-center gap-3 inline-flex"
                                     />
@@ -243,7 +243,7 @@ export default function Datosuser() {
                                         type="text"
                                         id="dni"
                                         autoComplete="given-name"
-                                        placeholder={`DNI: ${userData.dni}`}
+                                        placeholder="DNI"
                                         {...register("dni")}
                                         className="w-full self-stretch px-4 py-3 bg-white rounded-xl border border-orange-400 justify-start items-center gap-3 inline-flex"
                                     />
@@ -254,7 +254,7 @@ export default function Datosuser() {
                                         type="text"
                                         id="localizacion"
                                         autoComplete="given-name"
-                                        placeholder={`Localizacion: ${data.localizacion}`}
+                                        placeholder="localizacion"
                                         {...register("localizacion")}
                                         className="w-full self-stretch px-4 py-3 bg-white rounded-xl border border-orange-400 justify-start items-center gap-3 inline-flex"
                                     />
@@ -303,7 +303,7 @@ export default function Datosuser() {
                                         type="text"
                                         id="provincia"
                                         autoComplete="given-name"
-                                        placeholder={`Provincia: ${data.provincia}`}
+                                        placeholder="provincia"
                                         {...register("provincia")}
                                         className="w-full self-stretch px-4 py-3 bg-white rounded-xl border border-orange-400 justify-start items-center gap-3 inline-flex"
                                     />
@@ -357,7 +357,7 @@ export default function Datosuser() {
                                         type="text"
                                         id="direccion"
                                         autoComplete="given-name"
-                                        placeholder={`Direccion: ${userData.address}`}
+                                        placeholder="direccion"
                                         {...register("direccion")}
                                         value={userData.address}
                                         disabled={true}
@@ -371,7 +371,7 @@ export default function Datosuser() {
                                         type="text"
                                         id="dni"
                                         autoComplete="given-name"
-                                        placeholder={`DNI: ${userData.dni}`}
+                                        placeholder="DNI"
                                         {...register("dni")}
                                         value={userData.dni}
                                         disabled={true}
@@ -379,7 +379,7 @@ export default function Datosuser() {
                                     />
                                 </div>
                                 <div>
-                                <p className="text-black text-[26px] font-medium">Localizacion</p>
+                                <p className="text-black text-[26px] font-medium">Localización </p>
                                 <input
                                         type="text"
                                         id="localizacion"
@@ -422,7 +422,7 @@ export default function Datosuser() {
                                     />
                                 </div>
                                 <div>
-                                <p className="text-black text-[26px] font-medium">Telefono</p>
+                                <p className="text-black text-[26px] font-medium">Teléfono</p>
                                 <input
                                         
                                         className="w-full self-stretch px-4 py-3 bg-white rounded-xl border border-orange-400 justify-start items-center gap-3 inline-flex"
@@ -445,7 +445,7 @@ export default function Datosuser() {
                                     />
                                 </div>
                                 <div>
-                                <p className="text-black text-[26px] font-medium">Codigo Postal</p>
+                                <p className="text-black text-[26px] font-medium">Código Postal</p>
                                 <input
                                         type="text"
                                         id="postal"
