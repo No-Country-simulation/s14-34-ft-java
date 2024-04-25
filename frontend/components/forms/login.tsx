@@ -47,6 +47,7 @@ export default function FormLogin() {
             showAlert()
             return;
         }
+        
         // Redirigir a la página de dashboard después del inicio de sesión exitoso
         router.push("/");
     };
