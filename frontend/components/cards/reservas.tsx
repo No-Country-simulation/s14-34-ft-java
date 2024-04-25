@@ -12,54 +12,44 @@ import { useState } from 'react';
 
 const ReservasData = [
     {
-        id: '1', foto: '/reservas/image=1.svg', nombre: 'Orlando', apellido: "Cardenas",
-        servicio: "alojamiento", precio: "30.000", mascota: "Perro", estado: "activo",
+        id: '1', foto: '/reservas/image=1.svg', nombre: 'María', apellido: "Solís",
+        servicio: "paseo", precio: "30.000", mascota: "Perro", estado: "activo",
         fechaInicio: "2024-04-15", fechaFin: "2024-04-25" 
     },
     {
-        id: '2', foto: '/reservas/image=2.svg', nombre: 'Juan', apellido: "González",
+        id: '2', foto: '/reservas/image=2.svg', nombre: 'Juana', apellido: "González",
         servicio: "cuidado", precio: "50.000", mascota: "Gato", estado: "inactivo",
         fechaInicio: "2024-04-10", fechaFin: "2024-04-20"
     },
     {
         id: '3', foto: '/reservas/image=3.svg', nombre: 'María', apellido: "López",
-        servicio: "paseo", precio: "20.000", mascota: "Perro", estado: "activo",
+        servicio: "cuidado", precio: "20.000", mascota: "Erizo", estado: "activo",
         fechaInicio: "2024-04-20", fechaFin: "2024-04-30"
     },
     {
-        id: '4', foto: '/mascotas/1.png', nombre: 'Pedro', apellido: "Martínez",
-        servicio: "cuidado", precio: "40.000", mascota: "Perro", estado: "activo",
+        id: '4', foto: '/reservas/image=4.svg', nombre: 'Pedro', apellido: "Martínez",
+        servicio: "cuidado", precio: "40.000", mascota: "Chinchilla", estado: "activo",
         fechaInicio: "2024-04-12", fechaFin: "2024-04-22"
     },
     {
-        id: '5', foto: '/mascotas/1.png', nombre: 'Ana', apellido: "Gómez",
-        servicio: "paseo", precio: "25.000", mascota: "Gato", estado: "activo",
+        id: '5', foto: '/reservas/image=5.svg', nombre: 'Camilo', apellido: "Gómez",
+        servicio: "paseo", precio: "25.000", mascota: "Hamster", estado: "activo",
         fechaInicio: "2024-04-18", fechaFin: "2024-04-28"
     },
     {
-        id: '6', foto: '/mascotas/1.png', nombre: 'Diego', apellido: "Rodríguez",
-        servicio: "alojamiento", precio: "35.000", mascota: "Perro", estado: "activo",
+        id: '6', foto: '/reservas/image=6.svg', nombre: 'Diego', apellido: "Rodríguez",
+        servicio: "alojamiento", precio: "35.000", mascota: "Conejillo de Indias", estado: "activo",
         fechaInicio: "2024-04-22", fechaFin: "2024-05-02"
     },
     {
-        id: '7', foto: '/mascotas/1.png', nombre: 'Laura', apellido: "Hernández",
-        servicio: "cuidado", precio: "45.000", mascota: "Gato", estado: "activo",
+        id: '7', foto: '/reservas/image=7.svg', nombre: 'Laura', apellido: "Hernández",
+        servicio: "cuidado", precio: "45.000", mascota: "Cobayo", estado: "inactivo",
         fechaInicio: "2024-04-08", fechaFin: "2024-04-18"
     },
     {
-        id: '8', foto: '/mascotas/1.png', nombre: 'Carlos', apellido: "Sánchez",
-        servicio: "paseo", precio: "22.000", mascota: "Perro", estado: "activo",
+        id: '8', foto: '/reservas/image=8.svg', nombre: 'Karla', apellido: "Sánchez",
+        servicio: "alojamiento", precio: "22.000", mascota: "Conejo", estado: "activo",
         fechaInicio: "2024-04-25", fechaFin: "2024-05-05"
-    },
-    {
-        id: '9', foto: '/mascotas/1.png', nombre: 'Elena', apellido: "Fernández",
-        servicio: "alojamiento", precio: "28.000", mascota: "Gato", estado: "activo",
-        fechaInicio: "2024-04-17", fechaFin: "2024-04-27"
-    },
-    {
-        id: '10', foto: '/mascotas/1.png', nombre: 'Manuel', apellido: "Díaz",
-        servicio: "cuidado", precio: "55.000", mascota: "Perro", estado: "activo",
-        fechaInicio: "2024-04-14", fechaFin: "2024-04-24"
     }
 ];
 
