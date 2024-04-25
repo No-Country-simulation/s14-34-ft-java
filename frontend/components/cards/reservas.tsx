@@ -12,17 +12,17 @@ import { useState } from 'react';
 
 const ReservasData = [
     {
-        id: '1', foto: '/mascotas/1.png', nombre: 'Belén', apellido: "Pérez",
+        id: '1', foto: '/reservas/image=1.svg', nombre: 'Orlando', apellido: "Cardenas",
         servicio: "alojamiento", precio: "30.000", mascota: "Perro", estado: "activo",
-        fechaInicio: "2024-04-15", fechaFin: "2024-04-25"
+        fechaInicio: "2024-04-15", fechaFin: "2024-04-25" 
     },
     {
-        id: '2', foto: '/mascotas/1.png', nombre: 'Juan', apellido: "González",
+        id: '2', foto: '/reservas/image=2.svg', nombre: 'Juan', apellido: "González",
         servicio: "cuidado", precio: "50.000", mascota: "Gato", estado: "inactivo",
         fechaInicio: "2024-04-10", fechaFin: "2024-04-20"
     },
     {
-        id: '3', foto: '/mascotas/1.png', nombre: 'María', apellido: "López",
+        id: '3', foto: '/reservas/image=3.svg', nombre: 'María', apellido: "López",
         servicio: "paseo", precio: "20.000", mascota: "Perro", estado: "activo",
         fechaInicio: "2024-04-20", fechaFin: "2024-04-30"
     },
