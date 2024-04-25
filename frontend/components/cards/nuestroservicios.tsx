@@ -40,7 +40,7 @@ const fechaActualEnFormato = obtenerFechaActualEnFormato();
   return (
     <div id="servicios" className="bg-color7 p-2 w-full ">
       <div className="justify-self-end text-right px-24">
-        <h1 className="text-[38px]  text-right font-semibold">Nuestro servicios</h1>
+        <h1 className="text-[38px]  text-right font-semibold">Nuestros servicios</h1>
       </div>
       <div className="flex justify-around p-[80px]">
         <div onClick={handleDivClick1} className="cursor-pointer  w-[380px] h-[400px] shadow-2xl bg-white rounded-2xl flex-col justify-start items-center border-2">

@@ -74,7 +74,7 @@ const Carouselclientes = () => {
     }, [emblaApi])
 
     return (
-        <div className="overflow-hidden w-full embla bg-gradient-to-tr from-orange-200 via-orange-400 to-orange-200 h-[500px]" ref={emblaRef}>
+        <div className="" ref={emblaRef}>
             <div className="flex embla__container">
                 {usuarios.map((usuario, index) => (
                     <div key={index} className="flex w-full embla__slide content-center py-20 px-5">
