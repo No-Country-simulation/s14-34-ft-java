@@ -238,7 +238,7 @@ Lo mejor de todo, nuestro sistema intuitivo te permite crear una cuenta en la qu
   <tr>
     <td>
       <div align="center">
-        <a>Links</a>
+        <b align="center">Links</b>
         <a href="https://miro.com/app/board/uXjVKYNf3v0=/?share_link_id=847828277339" target="_blank" rel="author">
           <img width="110" src="https://camo.githubusercontent.com/dea1fd920c49f5b7f62a29b14a51bc73bf403e8d67b89081c4c2c87d7a068405/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4d69726f2d4637433932323f7374796c653d666f722d7468652d6261646765266c6f676f3d4d69726f266c6f676f436f6c6f723d303530303336"/>
         </a>
