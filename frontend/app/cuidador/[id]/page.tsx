@@ -10,12 +10,50 @@ import Volver from "@/components/buttons/volver";
 
 
 const cuidadores = [
-    { id: 1, imageUrl: '/paseo/Cuidadores/1.png', nombre: 'Concen', ubicacion: 'Ubicación 1' },
-    { id: 2, imageUrl: '/paseo/Cuidadores/2.png', nombre: 'Mati', ubicacion: 'Ubicación 2' },
-    { id: 3, imageUrl: '/paseo/Cuidadores/3.png', nombre: 'Mati', ubicacion: 'Ubicación 3' },
-    { id: 4, imageUrl: '/paseo/Cuidadores/4.png', nombre: 'Orlando', ubicacion: 'Ubicación 1' },
-    { id: 5, imageUrl: '/paseo/Cuidadores/6.png', nombre: 'Valerie', ubicacion: 'Ubicación 2' },
+    {
+        id: 1,
+        imageUrl: '/paseo/Cuidadores/1.png',
+        nombre: 'Julieta Fernández',
+        ubicacion: 'Ubicación 1',
+        detalles: 'Soy una amante de los animales con experiencia en el cuidado de perros y gatos. Me encanta pasar tiempo al aire libre, jugar y pasear a los peludos. Además, tengo habilidades en la administración de medicamentos y primeros auxilios.'
+    },
+    {
+        id: 2,
+        imageUrl: '/paseo/Cuidadores/2.png',
+        nombre: 'Abril Sánchez',
+        ubicacion: 'Ubicación 2',
+        detalles: 'Tengo una pasión por los animales desde que era niña. He trabajado con perros de todas las edades y tamaños. Disfruto de largos paseos y de proporcionarles todo el amor y cuidado que necesitan.'
+    },
+    {
+        id: 3,
+        imageUrl: '/paseo/Cuidadores/3.png',
+        nombre: 'Agustina Pérez',
+        ubicacion: 'Ubicación 3',
+        detalles: 'Me considero una persona responsable y confiable, especialmente cuando se trata del cuidado de mascotas. Tengo experiencia en el cuidado de animales domésticos y estoy comprometida a proporcionarles un ambiente seguro y amoroso.'
+    },
+    {
+        id: 4,
+        imageUrl: '/paseo/Cuidadores/4.png',
+        nombre: 'Catalina Diaz',
+        ubicacion: 'Ubicación 1',
+        detalles: 'Mi amor por los animales me llevó a convertirme en cuidadora profesional. He trabajado con una variedad de mascotas y disfruto creando un vínculo especial con cada una. Estoy comprometida a brindarles el mejor cuidado posible.'
+    },
+    {
+        id: 5,
+        imageUrl: '/paseo/Cuidadores/5.png',
+        nombre: 'Azmin Alvarez',
+        ubicacion: 'Ubicación 2',
+        detalles: 'Como amante de los animales, disfruto pasar tiempo con perros y gatos. Tengo habilidades en el entrenamiento básico y en proporcionarles una atención integral. Estoy comprometida a hacer que su experiencia de cuidado sea lo más placentera posible.'
+    },
+    {
+        id: 6,
+        imageUrl: '/paseo/Cuidadores/6.png',
+        nombre: 'Franco Bravo',
+        ubicacion: 'Ubicación 2',
+        detalles: 'Soy un entusiasta de los animales con experiencia en el cuidado de perros y gatos. Me encanta interactuar con ellos, ya sea jugando, paseando o simplemente brindándoles compañía. Estoy comprometido a proporcionarles el cuidado y la atención que se merecen.'
+    }
 ];
+
 
 export default function CuidadorId({ params }: { params: { id: string } }) {
     // Encuentra el cuidador con la ID proporcionada en los parámetros
@@ -36,20 +74,23 @@ export default function CuidadorId({ params }: { params: { id: string } }) {
                 <HeadersOne />
             </div>
             <div className="mt-36 ml-10">
-                <div>
-                    <Volver />
-                </div>
-                <div>
-                    <div className="w-[241px] h-14 px-6 py-4 bg-emerald-800 rounded-2xl border border-emerald-800 justify-center items-center gap-2 inline-flex">
-                        <div className="text-white text-xl font-medium ">Contactar al cuidador</div>
+                <div className="flex flex-row justify-between">
+                    <div className="">
+                        <Volver />
+                    </div>
+                    <div className="mr-24">
+                        <button className="w-[250px] h-14 px-6 py-4 bg-emerald-800 rounded-2xl border border-emerald-800 justify-center items-center gap-2 inline-flex">
+                            <div className="text-white text-xl font-medium ">Contactar al cuidador</div>
+                        </button>
                     </div>
                 </div>
-                <div className="w-[1200px] h-[790px] p-[60px] bg-white rounded-2xl shadow flex-col justify-start items-start gap-[50px] inline-flex">
+
+                <div className="mt-10 w-[1200px] h-[790px] p-[60px] bg-white rounded-2xl shadow-md border-2 flex-col justify-start items-start gap-[50px] inline-flex">
                     <div className="self-stretch justify-start items-start gap-[69px] inline-flex">
                         <div className="px-20 py-[50px] bg-neutral-50 rounded-2xl border border-orange-400 justify-start items-start gap-[54px] flex">
                             <Image className="w-[150px] h-[150px] rounded-full" src={cuidador.imageUrl} alt="foto" width={150} height={150} />
                             <div className="flex-col justify-start items-start gap-5 inline-flex">
-                                <div className="self-stretch text-black text-[28px] font-medium ">Valentina López</div>
+                                <div className="self-stretch text-black text-[28px] font-medium ">{cuidador.nombre}</div>
                                 <div className="self-stretch justify-start items-center gap-2.5 inline-flex">
                                     <div className="w-[25.67px] h-[36.67px] relative"></div>
                                     <div className="grow shrink basis-0 text-black text-[28px] font-medium ">Qulimes</div>
@@ -145,8 +186,6 @@ export default function CuidadorId({ params }: { params: { id: string } }) {
         </div>
     )
 }
-
-
 {/* <h2>{cuidador.nombre}</h2>
 <Image src={cuidador.imageUrl} alt={cuidador.nombre} width={200} height={200} />
 <p>{cuidador.ubicacion}</p>
