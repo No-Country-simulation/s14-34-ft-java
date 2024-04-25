@@ -1,6 +1,7 @@
 import type { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
+
 export const AuthOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({
@@ -21,24 +22,34 @@ export const AuthOptions: NextAuthOptions = {
             headers: { "Content-Type": "application/json" },
           }
         );
+        // const resp = await res.json();
+        // if (resp.status === 401) {
+        //   throw new Error("Credenciales incorrectas");
+        // }
+        // console.log(resp)
+        
         const user = await res.json();
-        if (res.status === 401) {
-          throw new Error("Credenciales incorrectas");
-        }
-        return user;
+
+          if (res.status === 401) {
+            throw new Error("Credenciales incorrectas");
+
+          }
+          return user;
       },
     }),
   ],
   callbacks: {
-    async session({ session, token, user }) {
-      console.log(user)
-      console.log(session)
-      console.log(token)
-      return session
+    async jwt({ token, user }) {
+      return { ...token, ...user };
     },
+    async session({ session, token }) {
+      session.user = token as any;
+      console.log(session)
+      return session;
+    }
   },
   pages: {
     signIn: "/auth/login",
   },
-  secret: process.env.NEXTAUTH_SECRET
+  
 };

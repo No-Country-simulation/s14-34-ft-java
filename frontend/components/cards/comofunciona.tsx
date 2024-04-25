@@ -61,7 +61,7 @@ export default function Comofunciona() {
           <div className="p-4 bg-orange-400 rounded-[50px] justify-center items-center gap-2.5 inline-flex relative bottom-6">
             <div className="justify-center items-center gap-2.5 flex">
               <div className="w-6 h-6 relative"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7.33333 1.83398V5.50065M14.6667 1.83398V5.50065M19.25 12.834V5.50065C19.25 5.01442 19.0568 4.54811 18.713 4.20429C18.3692 3.86047 17.9029 3.66732 17.4167 3.66732H4.58333C4.0971 3.66732 3.63079 3.86047 3.28697 4.20429C2.94315 4.54811 2.75 5.01442 2.75 5.50065V18.334C2.75 18.8202 2.94315 19.2865 3.28697 19.6303C3.63079 19.9742 4.0971 20.1673 4.58333 20.1673H11.9167M2.75 9.16732H19.25M14.6667 18.334L16.5 20.1673L20.1667 16.5007" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M7.33333 1.83398V5.50065M14.6667 1.83398V5.50065M19.25 12.834V5.50065C19.25 5.01442 19.0568 4.54811 18.713 4.20429C18.3692 3.86047 17.9029 3.66732 17.4167 3.66732H4.58333C4.0971 3.66732 3.63079 3.86047 3.28697 4.20429C2.94315 4.54811 2.75 5.01442 2.75 5.50065V18.334C2.75 18.8202 2.94315 19.2865 3.28697 19.6303C3.63079 19.9742 4.0971 20.1673 4.58333 20.1673H11.9167M2.75 9.16732H19.25M14.6667 18.334L16.5 20.1673L20.1667 16.5007" stroke="white" strokewidth="1.5" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
 
 

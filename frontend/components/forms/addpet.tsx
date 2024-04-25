@@ -89,8 +89,8 @@ const Addpet: React.FC<FormularioProps> = ({ onClose }) => {
     };
 
     return (
-        <div className='fixed inset-0 flex items-center justify-center bg-white z-50'>
-            <div className='bg-white mx-auto'>
+        <div className='fixed inset-0 flex items-center justify-center bg-white z-50 opacity-90'>
+            <div className='bg-whit mx-auto p-4'>
                 <div className=" flex justify-between ml-10 mr-10 mb-5">
                     <div className="self-stretch justify-between items-end inline-flex text-left">
                         <p className="text-black text-[28px] font-medium">Añadir mascota</p>
@@ -111,7 +111,7 @@ const Addpet: React.FC<FormularioProps> = ({ onClose }) => {
                     </div>
                 </div>
                 {/* fomulario */}
-                <div className="p-2 mx-auto" >
+                <div className="" >
                     <form onSubmit={handleSubmit(onSubmit)} className="gap-2">
                         <div className='flex gap-4 justify-center'>
                             <div className="mb-4">

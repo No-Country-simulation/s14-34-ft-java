@@ -6,6 +6,8 @@ import Mascota from "@/components/cards/mascota";
 
 
 export default function page() {
+
+  //
   return (
     <div className="bg-color7">
       <HeadersOne />
@@ -17,6 +19,5 @@ export default function page() {
       <FootersOne />
       <Foothercopyrigth />
     </div>
-
   )
 }

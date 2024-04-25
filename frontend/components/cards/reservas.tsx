@@ -12,11 +12,47 @@ import { useState } from 'react';
 
 const ReservasData = [
     {
-        id: '1', foto: '/mascotas/1.png', nombre: 'Belen', apellido: "Perez",
-        sevicio: "alojamiento", precio: "30.000", mascota: "Perro", Estado: "activo"
+        id: '1', foto: '/reservas/image=1.svg', nombre: 'María', apellido: "Solís",
+        servicio: "paseo", precio: "30.000", mascota: "Perro", estado: "activo",
+        fechaInicio: "2024-04-15", fechaFin: "2024-04-25" 
     },
+    {
+        id: '2', foto: '/reservas/image=2.svg', nombre: 'Juana', apellido: "González",
+        servicio: "cuidado", precio: "50.000", mascota: "Gato", estado: "inactivo",
+        fechaInicio: "2024-04-10", fechaFin: "2024-04-20"
+    },
+    {
+        id: '3', foto: '/reservas/image=3.svg', nombre: 'Elena', apellido: "López",
+        servicio: "cuidado", precio: "20.000", mascota: "Erizo", estado: "activo",
+        fechaInicio: "2024-04-20", fechaFin: "2024-04-30"
+    },
+    {
+        id: '4', foto: '/reservas/image=4.svg', nombre: 'Pedro', apellido: "Martínez",
+        servicio: "cuidado", precio: "40.000", mascota: "Chinchilla", estado: "activo",
+        fechaInicio: "2024-04-12", fechaFin: "2024-04-22"
+    },
+    {
+        id: '5', foto: '/reservas/image=5.svg', nombre: 'Camilo', apellido: "Gómez",
+        servicio: "paseo", precio: "25.000", mascota: "Hamster", estado: "activo",
+        fechaInicio: "2024-04-18", fechaFin: "2024-04-28"
+    },
+    {
+        id: '6', foto: '/reservas/image=6.svg', nombre: 'Diego', apellido: "Rodríguez",
+        servicio: "alojamiento", precio: "35.000", mascota: "Conejillo de Indias", estado: "activo",
+        fechaInicio: "2024-04-22", fechaFin: "2024-05-02"
+    },
+    {
+        id: '7', foto: '/reservas/image=7.svg', nombre: 'Laura', apellido: "Hernández",
+        servicio: "cuidado", precio: "45.000", mascota: "Cobayo", estado: "inactivo",
+        fechaInicio: "2024-04-08", fechaFin: "2024-04-18"
+    },
+    {
+        id: '8', foto: '/reservas/image=8.svg', nombre: 'Karla', apellido: "Sánchez",
+        servicio: "alojamiento", precio: "22.000", mascota: "Conejo", estado: "activo",
+        fechaInicio: "2024-04-25", fechaFin: "2024-05-05"
+    }
+];
 
-]
 
 export default function Reservas() {
     const [mostrarFormulario, setMostrarFormulario] = useState(false);
@@ -29,7 +65,7 @@ export default function Reservas() {
 
     const { data: session, status } = useSession();
 
-    if (!session) {
+    if (session) {
 
         return (
             <div className=" mt-36 ml-10 mr-20">
@@ -49,52 +85,40 @@ export default function Reservas() {
                 </div>
 
 
-                <div className="mt-28 w-[1200px] h-[703px] pt-6 rounded-2xl border border-orange-400 flex-col justify-start items-start inline-flex">
-                    {ReservasData.map(reserva => (
-                        <div key={reserva.id} className="">
-
-                            <div className="w-[1200px] h-[148px] px-[50px] py-6 bg-white border-t border-orange-400 justify-between items-center inline-flex">
-                                <div className="h-[75px] justify-start items-center gap-4 flex">
-                                    <div className="w-[75px] h-[75px] justify-center items-center flex">
-                                        <Image className="w-[75px] h-[75px] rounded-full" src="https://via.placeholder.com/75x75" alt="foto" width={75}  height={75}/>
-                                    </div>
-                                    <div className="grow shrink basis-0 self-stretch flex-col justify-center items-start gap-[15px] inline-flex">
-                                        <div className="self-stretch grow shrink basis-0 justify-center items-center gap-2.5 inline-flex">
-                                            <div className="grow shrink basis-0 self-stretch text-black text-lg font-normal ">Belén Pérez</div>
-                                        </div>
-                                        <div className="self-stretch grow shrink basis-0 justify-center items-center gap-2.5 inline-flex">
-                                            <div className="grow shrink basis-0 self-stretch text-black text-lg font-normal ">Cuidador</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="grow shrink basis-0 self-stretch justify-start items-start flex">
-                                    <div className="grow shrink basis-0 self-stretch p-6 justify-center items-center gap-2.5 flex">
-                                        <div className="w-[97px] h-[21px] text-black text-lg font-normal font-['Roboto']">Alojamiento</div>
-                                    </div>
-                                    <div className="grow shrink basis-0 h-[100px] p-6 justify-center items-center gap-2.5 flex">
-                                        <div className="grow shrink basis-0 self-stretch text-black text-lg font-normal font-['Roboto']">$ 80.000</div>
-                                    </div>
-                                    <div className="grow shrink basis-0 h-[100px] p-6 justify-center items-center gap-2.5 flex">
-                                        <div className="grow shrink basis-0 self-stretch text-black text-lg font-normal font-['Roboto']">Perro</div>
-                                    </div>
-                                    <div className="grow shrink basis-0 p-6 flex-col justify-center items-center gap-2.5 inline-flex">
-                                        <div className="self-stretch text-black text-lg font-normal font-['Roboto']">15/04/24</div>
-                                        <div className="self-stretch text-black text-lg font-normal font-['Roboto']">25/04/24</div>
-                                    </div>
-                                </div>
-                                <div className="h-[45px] px-6 py-3 bg-green-100 rounded-[50px] justify-center items-center gap-2.5 flex">
-                                    <div className="grow shrink basis-0 self-stretch text-center text-emerald-700 text-lg font-medium font-['Roboto']">Activo</div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
+                <div className="mt-28 max-h-[703px] overflow-y-auto rounded-2xl border border-orange-400">
+    {ReservasData.map(reserva => (
+        <div key={reserva.id} className="w-full bg-white border-t border-orange-400 py-6 px-4 md:px-6 flex justify-between items-center">
+            <div className="flex items-center space-x-4">
+                <div className="w-16 h-16">
+                    <Image className="w-full h-full rounded-full" src={reserva.foto} alt="foto" width={64} height={64}/>
                 </div>
+                <div className="flex flex-col">
+                    <div className="text-black text-lg font-normal">{reserva.nombre}</div>
+                    <div className="text-black text-lg font-normal">{reserva.apellido}</div>
+                </div>
+            </div>
+            <div className="flex items-center space-x-4">
+                {/* <div className="text-black text-lg font-normal">{reserva.}</div> */}
+                <div className="text-black text-lg font-normal">{reserva.precio}</div>
+                <div className="text-black text-lg font-normal">{reserva.mascota}</div>
+                <div className="flex flex-col items-center space-y-1">
+                    <div className="text-black text-lg font-normal">{reserva.fechaInicio}</div>
+                    <div className="text-black text-lg font-normal">{reserva.fechaFin}</div>
+                </div>
+                <div className="px-6 py-3 bg-green-100 rounded-[50px]">
+                    <div className="text-emerald-700 text-lg font-medium">Activo</div>
+                </div>
+            </div>
+        </div>
+    ))}
+</div>
+
             </div >
         )
     }
 
     // 
-    if (session) {
+    if (!session) {
         return (
             <main className="flex min-h-screen flex-col items-center justify-between p-24 gap-2 m-24">
                 <div className='justify-center text-center justify-items-center'>

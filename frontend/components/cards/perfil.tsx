@@ -6,8 +6,21 @@ import Link from "next/link";
 import Image from 'next/image';
 import Volver from "@/components/buttons/volver";
 import { useSession, signIn, signOut } from "next-auth/react";
+import { Fragment, useEffect, useRef, useState } from 'react';
 
-// Datos Ficticios
+interface UserData {
+    user_id: number;
+    email: string;
+    firstName: string;
+    lastName: string;
+    address: string;
+    phone: string;
+    dni: string;
+    photo: string;
+    role: string;
+    createdAt: string;
+    lastLogin: string;
+}
 
 const data = { imageUrl: '/perfil/fotoperfil.png', nombre: 'Cristina', apellido: 'Gonzales', email: "cristiana@gmail.com", direccion: "Buenos Aires" }
 // 
@@ -15,6 +28,31 @@ const data = { imageUrl: '/perfil/fotoperfil.png', nombre: 'Cristina', apellido:
 export default function Perfil() {
     const router = useRouter();
     const { data: session, status } = useSession();
+    const token = session?.user.token;
+    const [userData, setUserData] = useState<UserData | null>(null); 
+
+    useEffect(() => {
+        const fetchUserData = async () => {
+            if (session?.user?.token) {
+                try {
+                    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/user/token`, {
+                        method: "GET",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "token": session.user.token,
+                        },
+                    });
+                    const data = await res.json();
+                    console.log(data)
+                    setUserData(data);
+                } catch (error) {
+                    console.error("Error fetching user data:", error);
+                }
+            }
+        };
+
+        fetchUserData();
+    }, [session]);
 
     const handleGoBack = () => {
         router.back();
@@ -36,22 +74,24 @@ export default function Perfil() {
         router.push('/');
     }
     //  
-    if (!session) {
+    if (session) {
         return (
             <div className="mt-36 ml-10">
                 <div>
                     <Volver />
                 </div>
+                {userData && (
+                    
                 <div className="grid grid-cols-2 mt-20 gap-2 mr-20 justify-center">
                     <div className="justify-start items-center gap-8 inline-flex">
-                        <Image className="w-[200px] h-[200px] relative rounded-[200px]" src={data.imageUrl} width={400} height={400} alt={data.nombre} quality={100} priority />
+                        <Image className="w-[200px] h-[200px] relative rounded-[200px]" src={data.imageUrl} width={400} height={400} alt={data.imageUrl} quality={100} priority />
                         <div className="w-[351px] h-[133px] flex-col justify-center items-start gap-4 inline-flex">
                             <br />
                             <div className="self-stretch justify-center items-center gap-2.5 inline-flex">
-                                <div className="grow shrink basis-0 self-stretch text-black text-[28px] font-semibold">{data.nombre} {data.apellido}</div>
+                                <div className="grow shrink basis-0 self-stretch text-black text-[28px] font-semibold">{userData.firstName} {userData.lastName}</div>
                             </div>
                             <div className="self-stretch grow shrink basis-0 justify-center items-center gap-2.5 inline-flex">
-                                <div className="grow shrink basis-0 self-stretch text-black text-lg font-normal ">{data.email} {data.direccion}</div>
+                                <div className="grow shrink basis-0 self-stretch text-black text-lg font-normal ">{userData.email}</div>
                             </div>
                         </div>
                     </div>
@@ -70,6 +110,7 @@ export default function Perfil() {
                         </div>
                     </div>
                 </div>
+                )}
                 <div className="mb-20 grid grid-cols-3 items-stretch mt-40 h-auto">
                     <div className="group hover:bg-color5  w-[380px] h-[280px] px-[39.50px] pt-[72px] pb-[71px] bg-neutral-50 rounded-2xl border border-emerald-800 justify-center items-center inline-flex">
                         <button onClick={editarDatos} className="self-stretch p-4 rounded-xl backdrop-blur-[25px] flex-col justify-center items-center gap-6 inline-flex">
@@ -111,7 +152,7 @@ export default function Perfil() {
             </div>
         )
     }
-    if (session) {
+    if (!session) {
         return (
             <main className="flex min-h-screen flex-col items-center justify-between p-24 gap-2 m-24">
                 <div className='justify-center text-center justify-items-center'>
