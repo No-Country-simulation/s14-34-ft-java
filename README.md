@@ -1,4 +1,6 @@
-![image](https://i.ibb.co/N9Zm16K/Portada.png)
+<div>
+  <img aling="center" src="https://i.ibb.co/N9Zm16K/Portada.png" alt="image">
+</div>
 
 ## Sobre el Proyecto 🐕‍🦺🐱🐰🐭🐇
 
@@ -381,7 +383,7 @@ Y para ejecutar el sistema
 </table>
 
 <div style="text-align: center;">
-  <img src="https://i.ibb.co/gt6XZDw/Imagotipo-Color.png" alt="image">
+  <img align="center" src="https://i.ibb.co/gt6XZDw/Imagotipo-Color.png" alt="image">
 </div>
 
 <div style="text-align: center;">
