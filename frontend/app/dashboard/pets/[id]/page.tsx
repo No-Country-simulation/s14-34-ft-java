@@ -3,19 +3,19 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Fragment, useEffect, useState } from 'react';
-//valire
+//valire //las comentadas, no se encuentran en el figma
 interface Pet {
     id: number;
     typeOfPet: string;
     name: string;
     breed: string;
     age: number;
-    size: string;
+    size: string; 
     gender: string;
     photo: string;
-    behaviour: string;
-    healthStatus: string;
-    location: string;
+    //behaviour: string;
+    //healthStatus: string;
+    //location: string;
     vaccinated: boolean;
     sterilized: boolean;
     generalDescription: string;
@@ -75,106 +75,106 @@ export default function MascotaId({params}: {params: {id:string}}) {
                 <div className="self-stretch h-[87px] flex-col justify-start items-start gap-4 flex">
                     <div className="self-stretch text-black text-[22px] font-medium ">Nombre de tu mascota</div>
                     <div className="self-stretch grow shrink basis-0 px-4 py-3 bg-white rounded-xl border border-emerald-800 justify-between items-center inline-flex">
-                        <div className="grow shrink basis-0 self-stretch text-black text-lg font-normal ">{petData.name}</div>
+                        <div className="grow shrink basis-0 self-stretch text-black text-lg font-normal">{petData.name}</div>
                     </div>
                 </div>
                 <div className="self-stretch justify-start items-start gap-6 inline-flex">
                     <div className="grow shrink basis-0 h-[90px] flex-col justify-start items-start gap-4 inline-flex">
-                        <div className="self-stretch text-black text-[22px] font-medium font-['Roboto']">Tipo de mascota</div>
+                        <div className="self-stretch text-black text-[22px] font-medium">Tipo de mascota</div>
                         <div className="self-stretch grow shrink basis-0 px-4 py-3 bg-white rounded-xl border border-emerald-800 justify-between items-center inline-flex">
-                            <div className="grow shrink basis-0 self-stretch text-black text-lg font-normal font-['Roboto']">Cobaya</div>
+                            <div className="grow shrink basis-0 self-stretch text-black text-lg font-normal">{petData.typeOfPet}</div>
                             <div className="w-6 h-6 relative"></div>
                         </div>
                     </div>
                     <div className="grow shrink basis-0 h-[90px] flex-col justify-start items-start gap-4 inline-flex">
-                        <div className="self-stretch text-black text-[22px] font-medium font-['Roboto']">Raza</div>
+                        <div className="self-stretch text-black text-[22px] font-medium">Raza</div>
                         <div className="self-stretch grow shrink basis-0 px-4 py-3 bg-white rounded-xl border border-emerald-800 justify-between items-center inline-flex">
-                            <div className="grow shrink basis-0 self-stretch text-black text-lg font-normal font-['Roboto']">Abisinia</div>
+                            <div className="grow shrink basis-0 self-stretch text-black text-lg font-normal">{petData.breed}</div>
                             <div className="w-6 h-6 relative"></div>
                         </div>
                     </div>
                 </div>
                 <div className="self-stretch h-[98px] flex-col justify-start items-start gap-6 flex">
-                    <div className="self-stretch grow shrink basis-0 text-black text-[22px] font-medium font-['Roboto']">Edad</div>
+                    <div className="self-stretch grow shrink basis-0 text-black text-[22px] font-medium">Edad</div>
                     <div className="self-stretch justify-start items-start gap-6 inline-flex">
                         <div className="grow shrink basis-0 self-stretch px-4 py-3 bg-white rounded-xl border border-emerald-800 justify-between items-center flex">
-                            <div className="grow shrink basis-0 self-stretch text-black text-lg font-normal font-['Roboto']">2 años</div>
+                            <div className="grow shrink basis-0 self-stretch text-black text-lg font-normal">{petData.age}</div>
                         </div>
                         <div className="grow shrink basis-0 self-stretch px-4 py-3 bg-white rounded-xl border border-emerald-800 justify-between items-center flex">
-                            <div className="grow shrink basis-0 self-stretch text-black text-lg font-normal font-['Roboto']">5 meses</div>
+                            <div className="grow shrink basis-0 self-stretch text-black text-lg font-normal">{petData.age}</div>
                             <div className="w-6 h-6 relative"></div>
                         </div>
                     </div>
                 </div>
                 <div className="self-stretch justify-start items-start gap-6 inline-flex">
                     <div className="grow shrink basis-0 h-[90px] flex-col justify-start items-start gap-4 inline-flex">
-                        <div className="self-stretch text-black text-[22px] font-medium font-['Roboto']">Peso</div>
+                        <div className="self-stretch text-black text-[22px] font-medium">Tamaño</div>
                         <div className="self-stretch grow shrink basis-0 px-4 py-3 bg-white rounded-xl border border-emerald-800 justify-between items-center inline-flex">
-                            <div className="grow shrink basis-0 self-stretch text-black text-lg font-normal font-['Roboto']">643 gramos</div>
+                            <div className="grow shrink basis-0 self-stretch text-black text-lg font-normal">{petData.size}</div>
                         </div>
                     </div>
                     <div className="grow shrink basis-0 h-[90px] flex-col justify-start items-start gap-4 inline-flex">
-                        <div className="self-stretch text-black text-[22px] font-medium font-['Roboto']">Género</div>
+                        <div className="self-stretch text-black text-[22px] font-medium">Género</div>
                         <div className="self-stretch grow shrink basis-0 px-4 py-3 bg-white rounded-xl border border-emerald-800 justify-between items-center inline-flex">
-                            <div className="grow shrink basis-0 self-stretch text-black text-lg font-normal font-['Roboto']">Femenino</div>
+                            <div className="grow shrink basis-0 self-stretch text-black text-lg font-normal">{petData.gender}</div>
                             <div className="w-6 h-6 relative"></div>
                         </div>
                     </div>
                 </div>
                 <div className="self-stretch h-[74px] flex-col justify-start items-start gap-4 flex">
-                    <div className="self-stretch text-black text-[22px] font-medium font-['Roboto']">Vacunas</div>
+                    <div className="self-stretch text-black text-[22px] font-medium">Vacunas</div>
                     <div className="self-stretch grow shrink basis-0 justify-start items-start gap-6 inline-flex">
                         <div className="grow shrink basis-0 h-8 justify-start items-center gap-4 flex">
                             <div className="w-8 h-8 relative">
                                 <div className="w-8 h-8 left-0 top-0 absolute bg-zinc-300"></div>
                             </div>
-                            <div className="grow shrink basis-0 self-stretch text-black text-lg font-normal font-['Roboto']">Si</div>
+                            <div className="grow shrink basis-0 self-stretch text-black text-lg font-normal">Si</div>
                         </div>
                         <div className="grow shrink basis-0 h-8 justify-start items-center gap-4 flex">
                             <div className="w-8 h-8 relative">
                                 <div className="w-8 h-8 left-0 top-0 absolute bg-zinc-300"></div>
                             </div>
-                            <div className="grow shrink basis-0 self-stretch text-black text-lg font-normal font-['Roboto']">No</div>
+                            <div className="grow shrink basis-0 self-stretch text-black text-lg font-normal">No</div>
                         </div>
                     </div>
                 </div>
                 <div className="self-stretch h-[74px] flex-col justify-start items-start gap-4 flex">
-                    <div className="self-stretch text-black text-[22px] font-medium font-['Roboto']">Esterilizado/a</div>
+                    <div className="self-stretch text-black text-[22px] font-medium">Esterilizado/a</div>
                     <div className="self-stretch grow shrink basis-0 justify-start items-start gap-6 inline-flex">
                         <div className="grow shrink basis-0 h-8 justify-start items-center gap-4 flex">
                             <div className="w-8 h-8 relative">
                                 <div className="w-8 h-8 left-0 top-0 absolute bg-zinc-300"></div>
                             </div>
-                            <div className="grow shrink basis-0 self-stretch text-black text-lg font-normal font-['Roboto']">Si</div>
+                            <div className="grow shrink basis-0 self-stretch text-black text-lg font-normal">Si</div>
                         </div>
                         <div className="grow shrink basis-0 h-8 justify-start items-center gap-4 flex">
                             <div className="w-8 h-8 relative">
                                 <div className="w-8 h-8 left-0 top-0 absolute bg-zinc-300"></div>
                             </div>
-                            <div className="grow shrink basis-0 self-stretch text-black text-lg font-normal font-['Roboto']">No</div>
+                            <div className="grow shrink basis-0 self-stretch text-black text-lg font-normal">No</div>
                         </div>
                     </div>
                 </div>
             </div>
             <div className="self-stretch h-[300px] flex-col justify-start items-start gap-6 flex">
-                <div className="self-stretch grow shrink basis-0 text-black text-[22px] font-medium font-['Roboto']">Información adicional</div>
+                <div className="self-stretch grow shrink basis-0 text-black text-[22px] font-medium">Información adicional</div>
                 <div className="self-stretch h-[250px] px-4 py-8 rounded-xl border border-emerald-800 justify-between items-start inline-flex">
-                    <div className="grow shrink basis-0 text-justify text-black text-lg font-normal font-['Roboto']">Copito es una cobaya adorable y sociable. Le gusta pasar tiempo durmiendo, gruñe suavemente mientras come heno, pellets y verduras frescas.</div>
+                    <div className="grow shrink basis-0 text-justify text-black text-lg font-normal">{petData.generalDescription}</div>
                 </div>
             </div>
         </div>
         <div className="self-stretch justify-center items-center gap-8 inline-flex">
             <div className="grow shrink basis-0 h-14 px-6 py-4 bg-white rounded-2xl border border-emerald-800 justify-center items-center gap-2 flex">
-                <div className="text-emerald-800 text-xl font-medium font-['Roboto']">Cancelar</div>
+                <div className="text-emerald-800 text-xl font-medium">Cancelar</div>
             </div>
-            <div className="grow shrink basis-0 h-14 px-6 py-4 bg-emerald-800 rounded-2xl border border-emerald-800 justify-center items-center gap-2 flex">
+            <div className="grow shrink basis-0 h-14 px-6 py-4 bg-emerald-800 rounded-2xl border border-emerald-800 flex justify-center items-center gap-2">
                 <div className="p-2 rounded-[50px] justify-start items-start gap-2.5 flex">
                     <div className="w-6 h-6 relative">
                         <div className="w-[17px] h-[17px] left-[4px] top-[3px] absolute">
                         </div>
                     </div>
                 </div>
-                <div className="text-white text-xl font-medium font-['Roboto']">Editar</div>
+                <div className="text-white text-xl font-medium flex items-center justify-center">Editar</div>
             </div>
         </div>
     </div>

@@ -14,7 +14,7 @@ const cuidadores = [
     { id: 2, imageUrl: '/paseo/Cuidadores/2.png', nombre: 'Mati', ubicacion: 'Ubicación 2' },
     { id: 3, imageUrl: '/paseo/Cuidadores/3.png', nombre: 'Mati', ubicacion: 'Ubicación 3' },
     { id: 4, imageUrl: '/paseo/Cuidadores/4.png', nombre: 'Orlando', ubicacion: 'Ubicación 1' },
-    { id: 5, imageUrl: '/paseo/Cuidadores/6.png', nombre: 'Valeri', ubicacion: 'Ubicación 2' },
+    { id: 5, imageUrl: '/paseo/Cuidadores/6.png', nombre: 'Valerie', ubicacion: 'Ubicación 2' },
 ];
 
 export default function CuidadorId({ params }: { params: { id: string } }) {
