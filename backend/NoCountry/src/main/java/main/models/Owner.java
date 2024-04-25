@@ -20,21 +20,22 @@ public class Owner {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Long id;
 
     @NotNull
     @Size(max = 50)
-    @Column(name = "first_name")
+    @Column(name = "first_name", unique = true)
     private String firstName;
 
     @NotNull
     @Size(max = 50)
-    @Column(name = "last_name")
+    @Column(name = "last_name", unique = true)
     private String lastName;
 
     @NotNull
     @Size(max = 50)
-    @Column(name = "email")
+    @Column(name = "email", unique = true)
     private String email;
 
 
@@ -44,7 +45,7 @@ public class Owner {
 
     @NotNull
     @Size(max = 50)
-    @Column(name = "phone")
+    @Column(name = "phone", unique = true)
     private String phone;
 
     @Size(max = 90)
@@ -75,5 +76,11 @@ public class Owner {
     @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private List<Pet> pets = new ArrayList<>();
+
+/*
+    @OneToMany(mappedBy = "ownerReview", cascade = CascadeType.ALL, orphanRemoval = true,fetch = FetchType.LAZY)
+    private List<Review> reviews;
+*/
+
 
 }

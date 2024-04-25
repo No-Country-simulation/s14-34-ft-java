@@ -1,5 +1,7 @@
 package main.services.impl;
 
+import main.dtos.ReviewDTO;
+import main.mappers.ReviewMapper;
 import main.models.Review;
 import main.repository.ReviewRepository;
 import main.services.ReviewService;
@@ -10,12 +12,12 @@ import java.util.List;
 @Service
 public class ReviewServiceImpl implements ReviewService {
 
-    private final ReviewRepository reviewRepository;
+    @Autowired
+    private  ReviewRepository reviewRepository;
 
     @Autowired
-    public ReviewServiceImpl(ReviewRepository reviewRepository) {
-        this.reviewRepository = reviewRepository;
-    }
+    private ReviewMapper reviewMapper;
+
 
     @Override
     public List<Review> getAllReviews() {
@@ -28,8 +30,10 @@ public class ReviewServiceImpl implements ReviewService {
     }
 
     @Override
-    public Review saveReview(Review review) {
-        return reviewRepository.save(review);
+    public ReviewDTO saveReview(ReviewDTO reviewDTO) {
+        Review review = reviewMapper.reviewDTOToReview(reviewDTO);
+        Review savedReview = reviewRepository.save(review);
+        return reviewMapper.reviewToReviewDTO(savedReview);
     }
 
     @Override

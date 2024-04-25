@@ -7,13 +7,11 @@ import main.models.User;
 import main.repository.OwnerRepository;
 import main.repository.UserRepository;
 import main.services.IOwnerService;
-import main.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -34,8 +32,9 @@ public class OwnerServiceImpl implements IOwnerService {
     }
 
     @Override
-    public Owner getOwnerById(Long id) throws IllegalArgumentException {
+    public Owner getOwnerById(Long userId) throws IllegalArgumentException {
         try {
+            Long id = ownerRepository.findOwnerIdByUserId(userId);
             return ownerRepository.findById(id)
                     .orElseThrow(() -> new IllegalArgumentException("Propietario no encontrado"));
         } catch (Exception e) {
@@ -48,6 +47,8 @@ public class OwnerServiceImpl implements IOwnerService {
         try {
             User user = userRepository.findById(userId)
                     .orElseThrow(() -> new EntityNotFoundException("User not found"));
+
+            owner.setUser(user);
             owner.setEmail(user.getEmail());
             owner.setFirstName(user.getFirstName());
             owner.setLastName(user.getLastName());

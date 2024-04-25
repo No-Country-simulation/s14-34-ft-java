@@ -1,30 +1,33 @@
 package main.models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "reviews")
 public class Review {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "review_id")
-    private Long reviewId;
+    private Long Id;
 
-    @Column(name = "desc_pet_sitter")
-    private String descPetSitter;
+    @Column(name = "review_comment")
+    private String reviewComment;
 
     @Column(name = "valoration")
-    private int valoration;
+    private Integer valoration;
 
-    @ManyToOne
+/*    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "owner_id")
-    private Owner owner;
+    private Owner ownerReview;*/
 
     //@ManyToOne
     //@JoinColumn(name = "pet_sitter_id")
-    //private PetSitter petSitter;
 
-    // Constructor, getters y setters
 }
 

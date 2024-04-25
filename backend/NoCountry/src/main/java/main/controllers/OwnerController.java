@@ -4,15 +4,11 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import main.auth.service.JwtService;
 import main.models.Owner;
-import main.models.Pet;
 import main.services.impl.OwnerServiceImpl;
-import main.services.impl.UserServiceImpl;
-import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -42,9 +38,10 @@ public class OwnerController {
     }
 
     @GetMapping(value = "/{id}",produces = "application/json")
-    public ResponseEntity<?> getOwnerById(@PathVariable Long id) {
+    public ResponseEntity<?> getOwnerById(@RequestHeader("token") String token) {
         try {
-            return ResponseEntity.status(HttpStatus.OK).body(ownerService.getOwnerById(id));
+            Long userId = jwtService.getUserIdFromToken(token);
+            return ResponseEntity.status(HttpStatus.OK).body(ownerService.getOwnerById(userId));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Owner not found");
         }
