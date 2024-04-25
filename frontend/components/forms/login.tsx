@@ -57,7 +57,7 @@ export default function FormLogin() {
                 <div className="self-stretch grow shrink basis-0 flex-col justify-start items-center gap-8 flex">
                     <div className="flex flex-col items-center justify-center h-[195px]">
                         <div className="h-[100px] mb-10">
-                            <Image src="/logo/5_Imagotipo Negro.svg" alt="logo" className="object-contain" width="500" height="100"/>
+                            <Image src="/logo/logoverde.svg" alt="logo" className="object-contain" width="500" height="100"/>
                         </div>
                         <div className="flex flex-col items-center gap-6">
                             <div className="text-black text-[38px] font-semibold">Bienvenido</div>

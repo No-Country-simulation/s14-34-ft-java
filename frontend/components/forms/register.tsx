@@ -139,7 +139,7 @@ export default function FormRegister() {
             <div className="mt-20 mb-20 ml-36 w-[658px] h-[1262px] p-[60px] bg-white rounded-2xl shadow-sm backdrop-blur-[25px] flex-col justify-start items-start gap-[50px] inline-flex">
                 <div className="self-stretch grow shrink basis-0 flex-col justify-start items-center gap-8 flex">
                     <div className="h-[100px] mb-10">
-                        <Image src="/logo/5_Imagotipo Negro.svg" alt="logo" className="object-contain" width="500" height="100" />
+                        <Image src="/logo/logoverde.svg" alt="logo" className="object-contain" width="500" height="100" />
                     </div>
                     <div className="self-stretch h-[95px] flex-col justify-start items-center gap-12 flex">
                         <div className="self-stretch h-[95px] flex-col justify-start items-start gap-6 flex">
