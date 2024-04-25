@@ -6,7 +6,7 @@ export default function Happypaws() {
         <div id="nosotros" className="bg-color7 p-2 w-full h-[800px]">
             <div className="justify-self-end px-24">
                 <h1 className="text-[38px] text-left font-semibold mt-8 mb-8">¿ Por Que HappyPaws?</h1>
-                <div className="flex justify-around p-[0px] gap-4">
+                <div className="mt-20 flex justify-around p-[0px] gap-4">
                     <div className="w-[380px] h-[658px] p-6 bg-white rounded-2xl border border-orange-400 flex-col justify-start items-start gap-2.5 inline-flex">
                         <div className="h-[310px] flex-col justify-start items-start flex">
                             <div className="self-stretch p-2.5 justify-center items-center gap-2.5 inline-flex">

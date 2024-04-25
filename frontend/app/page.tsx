@@ -18,21 +18,21 @@ export default function Home() {
         <div>
           <Welcome />
         </div>
-        <div>
+        <div className="mt-40">
           <Nuestroservicios />
         </div>
-        <div>
+        <div className="mt-40">
           <Comofunciona />
         </div>
         <div>
-          <div className="justify-self-end text-right px-24 bg-color7">
+          <div className="mt-40 justify-self-end text-right px-24 bg-color7">
             <h1 className="text-[38px]  text-right font-semibold mb-10 bg-color7">Clientes felices</h1>
           </div>
           <div  className="p-2 overflow-hidden w-full embla bg-gradient-to-tr from-orange-200 via-orange-400 to-orange-200 h-[500px]">
           <Carouselclientes />
           </div>
         </div>
-        <div >
+        <div className="mt-40 mb-40">
           <Happypaws />
         </div>
       </main>
