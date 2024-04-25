@@ -185,7 +185,7 @@ const Filter: React.FC<FilterProps> = ({ onSearch }) => {
         <input type="date" name="fecha" onChange={handleDateChange} className="border-none shadow-none bg-transparent" />
       </div>
       <div className="w-[202px] h-[150px] p-2   rounded-tl-[100px] rounded-bl-[100px]  flex-col justify-center items-center gap-4 inline-flex">
-        <button onClick={handleSearch} className="bg-color2 p-4 rounded-[50px] text-color4 text-xl"><div className="flex gap-2"><div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
+        <button onClick={handleSearch} className="bg-color2 p-4 rounded-[50px] text-color4 text-xl"><div className="flex gap-2"><div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
           <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
         </svg>
         </div><div>Buscar</div></div></button>
