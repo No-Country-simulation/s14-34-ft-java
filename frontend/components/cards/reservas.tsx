@@ -14,11 +14,11 @@ const ReservasData = [
     {
         id: '1', foto: '/reservas/image=1.svg', nombre: 'María', apellido: "Solís",
         servicio: "paseo", precio: "30.000", mascota: "Perro", estado: "activo",
-        fechaInicio: "2024-04-15", fechaFin: "2024-04-25" 
+        fechaInicio: "2024-04-15", fechaFin: "2024-04-25"
     },
     {
         id: '2', foto: '/reservas/image=2.svg', nombre: 'Juana', apellido: "González",
-        servicio: "cuidado", precio: "50.000", mascota: "Gato", estado: "inactivo",
+        servicio: "paseo", precio: "50.000", mascota: "Gato", estado: "inactivo",
         fechaInicio: "2024-04-10", fechaFin: "2024-04-20"
     },
     {
@@ -28,12 +28,12 @@ const ReservasData = [
     },
     {
         id: '4', foto: '/reservas/image=4.svg', nombre: 'Pedro', apellido: "Martínez",
-        servicio: "cuidado", precio: "40.000", mascota: "Chinchilla", estado: "activo",
+        servicio: "alojamiento", precio: "40.000", mascota: "Chinchilla", estado: "activo",
         fechaInicio: "2024-04-12", fechaFin: "2024-04-22"
     },
     {
         id: '5', foto: '/reservas/image=5.svg', nombre: 'Camilo', apellido: "Gómez",
-        servicio: "paseo", precio: "25.000", mascota: "Hamster", estado: "activo",
+        servicio: "cuidado", precio: "25.000", mascota: "Hamster", estado: "activo",
         fechaInicio: "2024-04-18", fechaFin: "2024-04-28"
     },
     {
@@ -86,33 +86,51 @@ export default function Reservas() {
 
 
                 <div className="mt-28 max-h-[703px] overflow-y-auto rounded-2xl border border-orange-400">
-    {ReservasData.map(reserva => (
-        <div key={reserva.id} className="w-full bg-white border-t border-orange-400 py-6 px-4 md:px-6 flex justify-between items-center">
-            <div className="flex items-center space-x-4">
-                <div className="w-16 h-16">
-                    <Image className="w-full h-full rounded-full" src={reserva.foto} alt="foto" width={64} height={64}/>
+                    {ReservasData.map(reserva => (
+                        <div key={reserva.id} className="w-full bg-white border-t border-orange-400 py-6 px-4 md:px-6 flex justify-between items-center">
+                            <div className="flex items-center space-x-4">
+                                <div className="w-16 h-16">
+                                    <Image className="w-full h-full rounded-full" src={reserva.foto} alt="foto" width={64} height={64} />
+                                </div>
+                                <div className="flex flex-col flex-1 justify-center">
+                                    <div className="text-black text-lg font-normal">{reserva.nombre} {reserva.apellido}</div>
+                                    <div className="mt-4">Cuidador</div>
+                                </div>
+                            </div>
+                            <div className="flex items-center space-x-4">
+                                {/* <div className="text-black text-lg font-normal">{reserva.}</div> */}
+                                <div className="flex-1 self-stretch max-md:max-w-full">
+                                    <div className="flex gap-5 max-md:flex-col max-md:gap-0">
+                                        <div className="flex flex-col w-[17%] max-md:ml-0 max-md:w-full">
+                                            <div className="self-stretch my-auto text-lg text-black max-md:mt-10">
+                                            {reserva.servicio} 
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-col ml-5 w-[23%] max-md:ml-0 max-md:w-full">
+                                            <div className="self-stretch my-auto text-lg text-black max-md:mt-10">
+                                            {reserva.precio}
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-col ml-5 w-[59%] max-md:ml-0 max-md:w-full">
+                                            <div className="flex grow gap-5 text-lg text-black whitespace-nowrap max-md:mt-10">
+                                                <div className="flex-1 my-auto">{reserva.mascota}</div>
+                                                <div className="flex flex-col flex-1 justify-center p-6 max-md:px-5">
+                                                    <div>{reserva.fechaInicio}</div>
+                                                    <div className="mt-2.5">{reserva.fechaFin}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="flex flex-col items-center space-y-1">
+                                </div>
+                                <div className="justify-center self-stretch px-6 py-3 my-auto text-lg font-medium text-center text-emerald-700 whitespace-nowrap bg-green-100 rounded-[50px] max-md:px-5">
+                                    <div className="text-emerald-700 text-lg font-medium">Activo</div>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
                 </div>
-                <div className="flex flex-col">
-                    <div className="text-black text-lg font-normal">{reserva.nombre}</div>
-                    <div className="text-black text-lg font-normal">{reserva.apellido}</div>
-                    <div className="mt-4">Cuidador</div>
-                </div>
-            </div>
-            <div className="flex items-center space-x-4">
-                {/* <div className="text-black text-lg font-normal">{reserva.}</div> */}
-                <div className="text-black text-lg font-normal">{reserva.precio}</div>
-                <div className="text-black text-lg font-normal">{reserva.mascota}</div>
-                <div className="flex flex-col items-center space-y-1">
-                    <div className="text-black text-lg font-normal">{reserva.fechaInicio}</div>
-                    <div className="text-black text-lg font-normal">{reserva.fechaFin}</div>
-                </div>
-                <div className="px-6 py-3 bg-green-100 rounded-[50px]">
-                    <div className="text-emerald-700 text-lg font-medium">Activo</div>
-                </div>
-            </div>
-        </div>
-    ))}
-</div>
 
             </div >
         )
