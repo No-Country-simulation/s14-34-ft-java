@@ -369,18 +369,6 @@ Y para ejecutar el sistema
         </a>
       </div>
     </td>
-    <td>
-      <div align="center">
-        <a href="https://www.linkedin.com/in/johana-baccei-11b005248/" target="_blank" rel="author">
-          <img width="110" src="https://i.ibb.co/xJ0cD1v/Joha.jpg"/>
-          <h4 style="margin-top: 1rem;">Johana Baccei</h4>
-          <h4 style="margin-top: 1rem;">Team Leader</h4>
-        </a>
-        <a href="https://www.linkedin.com/in/johana-baccei-11b005248/" target="_blank">
-          <img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
-        </a>
-      </div>
-    </td>
   </tr>
 </table>
 
