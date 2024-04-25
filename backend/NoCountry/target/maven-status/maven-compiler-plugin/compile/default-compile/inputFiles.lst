@@ -9,6 +9,7 @@ F:\MATI PERSONAL\NoCountry Simulación\Mascotas\s14-34-ft-java\backend\NoCountry\
 F:\MATI PERSONAL\NoCountry Simulación\Mascotas\s14-34-ft-java\backend\NoCountry\src\main\java\main\enums\Role.java
 F:\MATI PERSONAL\NoCountry Simulación\Mascotas\s14-34-ft-java\backend\NoCountry\src\main\java\main\services\PetService.java
 F:\MATI PERSONAL\NoCountry Simulación\Mascotas\s14-34-ft-java\backend\NoCountry\src\main\java\main\config\ApplicationConfig.java
+F:\MATI PERSONAL\NoCountry Simulación\Mascotas\s14-34-ft-java\backend\NoCountry\src\main\java\main\dtos\ReviewDTO.java
 F:\MATI PERSONAL\NoCountry Simulación\Mascotas\s14-34-ft-java\backend\NoCountry\src\main\java\main\auth\filter\JwtAuthenticationFilter.java
 F:\MATI PERSONAL\NoCountry Simulación\Mascotas\s14-34-ft-java\backend\NoCountry\src\main\java\main\controllers\PetSitterController.java
 F:\MATI PERSONAL\NoCountry Simulación\Mascotas\s14-34-ft-java\backend\NoCountry\src\main\java\main\models\PetSitter.java
@@ -32,6 +33,7 @@ F:\MATI PERSONAL\NoCountry Simulación\Mascotas\s14-34-ft-java\backend\NoCountry\
 F:\MATI PERSONAL\NoCountry Simulación\Mascotas\s14-34-ft-java\backend\NoCountry\src\main\java\main\repository\PetRepository.java
 F:\MATI PERSONAL\NoCountry Simulación\Mascotas\s14-34-ft-java\backend\NoCountry\src\main\java\main\services\UserService.java
 F:\MATI PERSONAL\NoCountry Simulación\Mascotas\s14-34-ft-java\backend\NoCountry\src\main\java\main\auth\service\AuthService.java
+F:\MATI PERSONAL\NoCountry Simulación\Mascotas\s14-34-ft-java\backend\NoCountry\src\main\java\main\mappers\ReviewMapper.java
 F:\MATI PERSONAL\NoCountry Simulación\Mascotas\s14-34-ft-java\backend\NoCountry\src\main\java\main\auth\controller\AuthController.java
 F:\MATI PERSONAL\NoCountry Simulación\Mascotas\s14-34-ft-java\backend\NoCountry\src\main\java\main\dtos\PetDTO.java
 F:\MATI PERSONAL\NoCountry Simulación\Mascotas\s14-34-ft-java\backend\NoCountry\src\main\java\main\models\Service.java

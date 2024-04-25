@@ -4,6 +4,7 @@ main\services\impl\UserServiceImpl.class
 main\repository\ReviewRepository.class
 main\auth\request\RegisterRequest$RegisterRequestBuilder.class
 main\dtos\PetDTO.class
+main\dtos\ReviewDTO.class
 main\NoCountryApplication.class
 main\models\User.class
 main\models\Booking.class
@@ -13,11 +14,13 @@ main\services\IOwnerService.class
 main\auth\request\LoginRequest$LoginRequestBuilder.class
 main\models\User$UserBuilder.class
 main\mappers\PetMapperImpl.class
+main\mappers\ReviewMapper.class
 main\models\Review.class
 main\auth\response\AuthResponse.class
 main\services\impl\OwnerServiceImpl.class
 main\services\UserService.class
 main\services\PetService.class
+main\mappers\ReviewMapperImpl.class
 main\auth\response\AuthResponse$AuthResponseBuilder.class
 main\models\PetSitter.class
 main\auth\service\JwtService.class
