@@ -16,12 +16,14 @@ export default function Resultados({ params }: { params: { lugar: string, tipoMa
     <div className="bg-color7">
       <HeadersOne />
       <main className="flex min-h-screen flex-col">
-        <div>
+        <div className="mt-[95px]">
           <Welcome3 />
         </div>
         <div className="mt-8">
           <div className="justify-self-end text-right px-24 bg-color7">
-            <h1 className="text-[38px]  text-right font-semibold mb-10 bg-color7">Visitas</h1>
+            <h1 className="text-[38px]  text-right font-semibold mb-10 bg-color7">
+              Visitas
+            </h1>
           </div>
           <Alojamiento lugar={lugar} fecha={fecha} tipoMascota={tipoMascota} />
         </div>

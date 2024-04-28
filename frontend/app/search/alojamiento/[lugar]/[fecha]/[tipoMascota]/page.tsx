@@ -17,7 +17,7 @@ export default function Resultados({ params }: { params: { lugar: string, tipoMa
     <div className="bg-color7">
       <HeadersOne />
       <main className="flex min-h-screen flex-col">
-        <div>
+        <div className="mt-[95px]">
           <Welcome2 />
         </div>
         <div>
