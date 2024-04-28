@@ -14,25 +14,25 @@ export default function Home() {
   return (
     <div className="bg-color7">
       <HeadersOne />
-      <main className="flex min-h-screen flex-col">
-        <div>
+      <main className="flex min-h-screen flex-col ">
+        <div className="mt-[95px]">
           <Welcome />
         </div>
-        <div className="mt-40">
+        <div className="mt-10">
           <Nuestroservicios />
         </div>
-        <div className="mt-40">
+        <div className="mt-30">
           <Comofunciona />
         </div>
         <div>
-          <div className="mt-40 justify-self-end text-right px-24 bg-color7">
-            <h1 className="text-[38px]  text-right font-semibold mb-10 bg-color7">Clientes felices</h1>
+          <div className="mt-28 justify-self-end text-right px-24 bg-color7">
+            <h1 className="text-[38px]  text-right font-semibold mb-20 bg-color7">Clientes felices</h1>
           </div>
           <div  className="p-2 overflow-hidden w-full embla bg-gradient-to-tr from-orange-200 via-orange-400 to-orange-200 h-[500px]">
           <Carouselclientes />
           </div>
         </div>
-        <div className="mt-40 mb-40">
+        <div className="mt-20 mb-40">
           <Happypaws />
         </div>
       </main>

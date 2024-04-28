@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function FootersOne() {
     return (
         <div id="contacto" className="w-full h-[350px] px-[100px] py-[50px] bg-white flex-col justify-between items-center inline-flex shadow-lg">
-            <div className="self-stretch justify-center items-start gap-24 inline-flex">
+            <div className="self-stretch justify-center items-start gap-10 inline-flex">
                 <div className="mt-30 h-[180px] px-[69px] py-4 bg-white  justify-center items-center flex">
                     <Image src="/logo/1_Isotipo Color.svg" alt="log" width={250} height={180} />
                 </div>
