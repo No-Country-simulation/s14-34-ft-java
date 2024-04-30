@@ -376,9 +376,6 @@ Y para ejecutar el sistema
   <img src="https://i.ibb.co/gt6XZDw/Imagotipo-Color.png" alt="image">
 </div>
 
-
 <div style="text-align: center;">
   <h1 style="font-weight: bold;">Todas las imágenes son libres de derecho</h1>
 </div>
-
-

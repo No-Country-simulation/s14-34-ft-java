@@ -30,6 +30,7 @@ export const LoginShema = z.object({
 })
 
 
+
 export const EditUserSchema = z.object({
     nombre: z.string().optional(),
     apellido: z.string().optional(),
@@ -56,3 +57,5 @@ export const RegisterPetSchema = z.object({
     esterilizado: z.boolean().optional(),
     descripcionGeneral: z.string().max(300, {message: "maximo te caracter es de 300"}).optional(),
 });
+
+

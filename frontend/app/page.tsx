@@ -10,6 +10,7 @@ import Carouselclientes from "@/components/carrusel/clientesfelices/clients";
 import Happypaws from "@/components/cards/happypaws";
 
 
+
 export default function Home() {
   return (
     <div className="bg-color7">

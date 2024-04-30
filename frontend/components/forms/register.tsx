@@ -36,12 +36,14 @@ export default function FormRegister() {
         return ['es', 'mx', 'ar', 'co', 'pe', 've', 'cl', 'ec', 'gt', 'cu', 'bo', 'do', 'hn', 'py', 'sv', 'ni', 'cr', 'uy', 'pr', 'pa', 'gq'].includes(iso2);
     });
 
+
     const {
         register,
         handleSubmit,
         formState: { errors },
         setError,
     } = useForm<Register>({
+
         resolver: zodResolver(RegisterSchema),
     });
 
@@ -268,11 +270,13 @@ export default function FormRegister() {
                                 </div>
                             </form>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
     )
+
 }
 
 // <div className="mt-20 mb-20 ml-36 w-[658px] h-[1234px] p-[60px] bg-white rounded-2xl shadow backdrop-blur-[25px] flex-col justify-start items-start gap-[50px] inline-flex">
@@ -417,3 +421,4 @@ export default function FormRegister() {
 //     </div>
 // </div>
 // </div> 
+
