@@ -264,7 +264,7 @@ const Filter: React.FC<FilterProps> = ({ onSearch }) => {
         <div className="mt-10">
           <button
             onClick={handleSearch}
-            className="flex  col-span-2 justify-center w-[469px] h-14 px-6 py-4 bg-orange-400 rounded-2xl items-center gap-2.5 text-white text-xl font-medium hover:bg-orange-300"
+            className="flex  col-span-2 justify-center w-[469px] h-14 px-6 py-4 bg-orange-400 rounded-2xl items-center gap-2.5 hover:bg-orange-300 text-white text-xl font-medium"
           >
             <div className="flex items-center gap-2">
               <svg

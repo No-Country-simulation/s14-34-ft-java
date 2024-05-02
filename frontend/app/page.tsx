@@ -27,10 +27,16 @@ export default function Home() {
         </div>
         <div>
           <div className="mt-28 justify-self-end text-right px-24 bg-color7">
-            <h1 className="text-[38px]  text-right font-semibold mb-20 bg-color7">Clientes felices</h1>
+            <h1
+              className="  text-right mb-20 bg-color7 text-black
+text-[38px]
+font-medium"
+            >
+              Clientes felices
+            </h1>
           </div>
-          <div  className="p-2 overflow-hidden w-full embla bg-gradient-to-tr from-orange-200 via-orange-400 to-orange-200 h-[500px]">
-          <Carouselclientes />
+          <div className="p-2 overflow-hidden w-full embla bg-gradient-to-tr from-orange-200 via-orange-400 to-orange-200 h-[500px]">
+            <Carouselclientes />
           </div>
         </div>
         <div className="mt-20 mb-40">
@@ -42,22 +48,3 @@ export default function Home() {
     </div>
   );
 }
-
-
-{/* 
-<p className="font-roboto text-18 font-normal">Texto de tamaño 18px con Roboto Regular</p>
-<p className="font-roboto text-20 font-normal">Texto de tamaño 20px con Roboto Regular</p>
-<p className="font-roboto text-24 font-normal">Texto de tamaño 24px con Roboto Regular</p>
-<p className="font-roboto text-28 font-normal">Texto de tamaño 28px con Roboto Regular</p>
-<p className="font-roboto text-14 font-normal">Texto de tamaño 14px con Roboto Regular</p>
-<p className="font-roboto text-16 font-normal">Texto de tamaño 16px con Roboto Regular</p>
-<p className="font-roboto text-18 font-normal">Texto de tamaño 18px con Roboto Regular</p>
-<p className="font-roboto text-20 font-normal">Texto de tamaño 20px con Roboto Regular</p> 
-*/}
-
-
-// const handleSearch = (filters:any) => {
-//   // Aquí puedes manejar la lógica para realizar la búsqueda utilizando los filtros
-//   console.log('Filtros aplicados:', filters);
-// };
-//<Filter onSearch={handleSearch} />
