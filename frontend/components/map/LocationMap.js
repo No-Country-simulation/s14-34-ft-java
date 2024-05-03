@@ -1,10 +1,12 @@
+//  AIzaSyDlg0HXmBuduZ9U9zLCr5e8TDMzzZUtHiQ
+//  AIzaSyD6ljpKkV63qT-dF6mPEofKqaeGUTAG0iA
 import React, { useEffect, useRef } from 'react';
 
 function LocationMap() {
     const mapRef = useRef(null);
     useEffect(() => {
-        const googleMapsScript = document.createElement('script');
-        googleMapsScript.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyDlg0HXmBuduZ9U9zLCr5e8TDMzzZUtHiQ&callback=console.debug&libraries=maps,marker&v=beta`;
+        const googleMapsScript = document.createElement('script'); 
+        googleMapsScript.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyD6ljpKkV63qT-dF6mPEofKqaeGUTAG0iA&callback=console.debug&libraries=maps,marker&v=beta`;
         googleMapsScript.async = true;
         googleMapsScript.defer = true;
         googleMapsScript.addEventListener('load', initializeMap);
